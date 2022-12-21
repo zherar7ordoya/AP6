@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69C7B584-E66D-43ED-A73E-C85A0A60EA3D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FullCarMultimarca.MPP</RootNamespace>
+    <AssemblyName>FullCarMultimarca.MPP</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\ProteccionBase.cs" />
+    <Compile Include="ManejadoresDatos\CatalogoManejadorDatos.cs" />
+    <Compile Include="ManejadoresDatos\FullCarManejadorDatos.cs" />
+    <Compile Include="Gestion\MPPCliente.cs" />
+    <Compile Include="Gestion\MPPTipoContacto.cs" />
+    <Compile Include="Gestion\MPPUnidad.cs" />
+    <Compile Include="Liquidaciones\MPPLiquidacion.cs" />
+    <Compile Include="ManejadoresDatos\LogManejadorDatos.cs" />
+    <Compile Include="MPPProvincia.cs" />
+    <Compile Include="Traductores\TraductorCliente.cs" />
+    <Compile Include="Traductores\TraductorColorUnidad.cs" />
+    <Compile Include="Traductores\TraductorFormaPago.cs" />
+    <Compile Include="Traductores\TraductorLog.cs" />
+    <Compile Include="Traductores\TraductorMarca.cs" />
+    <Compile Include="Traductores\TraductorModelo.cs" />
+    <Compile Include="Traductores\TraductorOperacion.cs" />
+    <Compile Include="Traductores\TraductorPermiso.cs" />
+    <Compile Include="Traductores\TraductorTiposContacto.cs" />
+    <Compile Include="Traductores\TraductorUnidad.cs" />
+    <Compile Include="Traductores\TraductorUsuario.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="Gestion\MPPColorUnidad.cs" />
+    <Compile Include="Gestion\MPPFormaPago.cs" />
+    <Compile Include="Gestion\MPPMarca.cs" />
+    <Compile Include="Gestion\MPPModelo.cs" />
+    <Compile Include="Parametros\MPPFlagsComisiones.cs" />
+    <Compile Include="Parametros\MPPFlagsVentas.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MPPCatalogo.cs" />
+    <Compile Include="Parametros\MPPFlagsSeguridad.cs" />
+    <Compile Include="MPPLog.cs" />
+    <Compile Include="MPPMigracion.cs" />
+    <Compile Include="Seguridad\MPPPermiso.cs" />
+    <Compile Include="MPPProteccion.cs" />
+    <Compile Include="Seguridad\MPPUsuario.cs" />
+    <Compile Include="Ventas\MPPOperacion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FullCarMultimarca.Abstracciones\FullCarMultimarca.Abstracciones.csproj">
+      <Project>{2d743f41-589d-41c5-81bb-99809474457f}</Project>
+      <Name>FullCarMultimarca.Abstracciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FullCarMultimarca.BE\FullCarMultimarca.BE.csproj">
+      <Project>{be51f97d-5025-4d52-b9ee-ba99f7cfcb66}</Project>
+      <Name>FullCarMultimarca.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FullCarMultimarca.DAL\FullCarMultimarca.DAL.csproj">
+      <Project>{413041ba-5303-4a1d-9677-a3ee0529e8b5}</Project>
+      <Name>FullCarMultimarca.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FullCarMultimarca.Servicios\FullCarMultimarca.Servicios.csproj">
+      <Project>{4cd186c3-252f-49a8-9571-f7a4bba5cb22}</Project>
+      <Name>FullCarMultimarca.Servicios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

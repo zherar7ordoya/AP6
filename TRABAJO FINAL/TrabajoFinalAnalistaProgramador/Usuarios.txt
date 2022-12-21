@@ -1,0 +1,6 @@
+USUARIOS:
+
+Usuario: lucho45 - Contraseña: bbbB123_ (Gerente).
+Usuario: g - Contraseña: aaaA123_ (Gerente).
+Usuario: e - Contraseña: aaaA123_ (Empleado).
+Usuario: hernan123 - Contraseña: aaaA123_ (Empleado).

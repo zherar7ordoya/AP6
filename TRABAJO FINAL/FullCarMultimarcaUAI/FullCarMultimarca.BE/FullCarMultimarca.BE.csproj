@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE51F97D-5025-4D52-B9EE-BA99F7CFCB66}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FullCarMultimarca.BE</RootNamespace>
+    <AssemblyName>FullCarMultimarca.BE</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gestion\Cliente.cs" />
+    <Compile Include="Gestion\ColorUnidad.cs" />
+    <Compile Include="Gestion\FormaPago.cs" />
+    <Compile Include="Gestion\FormaPagoContado.cs" />
+    <Compile Include="Gestion\FormaPagoCredito.cs" />
+    <Compile Include="Gestion\FormaPagoUsado.cs" />
+    <Compile Include="Gestion\Marca.cs" />
+    <Compile Include="Gestion\Modelo.cs" />
+    <Compile Include="Gestion\ModeloPickUp.cs" />
+    <Compile Include="Gestion\ModeloResto.cs" />
+    <Compile Include="Gestion\Contacto.cs" />
+    <Compile Include="Gestion\TipoContacto.cs" />
+    <Compile Include="Gestion\Unidad.cs" />
+    <Compile Include="Liquidaciones\Liquidacion.cs" />
+    <Compile Include="Liquidaciones\LiquidacionVendedor.cs" />
+    <Compile Include="Parametros\FlagsComisiones.cs" />
+    <Compile Include="Parametros\FlagsVentas.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Catalogo.cs" />
+    <Compile Include="Parametros\FlagsSeguridad.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Provincia.cs" />
+    <Compile Include="Seguridad\Permiso.cs" />
+    <Compile Include="Seguridad\PermisoCompuesto.cs" />
+    <Compile Include="Seguridad\PermisoSimple.cs" />
+    <Compile Include="Seguridad\Usuario.cs" />
+    <Compile Include="Ventas\Operacion.cs" />
+    <Compile Include="Ventas\OperacionFormaPago.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FullCarMultimarca.Abstracciones\FullCarMultimarca.Abstracciones.csproj">
+      <Project>{2d743f41-589d-41c5-81bb-99809474457f}</Project>
+      <Name>FullCarMultimarca.Abstracciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FullCarMultimarca.Servicios\FullCarMultimarca.Servicios.csproj">
+      <Project>{4cd186c3-252f-49a8-9571-f7a4bba5cb22}</Project>
+      <Name>FullCarMultimarca.Servicios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
