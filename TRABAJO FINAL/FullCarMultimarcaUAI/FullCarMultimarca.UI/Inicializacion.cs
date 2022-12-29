@@ -2,33 +2,35 @@
 using FullCarMultimarca.BE.Seguridad;
 using FullCarMultimarca.BLL.Seguridad;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FullCarMultimarca.UI.Base;
 using FullCarMultimarca.UI.Seguridad;
 using FullCarMultimarca.Servicios.Excepciones;
-using FullCarMultimarca.BE;
 using FullCarMultimarca.BLL;
-using FullCarMultimarca.BLL.Ventas;
-using FullCarMultimarca.UI.UserControls;
 
 namespace FullCarMultimarca.UI
 {
     public class Inicializacion
     {
-        public Inicializacion()
-        {
+        // |> NO VOY A TOCAR ESTO HASTA ESTAR SEGURO QUE LA CLASE NO NECESITA
+        // UN CONSTRUCTOR VACÍO.
+        public Inicializacion() { /* ▂▃▅▇█ * █▇▅▃▂ */ }
 
-        }
+
+        // --------------------------------------------------------------------
+        // |> ÍNDICE DE INICIALIZACIÓN:
+        //      VerificarExistenciaBaseDeDatos()
+        //      InicializarSistema(Form formMenu, ToolStripItemCollection dropDownItems)
+        //      ValidarProteccionDatos()
+        //      GuardarUltimoUsuarioLogueado(string usuario)
+        // --------------------------------------------------------------------
 
         public void VerificarExistenciaBaseDeDatos()
         {
             try
             {
+                // OBTENER INSTANCIA => PATRÓN DE DISEÑO SINGLETON
+                //
                 BLLMigracion.ObtenerInstancia().VerificarYActualizarBaseDatos();
             }
             catch
@@ -36,6 +38,7 @@ namespace FullCarMultimarca.UI
                 throw;
             }
         }
+
         public void InicializarSistema(Form formMenu, ToolStripItemCollection dropDownItems)
         {
             bool visible = false;
@@ -113,12 +116,11 @@ namespace FullCarMultimarca.UI
                 Application.Exit();
             }
         }      
+
         public void GuardarUltimoUsuarioLogueado(string usuario)
         {
             Properties.Settings.Default.UltimoUsuarioLogueado = usuario;
             Properties.Settings.Default.Save();
         }
-       
-
     }
 }

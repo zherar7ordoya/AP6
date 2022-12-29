@@ -3,7 +3,6 @@ using FullCarMultimarca.Servicios.Excepciones;
 using FullCarMultimarca.BE.Liquidaciones;
 using FullCarMultimarca.BE.Seguridad;
 using FullCarMultimarca.BE.Ventas;
-using FullCarMultimarca.DAL;
 using FullCarMultimarca.MPP.Base;
 using FullCarMultimarca.MPP.Seguridad;
 using FullCarMultimarca.MPP.Ventas;
@@ -12,8 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FullCarMultimarca.MPP.Liquidaciones
 {

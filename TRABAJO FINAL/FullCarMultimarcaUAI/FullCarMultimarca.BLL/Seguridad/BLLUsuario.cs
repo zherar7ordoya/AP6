@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FullCarMultimarca.BE.Seguridad;
 
 using FullCarMultimarca.MPP.Seguridad;
@@ -11,7 +9,6 @@ using FullCarMultimarca.Servicios;
 using FullCarMultimarca.Abstracciones;
 using FullCarMultimarca.Servicios.Excepciones;
 using FullCarMultimarca.BE.Parametros;
-using FullCarMultimarca.BE;
 using FullCarMultimarca.BLL.Parametros;
 using FullCarMultimarca.Vistas;
 

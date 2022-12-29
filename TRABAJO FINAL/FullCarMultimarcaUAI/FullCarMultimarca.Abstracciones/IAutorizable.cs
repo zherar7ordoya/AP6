@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FullCarMultimarca.Abstracciones
+﻿namespace FullCarMultimarca.Abstracciones
 {
     /// <summary>
     /// Interfaz que expone los métodos a implementar cuando un objeto se puede autorizar/rechazar

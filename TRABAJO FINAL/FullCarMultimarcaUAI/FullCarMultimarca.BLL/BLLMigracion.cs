@@ -1,10 +1,4 @@
 ﻿using FullCarMultimarca.MPP;
-using FullCarMultimarca.MPP.Seguridad;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FullCarMultimarca.BLL
 {
@@ -22,6 +16,7 @@ namespace FullCarMultimarca.BLL
         /// <returns></returns>
         public static BLLMigracion ObtenerInstancia()
         {
+            // |> PATRÓN DE DISEÑO SINGLETON
             if (_bllMigracion == null)
                 _bllMigracion = new BLLMigracion();
             return _bllMigracion;

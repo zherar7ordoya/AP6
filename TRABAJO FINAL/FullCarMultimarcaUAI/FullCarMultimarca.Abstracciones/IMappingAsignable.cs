@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FullCarMultimarca.Abstracciones
+﻿namespace FullCarMultimarca.Abstracciones
 {
     /// <summary>
     /// Interfaz que agrega al ABMC métodos para la asignación en patrones de composición para la capa mapping

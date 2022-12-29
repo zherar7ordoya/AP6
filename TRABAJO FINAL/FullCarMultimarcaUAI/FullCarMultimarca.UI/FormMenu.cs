@@ -1,25 +1,13 @@
-﻿
-using FullCarMultimarca.BE.Seguridad;
-using FullCarMultimarca.UI.Base;
+﻿using FullCarMultimarca.UI.Base;
 using FullCarMultimarca.UI.Seguridad;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Reflection;
-using System.Resources;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FullCarMultimarca.BLL.Seguridad;
 using FullCarMultimarca.UI.Gestion;
 using FullCarMultimarca.BLL.Parametros;
 using FullCarMultimarca.UI.Parametros;
-using FullCarMultimarca.BE;
 using FullCarMultimarca.UI.Ventas;
 using FullCarMultimarca.BLL.Ventas;
 using FullCarMultimarca.BLL;
@@ -30,15 +18,25 @@ using FullCarMultimarca.BE.Liquidaciones;
 
 namespace FullCarMultimarca.UI
 {
+    // |> INCLUYO ANÁLISIS DE FLUJO "ON-BOOT"
     public partial class FormMenu : Form
     {
+
+        // |> SIN NOVEDAD
         public FormMenu()
         {
             InitializeComponent();
-        }               
-        
-        private Inicializacion _inicializacion = new Inicializacion();                
+        }
+
+        // |> AGRUPO VARIABLES DE CLASE
+
+        private Inicializacion _inicializacion = new Inicializacion();
         private EventHandler _onOfertasVencidas;
+        private static Notification _formNotificacionOpPendientesAut;
+        private static Notification _formNotificacionOpRechazadas;
+
+
+        // |> TODAVÍA NO SÉ QUÉ HACE...
         public event EventHandler OnOfertasVencidas
         {
             add
@@ -54,16 +52,16 @@ namespace FullCarMultimarca.UI
             }
         }
 
-        private static Notification _formNotificacionOpPendientesAut;
-        private static Notification _formNotificacionOpRechazadas;
         
 
         #region EVENTOS DEL MENU PRINCIPAL
 
+        // |> ÉSTO ES LO PRIMERO QUE SE VA A EJECUTAR
         private void FormMenu_Load(object sender, EventArgs e)
         {
             try
             {
+                // |> CONFIGURACIÓN REGIONAL (¿PARA QUÉ?)
                 var cInfo = new CultureInfo("es-AR");
                 System.Threading.Thread.CurrentThread.CurrentUICulture = cInfo;
                 System.Threading.Thread.CurrentThread.CurrentCulture = cInfo;
@@ -107,7 +105,7 @@ namespace FullCarMultimarca.UI
                 FormLogin fLogin = new FormLogin();
                 if (DialogResult.OK == fLogin.ShowDialog())
                 {
-                    UtilUI.ObtenerInstancia().CerrarTodosLosFormsHijos(this);                    
+                    UtilUI.ObtenerInstancia().CerrarTodosLosFormsHijos(this);
                 }
             }
             catch (Exception ex)
@@ -115,7 +113,7 @@ namespace FullCarMultimarca.UI
                 MostrarMensaje.MostrarError(ex);
                 Application.Exit();
             }
-        }      
+        }
         private void modificarClaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -200,7 +198,7 @@ namespace FullCarMultimarca.UI
             {
                 MostrarMensaje.MostrarError(ex);
             }
-        }      
+        }
 
         #endregion
 
@@ -345,7 +343,7 @@ namespace FullCarMultimarca.UI
         {
             try
             {
-                var instancia = FormListaOperaciones.ObtenerInstancia();             
+                var instancia = FormListaOperaciones.ObtenerInstancia();
                 UtilUI.ObtenerInstancia().AbrirOTraerAlFrente(this, instancia);
             }
             catch (Exception ex)
@@ -374,11 +372,11 @@ namespace FullCarMultimarca.UI
         private void liquidarComisionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
-            {             
+            {
                 var nuevaLiquidacion = new FormLiquidarComisiones();
                 string codigo = nuevaLiquidacion.IniciarNuevaLiquidacion();
-                if(nuevaLiquidacion.DialogResult == DialogResult.OK)
-                {                    
+                if (nuevaLiquidacion.DialogResult == DialogResult.OK)
+                {
                     var liqCompleta = BLLLiquidacion.ObtenerInstancia().ObtenerVistaCompleta(new Liquidacion(codigo));
                     var fDetalle = new FormVerLiquidacion(liqCompleta);
                     fDetalle.ShowDialog();
@@ -424,7 +422,7 @@ namespace FullCarMultimarca.UI
                     _formNotificacionOpRechazadas.Close();
 
 
-                _inicializacion.InicializarSistema(this,menuStrip1.Items);
+                _inicializacion.InicializarSistema(this, menuStrip1.Items);
 
                 //Al ingresar exitosamente anulamos las ofertas e incializamos el timer para que se venzan nuevas ofertas cada un minuto.
                 AnularOfertasVencidas();
@@ -445,9 +443,9 @@ namespace FullCarMultimarca.UI
         }
         private void IngresarAlSistema()
         {
-            FormLogin fLogin = new FormLogin(FullCarMultimarca.UI.Properties.Settings.Default.UltimoUsuarioLogueado);
+            FormLogin fLogin = new FormLogin(Properties.Settings.Default.UltimoUsuarioLogueado);
             if (DialogResult.OK != fLogin.ShowDialog())
-                Application.Exit();        
+                Application.Exit();
         }
 
 
@@ -467,7 +465,7 @@ namespace FullCarMultimarca.UI
                 {
                     //Si se vencieron ofertas invoco a los suscriptores que desen ser notificados
                     _onOfertasVencidas?.Invoke(this, null);
-                }                    
+                }
             }
             catch
             {
@@ -525,7 +523,7 @@ namespace FullCarMultimarca.UI
         private void BuscarOperacionesPendientesDeAutorizar()
         {
             var qAutPendientes = BLLOperacion.ObtenerInstancia()
-                .ObtenerCantidadAutorizacionPendientes();            
+                .ObtenerCantidadAutorizacionPendientes();
             if (qAutPendientes > 0)
             {
                 if (_formNotificacionOpPendientesAut != null)
@@ -544,7 +542,7 @@ namespace FullCarMultimarca.UI
                 }
                 _formNotificacionOpPendientesAut.linkLabel1.Text = "Presione aquí para abrir la carpeta de Operaciones a Autorizar";
                 _formNotificacionOpPendientesAut.linkLabel1.LinkClicked += new LinkLabelLinkClickedEventHandler(MostrarOperacionesPendientes);
-                _formNotificacionOpPendientesAut.Show();                
+                _formNotificacionOpPendientesAut.Show();
             }
 
         }
@@ -591,7 +589,7 @@ namespace FullCarMultimarca.UI
             {
                 //Consumimos
             }
-           
+
         }
         private void MostrarOperacionesRechazadas(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -619,6 +617,6 @@ namespace FullCarMultimarca.UI
 
         #endregion
 
-      
+
     }
 }

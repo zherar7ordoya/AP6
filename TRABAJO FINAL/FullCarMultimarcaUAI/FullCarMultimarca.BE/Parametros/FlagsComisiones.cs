@@ -1,11 +1,4 @@
-﻿using FullCarMultimarca.Abstracciones;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FullCarMultimarca.BE.Parametros
+﻿namespace FullCarMultimarca.BE.Parametros
 {
     /// <summary>
     /// Parametros de la gestión de comisiones

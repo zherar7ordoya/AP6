@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FullCarMultimarca.Abstracciones
+﻿namespace FullCarMultimarca.Abstracciones
 {
     /// <summary>
     /// Abstracción que se inyecta en todas las clases del negocio y brinda el servicio de logear los eventos.

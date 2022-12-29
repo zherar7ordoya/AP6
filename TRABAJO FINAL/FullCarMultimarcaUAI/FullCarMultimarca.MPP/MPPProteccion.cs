@@ -1,15 +1,9 @@
-﻿using FullCarMultimarca.DAL;
-using FullCarMultimarca.MPP.Base;
+﻿using FullCarMultimarca.MPP.Base;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FullCarMultimarca.BE.Seguridad;
-using System.Collections;
 using FullCarMultimarca.Servicios.Excepciones;
-using FullCarMultimarca.BE;
 using FullCarMultimarca.MPP.Seguridad;
 using FullCarMultimarca.MPP.Gestion;
 using FullCarMultimarca.MPP.Ventas;

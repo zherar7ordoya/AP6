@@ -1,13 +1,7 @@
-﻿using FullCarMultimarca.BE;
-using FullCarMultimarca.BE.Seguridad;
-using FullCarMultimarca.Servicios.Excepciones;
+﻿using FullCarMultimarca.Servicios.Excepciones;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace FullCarMultimarca.MPP
@@ -30,7 +24,7 @@ namespace FullCarMultimarca.MPP
         }
         
 
-        internal static string STR_ERROR_ELIMINAR_FK = "No puede realizar esta acción ya que hay otros elementos que dependen de él." + System.Environment.NewLine;
+        internal static string STR_ERROR_ELIMINAR_FK = "No puede realizar esta acción ya que hay otros elementos que dependen de él." + Environment.NewLine;
         internal static Exception WrapException(Exception ex)
         {
             if ((ex is InvalidConstraintException))//violacion de foreign key

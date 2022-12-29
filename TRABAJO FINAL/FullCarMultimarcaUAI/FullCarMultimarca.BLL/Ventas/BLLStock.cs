@@ -1,17 +1,14 @@
 ﻿using FullCarMultimarca.Abstracciones;
 using FullCarMultimarca.BE.Gestion;
 using FullCarMultimarca.MPP.Gestion;
-using FullCarMultimarca.MPP.Parametros;
 using FullCarMultimarca.Servicios;
 using FullCarMultimarca.Servicios.Excepciones;
 using FullCarMultimarca.Vistas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using FullCarMultimarca.BLL.Parametros;
-using System.Threading;
 using FullCarMultimarca.BLL.Gestion;
 
 namespace FullCarMultimarca.BLL.Ventas

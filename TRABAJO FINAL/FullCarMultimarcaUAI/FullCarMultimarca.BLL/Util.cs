@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace FullCarMultimarca.BLL
 {
-	/// <summary>
-	/// Clase estática que ofrece métodos para ayudar a la gestión de la BLL
-	/// </summary>
+    /// <summary>
+    /// Clase estática que ofrece métodos para ayudar a la gestión de la BLL
+    /// </summary>
     public static class Util
     {		
 		

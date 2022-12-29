@@ -1,17 +1,8 @@
 ﻿using FullCarMultimarca.Servicios.Excepciones;
-using FullCarMultimarca.BE.Liquidaciones;
-using FullCarMultimarca.BE.Ventas;
 using FullCarMultimarca.BLL;
 using FullCarMultimarca.BLL.Liquidaciones;
 using FullCarMultimarca.Vistas;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 

@@ -2,14 +2,10 @@
 using FullCarMultimarca.DAL;
 using FullCarMultimarca.Servicios.Excepciones;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FullCarMultimarca.MPP
-{    
+{
     public class CatalogoManejadorDatos : IManejadorBackup
     {
         private CatalogoManejadorDatos()

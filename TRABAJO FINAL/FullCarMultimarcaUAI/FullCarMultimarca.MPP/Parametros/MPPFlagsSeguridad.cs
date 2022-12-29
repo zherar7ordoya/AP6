@@ -1,16 +1,8 @@
-﻿using FullCarMultimarca.BE.Seguridad;
-using FullCarMultimarca.DAL;
-using FullCarMultimarca.MPP.Base;
-using FullCarMultimarca.Abstracciones;
+﻿using FullCarMultimarca.Abstracciones;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FullCarMultimarca.Servicios.Excepciones;
 using FullCarMultimarca.BE.Parametros;
-using FullCarMultimarca.BE;
 
 namespace FullCarMultimarca.MPP.Parametros
 {

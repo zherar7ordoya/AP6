@@ -1,5 +1,4 @@
 ﻿using FullCarMultimarca.BE.Gestion;
-using FullCarMultimarca.BE.Ventas;
 using FullCarMultimarca.BLL;
 using FullCarMultimarca.BLL.Gestion;
 using FullCarMultimarca.BLL.Ventas;
@@ -8,15 +7,8 @@ using FullCarMultimarca.UI.Base;
 using FullCarMultimarca.Vistas;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Printing;
-using System.IO;
 using FullCarMultimarca.Abstracciones;
 using FullCarMultimarca.Servicios.Extensiones;
 

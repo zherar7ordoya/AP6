@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FullCarMultimarca.BLL
+﻿namespace FullCarMultimarca.BLL
 {
     /// <summary>
     /// Clase que mapea los permisos a constantes para no tener que recordar los códigos cada vez que se los requiere

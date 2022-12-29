@@ -1,17 +1,11 @@
 ﻿using FullCarMultimarca.Abstracciones;
 using FullCarMultimarca.BE;
-using FullCarMultimarca.BE.Seguridad;
-using FullCarMultimarca.DAL;
-using FullCarMultimarca.MPP.Base;
 using FullCarMultimarca.MPP.Traductores;
-using FullCarMultimarca.Servicios;
 using FullCarMultimarca.Servicios.Excepciones;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FullCarMultimarca.MPP
 {

@@ -1,11 +1,8 @@
 ﻿using FullCarMultimarca.Abstracciones;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace FullCarMultimarca.Servicios
 {
@@ -56,7 +53,7 @@ namespace FullCarMultimarca.Servicios
         public string ObtenerCodigoHash(object[] array)
         {
             var fuenteStr = string.Join(", ", array);
-            byte[] tmpSource = ASCIIEncoding.ASCII.GetBytes(fuenteStr);
+            byte[] tmpSource = Encoding.ASCII.GetBytes(fuenteStr);
             byte[] tmpHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
             return ByteArrayToString(tmpHash);
         }                

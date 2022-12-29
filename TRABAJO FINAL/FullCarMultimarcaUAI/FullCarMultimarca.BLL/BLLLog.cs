@@ -1,15 +1,9 @@
 ﻿using FullCarMultimarca.Abstracciones;
 using FullCarMultimarca.BE;
-using FullCarMultimarca.BE.Seguridad;
 using FullCarMultimarca.MPP;
-using FullCarMultimarca.MPP.Seguridad;
-using FullCarMultimarca.Servicios;
 using FullCarMultimarca.Vistas;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FullCarMultimarca.BLL
 {

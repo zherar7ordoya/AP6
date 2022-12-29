@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FullCarMultimarca.Abstracciones
+﻿namespace FullCarMultimarca.Abstracciones
 {
     /// <summary>
     /// Interfaz que expone método para validar una entidad utilizado en la capa del negocio

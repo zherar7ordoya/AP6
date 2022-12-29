@@ -1,9 +1,7 @@
 ﻿using FullCarMultimarca.Abstracciones;
-using FullCarMultimarca.BE;
 using FullCarMultimarca.BE.Gestion;
 using FullCarMultimarca.BE.Seguridad;
 using FullCarMultimarca.BE.Ventas;
-using FullCarMultimarca.DAL;
 using FullCarMultimarca.MPP.Base;
 using FullCarMultimarca.MPP.Gestion;
 using FullCarMultimarca.MPP.Seguridad;
@@ -15,8 +13,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FullCarMultimarca.MPP.Ventas
 {

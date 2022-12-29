@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FullCarMultimarca.UI.UserControls
@@ -13,8 +9,8 @@ namespace FullCarMultimarca.UI.UserControls
 
         {
             SelectionStart = 0;
-            base.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
-            base.Enter += currencyMaskedTextBox_Enter;
+            TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+            Enter += currencyMaskedTextBox_Enter;
 
         }
 

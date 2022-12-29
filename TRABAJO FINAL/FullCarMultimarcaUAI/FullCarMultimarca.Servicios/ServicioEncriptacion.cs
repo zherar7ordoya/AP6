@@ -1,17 +1,14 @@
 ﻿using FullCarMultimarca.Abstracciones;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace FullCarMultimarca.Servicios
 {
-	/// <summary>
-	/// Provee metodos de encriptación
-	/// </summary>
+    /// <summary>
+    /// Provee metodos de encriptación
+    /// </summary>
     public class ServicioEncriptacion : IServicioEncriptacion
     {
 		private readonly string _SemillaEncriptacion = "MReina_SecretoClave";
@@ -19,7 +16,7 @@ namespace FullCarMultimarca.Servicios
 		private string EncriptarSHA(byte[] bytes, string clave)
 		{
 			string lClave = _SemillaEncriptacion + clave;
-			byte[] miClave = System.Text.Encoding.UTF8.GetBytes(lClave);
+			byte[] miClave = Encoding.UTF8.GetBytes(lClave);
 
 			HMACSHA1 miHMAC = new HMACSHA1(miClave);
 			CryptoStream cs = new CryptoStream(Stream.Null, miHMAC, CryptoStreamMode.Write);
@@ -30,7 +27,7 @@ namespace FullCarMultimarca.Servicios
 		}		
 		private string EncriptarSHA(string texto, string clave)
 		{
-			byte[] Datos = System.Text.Encoding.UTF8.GetBytes(texto);
+			byte[] Datos = Encoding.UTF8.GetBytes(texto);
 			return EncriptarSHA(Datos, clave);
 		}
 		public string EncriptarSHA(string texto)
@@ -43,11 +40,11 @@ namespace FullCarMultimarca.Servicios
 			try
 			{
 				byte[] keyArray;
-				byte[] Arreglo_a_Cifrar = UTF8Encoding.UTF8.GetBytes(texto);
+				byte[] Arreglo_a_Cifrar = Encoding.UTF8.GetBytes(texto);
 
 				//Se utilizan las clases de encriptación MD5
 				MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
-				keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(_SemillaEncriptacion));
+				keyArray = hashmd5.ComputeHash(Encoding.UTF8.GetBytes(_SemillaEncriptacion));
 				hashmd5.Clear();
 
 				//Algoritmo TripleDES
@@ -78,7 +75,7 @@ namespace FullCarMultimarca.Servicios
 				//algoritmo MD5
 				MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
 
-				keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(_SemillaEncriptacion));
+				keyArray = hashmd5.ComputeHash(Encoding.UTF8.GetBytes(_SemillaEncriptacion));
 
 				hashmd5.Clear();
 
@@ -91,7 +88,7 @@ namespace FullCarMultimarca.Servicios
 				ICryptoTransform cTransform = tdes.CreateDecryptor();
 				byte[] resultArray = cTransform.TransformFinalBlock(Array_a_Descifrar, 0, Array_a_Descifrar.Length);
 				tdes.Clear();
-				textoEncriptado = UTF8Encoding.UTF8.GetString(resultArray);
+				textoEncriptado = Encoding.UTF8.GetString(resultArray);
 
 			}
 			catch (Exception)

@@ -3,8 +3,6 @@ using FullCarMultimarca.BE.Gestion;
 using FullCarMultimarca.BE.Seguridad;
 using FullCarMultimarca.BE.Ventas;
 using FullCarMultimarca.BLL.Parametros;
-using FullCarMultimarca.MPP.Gestion;
-using FullCarMultimarca.MPP.Parametros;
 using FullCarMultimarca.MPP.Ventas;
 using FullCarMultimarca.Servicios;
 using FullCarMultimarca.Servicios.Excepciones;
@@ -12,7 +10,6 @@ using FullCarMultimarca.Vistas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using FullCarMultimarca.BLL.Gestion;
 
@@ -546,7 +543,7 @@ namespace FullCarMultimarca.BLL.Ventas
                 destItem.TasaIVA = BLLModelo.ObtenerInstancia(sourceItem.Unidad.Modelo).ObtenerTasaIVA();
                 destItem.Cliente = sourceItem.Cliente.ToString();
                 destItem.PrecioUnidad = sourceItem.PrecioUnidad;
-                destItem.NetoAComisionar = BLLOperacion.ObtenerInstancia().ObtenerImporteALiquidar(sourceItem);
+                destItem.NetoAComisionar = ObtenerInstancia().ObtenerImporteALiquidar(sourceItem);
 
 
                 lista.Add(destItem);

@@ -6,14 +6,8 @@ using FullCarMultimarca.BLL.Gestion;
 using FullCarMultimarca.Servicios.Excepciones;
 using FullCarMultimarca.UI.Base;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace FullCarMultimarca.UI.Gestion
 {
@@ -97,7 +91,7 @@ namespace FullCarMultimarca.UI.Gestion
             //Configurar CUIT            
             txtCUIT.CaracteresAceptados = new char[] { '-' };
             txtCUIT.MensajeErrorValidacion = "El Formato del CUIL/CUIT ingresado es inválido.";
-            txtCUIT.RegularValidacion = BLL.Util.PatronValidacionCUIT;
+            txtCUIT.RegularValidacion = Util.PatronValidacionCUIT;
             txtCUIT.MostrarBotonDeshacer = true;  
         }
         private void CargarCombos()

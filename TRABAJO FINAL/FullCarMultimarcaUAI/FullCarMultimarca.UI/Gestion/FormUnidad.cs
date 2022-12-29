@@ -3,15 +3,9 @@ using FullCarMultimarca.BLL.Gestion;
 using FullCarMultimarca.Servicios.Excepciones;
 using FullCarMultimarca.UI.Base;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FullCarMultimarca.BLL.Ventas;
 using FullCarMultimarca.Abstracciones;
 
 namespace FullCarMultimarca.UI.Gestion

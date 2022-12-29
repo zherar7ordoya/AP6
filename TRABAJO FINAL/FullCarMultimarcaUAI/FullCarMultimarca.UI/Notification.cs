@@ -1,13 +1,10 @@
 using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
 using System.Windows.Forms;
 using FullCarMultimarca.UI.Base;
 
 namespace FullCarMultimarca.UI
 {
-	public class Notification : TransDialog
+    public class Notification : TransDialog
 	{
         #region Ctor, init code and dispose
 		public Notification()
@@ -112,7 +109,7 @@ namespace FullCarMultimarca.UI
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelTextoNotificacion);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.Name = "Notification";
             this.ShowInTaskbar = false;
             this.Text = "Notificación FULL CAR";

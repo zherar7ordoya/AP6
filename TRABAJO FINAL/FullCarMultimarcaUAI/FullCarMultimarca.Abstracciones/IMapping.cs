@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace FullCarMultimarca.Abstracciones
-{     
+{
     /// <summary>
     /// Abstracción que implementan las clases de la capa mapping para brindar servicio ABMC
     /// </summary>

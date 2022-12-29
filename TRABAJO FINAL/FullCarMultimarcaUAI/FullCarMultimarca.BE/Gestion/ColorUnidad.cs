@@ -1,10 +1,6 @@
 ﻿using FullCarMultimarca.Abstracciones;
 using FullCarMultimarca.Servicios.Extensiones;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FullCarMultimarca.BE.Gestion
 {
