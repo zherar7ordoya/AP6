@@ -23,14 +23,18 @@ namespace FullCarMultimarca.UI
     {
 
         //  SIN NOVEDAD
-        public FormMenu()
-        {
-            InitializeComponent();
-        }
+        public FormMenu() => InitializeComponent();
+
 
         // |> AGRUPO VARIABLES DE CLASE
 
+        // INICIALIZAR SIGNIFICA:
+        // *) VerificarExistenciaBaseDeDatos()
+        // *) InicializarSistema(Form formMenu, ToolStripItemCollection dropDownItems)
+        // *) ValidarProteccionDatos()
+        // *) GuardarUltimoUsuarioLogueado(string usuario)
         private Inicializacion _inicializacion = new Inicializacion();
+
         private EventHandler _onOfertasVencidas;
         private static Notification _formNotificacionOpPendientesAut;
         private static Notification _formNotificacionOpRechazadas;
@@ -56,34 +60,39 @@ namespace FullCarMultimarca.UI
         }
 
 
+        //#region Eventos (del menú principal) --------------------------------
 
-        //#region EVENTOS DEL MENU PRINCIPAL
-
-        // ▂▃▅▇█ ÉSTO ES LO PRIMERO QUE SE VA A EJECUTAR █▇▅▃▂
+        // |> ÉSTO ES LO PRIMERO QUE SE VA A EJECUTAR
+        // *) CULTURIZAR
+        // *) VERIFICA SI EXISTE LA BASE DE DATOS
+        // *) LLAMA A INICIALIZAR EL SISTEMA
         private void FormMenu_Load(object sender, EventArgs e)
         {
             try
             {
-                // ▂▃▅▇█ CONFIGURACIÓN REGIONAL (¿PARA QUÉ?) █▇▅▃▂
+                // CONFIGURACIÓN REGIONAL (¿PARA QUÉ?)
                 var cInfo = new CultureInfo("es-AR");
                 System.Threading.Thread.CurrentThread.CurrentUICulture = cInfo;
                 System.Threading.Thread.CurrentThread.CurrentCulture = cInfo;
 
-                // |> LO DEJAMOS ASÍ POR EL MOMENTO: VERIFICA EXISTENCIA DE BD
                 _inicializacion.VerificarExistenciaBaseDeDatos();
 
-                // |> EVENTO QUE ¿HACE QUÉ? |||||||||||||||||||||||||||||||||||
+                // |> VUELVE A EJECUTAR LA INICIALIZACIÓN
                 Ticket.OnUsarioLogueadoCambiado += OnInicializarSistema;
             }
             catch (Exception ex)
             {
-                // |> MANEJADOR DE ERRORES
+                // |> MANEJADOR DE ERRORES: SIMPLEMENTE CIERRA (CONSULTAR LAS
+                // OBSERVACIONES DE TIM COREY SOBRE ESTA ESTRATEGIA, CREO
+                // RECORDAR QUE ALGO DIJO SOBRE LA CORRUPCIÓN DE DATOS (QUE FUE
+                // JUSTAMENTE LO QUE SUCEDIÓ AQUÍ EN EL PRIMER ARRANQUE)
                 MostrarMensaje.MostrarError(ex);
                 Application.Exit();
             }
         }
 
 
+        // |> ESTE EVENTO OCURRE CUANDO SE MUESTRA EL FORMULARIO POR PRIMERA VEZ
         private void FormMenu_Shown(object sender, EventArgs e)
         {
             try
@@ -104,7 +113,7 @@ namespace FullCarMultimarca.UI
         }
 
 
-        //#region INICIO
+        // |> MENUITEM INICIO *************************************************
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -228,9 +237,8 @@ namespace FullCarMultimarca.UI
             }
         }
 
-        //#endregion
 
-        //#region ADMINISTRACION
+        // |> MENUITEM ADMINISTRACIÓN *****************************************
 
         private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -347,9 +355,8 @@ namespace FullCarMultimarca.UI
             }
         }
 
-        //#endregion
 
-        //#region VENTAS
+        // |> MENUITEM VENTAS *************************************************
 
         private void stockToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -393,9 +400,7 @@ namespace FullCarMultimarca.UI
         }
 
 
-        //#endregion
-
-        //#region LIQUIDACIONES
+        // |> MENUITEM LIQUIDACIONES ******************************************
 
         private void liquidarComisionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -428,10 +433,13 @@ namespace FullCarMultimarca.UI
             }
         }
 
-        //#endregion
 
+        // --------------------------------------------------------------------
+        // HASTA ACÁ MÁS O MENOS ERA COHERENTE, PERO A PARTIR DE AQUÍ SE PUSO
+        // HORRIBLE: SIMPLEMENTE, HAY COSAS QUE NO DEBERÍAN ESTAR AQUÍ.
+        // VER LA FORMA DE HACER ALGO MÁS PROLIJO, POR DIOS...
+        // --------------------------------------------------------------------
 
-        //#endregion
 
         //#region EVENTOS Y METODOS DE DE INICIALIZACION
 
@@ -452,14 +460,21 @@ namespace FullCarMultimarca.UI
 
                 _inicializacion.InicializarSistema(this, menuStrip1.Items);
 
-                //Al ingresar exitosamente anulamos las ofertas e incializamos el timer para que se venzan nuevas ofertas cada un minuto.
+                // Al ingresar exitosamente anulamos las ofertas e incializamos
+                // el timer para que se venzan nuevas ofertas cada un minuto.
                 AnularOfertasVencidas();
                 IniciarTimerVencimientoOfertas();
-                //También vemos si hay operaciones pendientes de autorizar para avisar, luego timer cada 3 minutos para continuar notificando.
+                
+                // También vemos si hay operaciones pendientes de autorizar para
+                // avisar, luego timer cada 3 minutos para continuar notificando.
                 BuscarOperacionesPendientesDeAutorizar();
-                //Revisamos y notificamos si el usuario tiene operaciones rechazadas que revisar
+                
+                // Revisamos y notificamos si el usuario tiene operaciones
+                // rechazadas que revisar
                 BuscarOperacionesRechazadas();
-                //Solo se notifica a los usuarios logueados que tengan permiso de autorizar operaciones
+                
+                // Solo se notifica a los usuarios logueados que tengan permiso
+                // de autorizar operaciones
                 IniciarTimerNotificacionOperaciones();
 
             }
@@ -469,9 +484,17 @@ namespace FullCarMultimarca.UI
                 this.Close();
             }
         }
+
+        
         private void IngresarAlSistema()
         {
+            // POR SI ME OLVIDO LUEGO: RECUPERA EN UN STRING DESDE EL XML EN LA
+            // SUBCARPETA DE USUARIO (WINDOWS) EL NOMBRE GUARDADO DEL ÚLTIMO
+            // USUARIO Y LO PONE EN EL TEXTBOX "USUARIO" DEL FORMULARIO LOGIN.
             FormLogin fLogin = new FormLogin(Properties.Settings.Default.UltimoUsuarioLogueado);
+
+            // SOLO RECUPERA LA RESPUESTA POSITIVA DEL DIÁLOGO
+            // ¿DÓNDE, CUÁNDO, SE HACE EL CONTROL DE INGRESO?
             if (DialogResult.OK != fLogin.ShowDialog())
                 Application.Exit();
         }

@@ -1,5 +1,4 @@
-﻿
-using FullCarMultimarca.BE.Seguridad;
+﻿using FullCarMultimarca.BE.Seguridad;
 using FullCarMultimarca.BLL.Seguridad;
 using System;
 using System.Reflection;
@@ -7,6 +6,10 @@ using System.Windows.Forms;
 using FullCarMultimarca.UI.Seguridad;
 using FullCarMultimarca.Servicios.Excepciones;
 using FullCarMultimarca.BLL;
+
+
+// CÓDIGO HORRIBLE, EL MÉTODO ValidarProteccionDatos() HAY QUE REFACTORIZARLO
+// (ES DEMASIADO LARGO Y COMPLEJO) => MUCHO ANIDAMIENTO
 
 namespace FullCarMultimarca.UI
 {
@@ -30,15 +33,12 @@ namespace FullCarMultimarca.UI
             try
             {
                 // OBTENER INSTANCIA => PATRÓN DE DISEÑO SINGLETON
-                //
                 BLLMigracion.ObtenerInstancia().VerificarYActualizarBaseDatos();
             }
-            catch
-            {
-                throw;
-            }
+            catch { throw; }
         }
 
+        
         public void InicializarSistema(Form formMenu, ToolStripItemCollection dropDownItems)
         {
             bool visible = false;
@@ -51,6 +51,7 @@ namespace FullCarMultimarca.UI
                     //Inicializo los permisos de usuario
                     Ticket.AgregarPermiso(permiso);
                 }
+                
                 //Verificamos consistencia de la base de datos.
                 ValidarProteccionDatos();              
                 visible = true;
@@ -70,6 +71,7 @@ namespace FullCarMultimarca.UI
             }
         }
 
+
         public void ValidarProteccionDatos()
         {
             try
@@ -82,7 +84,8 @@ namespace FullCarMultimarca.UI
 
                 if (Ticket.TienePermiso(ConstPermisos.GESTIONAR_BACKUPS))
                 {
-                    msje = msje + "\nTablas afectadas:\n";
+                    msje += "\nTablas afectadas:\n";
+                    
                     if (exBC.TablasCorruptas != null)
                     {
                         foreach (string tabla in exBC.TablasCorruptas)
@@ -96,14 +99,20 @@ namespace FullCarMultimarca.UI
                     if (MostrarMensaje.Pregunta(msje) == DialogResult.Yes)
                     {
                         var form = FormCatalogoBackup.ObtenerInstancia(true);
-                        form.ShowDialog(); //Abrimos moFullCarMultimarca.DAL para no permitir usar el resto del sistema                                 
-                        Application.Exit();//Si llega hasta acá es porque NO restauró, ergo, se cierra el sistema porque sigue en estado inconsitente
+
+                        // Abrimos moFullCarMultimarca.DAL para no permitir usar
+                        // el resto del sistema                                 
+                        form.ShowDialog();
+
+                        // Si llega hasta acá es porque NO restauró, ergo, se
+                        // cierra el sistema porque sigue en estado inconsistente
+                        Application.Exit();
                     }
                     else
                         Application.Exit();
 
                 }
-                else //No tiene permisos de restaurar backuo
+                else //No tiene permisos de restaurar backup
                 {
                     MostrarMensaje.Error($"{msje}\nContacte al administrador.");
                     Application.Exit();
@@ -115,7 +124,13 @@ namespace FullCarMultimarca.UI
                 MostrarMensaje.MostrarError(ex);
                 Application.Exit();
             }
-        }      
+        }
+
+
+        // |> GUARDA EL ÚLTIMO USUARIO LOGUEADO EN UN XML UBICADO EN UNA
+        // SUBCARPETA DE LA CARPETA OCULTA LOCAL DE DATOS DE APLICACIONES
+        // https://learn.microsoft.com/en-us/dotnet/desktop/winforms/advanced/how-to-write-user-settings-at-run-time-with-csharp?view=netframeworkdesktop-4.8
+        // EN MI CASO, PODRÍA SER C:\Users\gtordoya\AppData\Local\[APP]\[ALEATORIO]\1.1.0.0\user.config
 
         public void GuardarUltimoUsuarioLogueado(string usuario)
         {
