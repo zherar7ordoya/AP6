@@ -12,6 +12,7 @@ using System.Linq;
 
 namespace FullCarMultimarca.MPP.Gestion
 {
+    // |> UNIDAD SE REFIERE A AUTOMÓVIL (Y NO A UN DISCO RÍGIDO, POR EJEMPLO)
     public class MPPUnidad : ProteccionBase, IMapping<Unidad>
     {
         private MPPUnidad()
@@ -36,6 +37,9 @@ namespace FullCarMultimarca.MPP.Gestion
                 _mppUnidad = new MPPUnidad();
             return _mppUnidad;
         }
+
+
+        
         ~MPPUnidad()
         {
             _mppUnidad = null;

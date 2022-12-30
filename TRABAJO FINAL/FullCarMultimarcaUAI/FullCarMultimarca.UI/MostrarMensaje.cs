@@ -9,32 +9,21 @@ namespace FullCarMultimarca.UI
     /// </summary>
     public static class MostrarMensaje
     {
-        public static void Informacion(string mensaje)
-        {
-            MessageBox.Show(mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information) ;
-        }
-        public static DialogResult Pregunta(string mensaje)
-        {
+        public static void Informacion(string mensaje) => MessageBox.Show(mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            return MessageBox.Show(mensaje, "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        }
-        public static void Advertencia(string mensaje)
-        {
-            MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-        public static void Error(string mensaje)
-        {
-            MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+        public static DialogResult Pregunta(string mensaje) => MessageBox.Show(mensaje, "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+        public static void Advertencia(string mensaje) => MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+        public static void Error(string mensaje) => MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
         public static void MostrarError(Exception ex)
         {
-            //Si el error es personalizado lo trato como advertencia, dado que es un ERROR lanzado por el desarrollador
-            if (ex is NegocioException)
-            {                
-               Advertencia(ex.Message);
-            }
-            else
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            // Si el error es personalizado lo trato como advertencia, dado que
+            // es un ERROR lanzado por el desarrollador
+            if (ex is NegocioException) Advertencia(ex.Message);
+            else { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
     }
 }

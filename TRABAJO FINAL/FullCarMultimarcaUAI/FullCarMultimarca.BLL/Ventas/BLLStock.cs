@@ -17,7 +17,9 @@ namespace FullCarMultimarca.BLL.Ventas
     {
         private BLLStock()
         {
+            // |> UNIDAD SE REFIERE A AUTOMÓVIL (Y NO A UN DISCO RÍGIDO, POR EJEMPLO)
             _abmc = MPPUnidad.ObtenerInstancia();
+
             _logger = BLLLog.ObtenerInstancia();
             _email = new ServicioCorreo();
             _exAsync = new ServicioTransfAsync();
@@ -61,11 +63,17 @@ namespace FullCarMultimarca.BLL.Ventas
             return query.ToList() ;
         }       
 
+        
         /// <summary>
         /// Este método vence todas las ofertas que ya no están vigentes en el sistema.
         /// </summary>
         public bool VencerOfertas()
         {
+
+            // |> EJEMPLO DE NO-AUTODOCUMENTADO: ¿QUÉ ES "ABMC"?
+            // |> UNIDAD SE REFIERE A AUTOMÓVIL (Y NO A UN DISCO RÍGIDO, POR EJEMPLO)
+            // |> EN ESTE CASO, ES ABM "COCHE"...
+
             //Obtenemos las unidades en oferta que ya están vencidas.
             var query = _abmc.Buscar("", "", false).AsQueryable();
             query = query.Where(u => u.Oferta != null && u.Oferta > 0);

@@ -22,7 +22,7 @@ namespace FullCarMultimarca.UI
     public partial class FormMenu : Form
     {
 
-        // |> SIN NOVEDAD
+        //  SIN NOVEDAD
         public FormMenu()
         {
             InitializeComponent();
@@ -36,9 +36,12 @@ namespace FullCarMultimarca.UI
         private static Notification _formNotificacionOpRechazadas;
 
 
-        // |> TODAVÍA NO SÉ QUÉ HACE...
+        // |> TODAVÍA NO SÉ QUÉ HACE... |||||||||||||||||||||||||||||||||||||||
         public event EventHandler OnOfertasVencidas
         {
+            // |> ÉSTE ES UN PATRÓN PARA EVITAR QUE UN CONTROLADOR DE EVENTOS
+            // (EVENT HANDLER) SE ENGANCHE (HOOK) DOS VECES. CON ESTE CÓDIGO,
+            // SE IGNORARÁ A UN LLAMADOR (CALLER) QUE SE SUSCRIBA DE NUEVO.
             add
             {
                 if (_onOfertasVencidas == null || !_onOfertasVencidas.GetInvocationList().Contains(value))
@@ -52,29 +55,35 @@ namespace FullCarMultimarca.UI
             }
         }
 
-        
 
-        #region EVENTOS DEL MENU PRINCIPAL
 
-        // |> ÉSTO ES LO PRIMERO QUE SE VA A EJECUTAR
+        //#region EVENTOS DEL MENU PRINCIPAL
+
+        // ▂▃▅▇█ ÉSTO ES LO PRIMERO QUE SE VA A EJECUTAR █▇▅▃▂
         private void FormMenu_Load(object sender, EventArgs e)
         {
             try
             {
-                // |> CONFIGURACIÓN REGIONAL (¿PARA QUÉ?)
+                // ▂▃▅▇█ CONFIGURACIÓN REGIONAL (¿PARA QUÉ?) █▇▅▃▂
                 var cInfo = new CultureInfo("es-AR");
                 System.Threading.Thread.CurrentThread.CurrentUICulture = cInfo;
                 System.Threading.Thread.CurrentThread.CurrentCulture = cInfo;
 
+                // |> LO DEJAMOS ASÍ POR EL MOMENTO: VERIFICA EXISTENCIA DE BD
                 _inicializacion.VerificarExistenciaBaseDeDatos();
+
+                // |> EVENTO QUE ¿HACE QUÉ? |||||||||||||||||||||||||||||||||||
                 Ticket.OnUsarioLogueadoCambiado += OnInicializarSistema;
             }
             catch (Exception ex)
             {
+                // |> MANEJADOR DE ERRORES
                 MostrarMensaje.MostrarError(ex);
                 Application.Exit();
             }
         }
+
+
         private void FormMenu_Shown(object sender, EventArgs e)
         {
             try
@@ -87,17 +96,22 @@ namespace FullCarMultimarca.UI
                 Application.Exit();
             }
         }
+
+
         private void FormMenu_Resize(object sender, EventArgs e)
         {
             this.Refresh();
         }
 
-        #region INICIO
+
+        //#region INICIO
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+
         private void cambiarDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -114,6 +128,8 @@ namespace FullCarMultimarca.UI
                 Application.Exit();
             }
         }
+
+
         private void modificarClaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -126,6 +142,8 @@ namespace FullCarMultimarca.UI
                 MostrarMensaje.MostrarError(ex);
             }
         }
+
+
         private void modiciarPalabraClaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -138,6 +156,8 @@ namespace FullCarMultimarca.UI
                 MostrarMensaje.MostrarError(ex);
             }
         }
+
+
         private void altaDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -150,6 +170,8 @@ namespace FullCarMultimarca.UI
                 MostrarMensaje.MostrarError(ex);
             }
         }
+
+
         private void verLogsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -162,6 +184,8 @@ namespace FullCarMultimarca.UI
                 MostrarMensaje.MostrarError(ex);
             }
         }
+
+
         private void parametrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -175,6 +199,8 @@ namespace FullCarMultimarca.UI
                 MostrarMensaje.MostrarError(ex);
             }
         }
+
+
         private void gestiónPermisosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -187,6 +213,8 @@ namespace FullCarMultimarca.UI
                 MostrarMensaje.MostrarError(ex);
             }
         }
+
+
         private void gestiónDeBackupsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -200,9 +228,9 @@ namespace FullCarMultimarca.UI
             }
         }
 
-        #endregion
+        //#endregion
 
-        #region ADMINISTRACION
+        //#region ADMINISTRACION
 
         private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -319,9 +347,9 @@ namespace FullCarMultimarca.UI
             }
         }
 
-        #endregion
+        //#endregion
 
-        #region VENTAS
+        //#region VENTAS
 
         private void stockToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -365,9 +393,9 @@ namespace FullCarMultimarca.UI
         }
 
 
-        #endregion
+        //#endregion
 
-        #region LIQUIDACIONES
+        //#region LIQUIDACIONES
 
         private void liquidarComisionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -400,12 +428,12 @@ namespace FullCarMultimarca.UI
             }
         }
 
-        #endregion
+        //#endregion
 
 
-        #endregion
+        //#endregion
 
-        #region EVENTOS Y METODOS DE DE INICIALIZACION
+        //#region EVENTOS Y METODOS DE DE INICIALIZACION
 
         /// <summary>
         /// Evento que se produce al cambiar el usuario del ticket; 
@@ -449,7 +477,7 @@ namespace FullCarMultimarca.UI
         }
 
 
-        #region MANEJO DEL VENCIMIENTO DE OFERTAS
+        //#region MANEJO DEL VENCIMIENTO DE OFERTAS
         private void IniciarTimerVencimientoOfertas()
         {
             timerVencimientoOfertas.Interval = 180000; //Cada tres minutos
@@ -469,6 +497,7 @@ namespace FullCarMultimarca.UI
             }
             catch
             {
+                // |> ¿PUEDE QUEDAR VACÍO? ||||||||||||||||||||||||||||||||||||
                 //Consumimos el error
             }
             finally
@@ -476,6 +505,8 @@ namespace FullCarMultimarca.UI
                 timerVencimientoOfertas.Start();
             }
         }
+
+        
         private bool AnularOfertasVencidas()
         {
             try
@@ -493,9 +524,9 @@ namespace FullCarMultimarca.UI
             OnOfertasVencidas -= (sender as FormListaBase).RefrescarGrillaDesdeSuscripcion;
         }
 
-        #endregion
+        //#endregion
 
-        #region MANEJO DEL POPUP NOTIFICABLE DE OPERACIONES PENDIENTES DE AUTORIZAR y RECHAZADAS POR USUARIO
+        //#region MANEJO DEL POPUP NOTIFICABLE DE OPERACIONES PENDIENTES DE AUTORIZAR y RECHAZADAS POR USUARIO
 
         private void IniciarTimerNotificacionOperaciones()
         {
@@ -609,14 +640,7 @@ namespace FullCarMultimarca.UI
             }
 
         }
-
-
-
-
-        #endregion
-
-        #endregion
-
-
+        //#endregion
+        //#endregion
     }
 }
