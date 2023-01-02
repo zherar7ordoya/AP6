@@ -2,6 +2,8 @@ using System;
 using System.Windows.Forms;
 using FullCarMultimarca.UI.Base;
 
+// NO HUBO COPY-PASTE, PARA NADA...
+
 namespace FullCarMultimarca.UI
 {
     public class Notification : TransDialog

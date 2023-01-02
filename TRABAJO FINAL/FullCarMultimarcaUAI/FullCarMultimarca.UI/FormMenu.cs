@@ -500,6 +500,13 @@ namespace FullCarMultimarca.UI
         }
 
 
+
+        // ********************************************************************
+        // --------- DILUCIDAR DEL PDF CUÁL ES LA LÓGICA DE LOS TIMERS --------
+        // ********************************************************************
+
+
+
         //#region MANEJO DEL VENCIMIENTO DE OFERTAS
         private void IniciarTimerVencimientoOfertas()
         {
@@ -507,6 +514,8 @@ namespace FullCarMultimarca.UI
             timerVencimientoOfertas.Tick += VencerOfertas;
             timerVencimientoOfertas.Start();
         }
+
+
         private void VencerOfertas(object sender, EventArgs e)
         {
             try
@@ -514,7 +523,8 @@ namespace FullCarMultimarca.UI
                 timerVencimientoOfertas.Stop();
                 if (AnularOfertasVencidas())
                 {
-                    //Si se vencieron ofertas invoco a los suscriptores que desen ser notificados
+                    //Si se vencieron ofertas invoco a los suscriptores que
+                    //desen ser notificados
                     _onOfertasVencidas?.Invoke(this, null);
                 }
             }
@@ -525,6 +535,7 @@ namespace FullCarMultimarca.UI
             }
             finally
             {
+                // DUPLICA INICIAL EL TIMER (ESTÁ EN IniciarTimerVencimientoOfertas())
                 timerVencimientoOfertas.Start();
             }
         }
@@ -534,22 +545,33 @@ namespace FullCarMultimarca.UI
         {
             try
             {
+                // ¿CUÁL ES LA DIFERENCIA CON EL "VencerOfertas()" DE ARRIBA?
+                // (ESTO ESTÁ FEO, ORDENARLO)
                 return BLLStock.ObtenerInstancia().VencerOfertas();
             }
             catch
             {
+                // ¿ÉSTO ES CONSUMIR UN ERROR? NO DIGO QUE ESTÉ MAL, SOLO QUE
+                // ESE "RETURN" EN UN CATCH... ES LA PRIMERA VEZ QUE LO VEO.
                 //Consumimos el error
                 return false;
             }
         }
+
         private void DesuscribirDeVencimientoOfertas(object sender, EventArgs e)
         {
+            // NO SÉ QUÉ QUISO HACER. PARECE QUE LA IDEA ERA HACER UNA CLASE
+            // BASE, LUEGO SE DIÓ CUENTA QUE NO EXISTE EN C# MULTI-HERENCIA,
+            // NO LO PODÍA SOLUCIONAR CON UNA CLASE ABSTRACTA, TAMPOCO CON UNA
+            // INTERFAZ, Y EN VEZ DE HACER UNA CLASE ESTÁTICA, HIZO UN PAR DE
+            // MÉTODOS PÚBLICOS (ORDENAR, POR DIOS...)
             OnOfertasVencidas -= (sender as FormListaBase).RefrescarGrillaDesdeSuscripcion;
         }
 
         //#endregion
 
-        //#region MANEJO DEL POPUP NOTIFICABLE DE OPERACIONES PENDIENTES DE AUTORIZAR y RECHAZADAS POR USUARIO
+        // #region MANEJO DEL POPUP NOTIFICABLE DE OPERACIONES PENDIENTES DE
+        // AUTORIZAR y RECHAZADAS POR USUARIO
 
         private void IniciarTimerNotificacionOperaciones()
         {
@@ -557,10 +579,13 @@ namespace FullCarMultimarca.UI
             timerNotificacionOperaciones.Tick += NotificarOperaciones;
             timerNotificacionOperaciones.Start();
         }
+
+
         private void NotificarOperaciones(object sender, EventArgs e)
         {
             try
             {
+                // TODO JUNTO... (ARREGLAR POR FAVOR)
                 timerNotificacionOperaciones.Stop();
                 BuscarOperacionesPendientesDeAutorizar();
                 BuscarOperacionesRechazadas();
@@ -574,10 +599,15 @@ namespace FullCarMultimarca.UI
                 timerNotificacionOperaciones.Start();
             }
         }
+
+
         private void BuscarOperacionesPendientesDeAutorizar()
         {
-            var qAutPendientes = BLLOperacion.ObtenerInstancia()
+            var qAutPendientes = BLLOperacion
+                .ObtenerInstancia()
                 .ObtenerCantidadAutorizacionPendientes();
+
+            // LA VERDAD, AUNQUE EL PROYECTO SE VE BIEN, LA FORMA DE PROGRAMAR...
             if (qAutPendientes > 0)
             {
                 if (_formNotificacionOpPendientesAut != null)
@@ -586,6 +616,7 @@ namespace FullCarMultimarca.UI
                 _formNotificacionOpPendientesAut = new Notification();
                 //_formNotificacionOpPendientesAut.KeyComando = "FullCarMultimarca.UI.Ventas.FormListaOperacionesAAutorizar";
                 _formNotificacionOpPendientesAut.BackColor = Color.LightYellow;
+
                 if (qAutPendientes == 1)
                 {
                     _formNotificacionOpPendientesAut.labelTextoNotificacion.Text = "Tiene una operación pendiente de Autorizar.";
@@ -594,16 +625,20 @@ namespace FullCarMultimarca.UI
                 {
                     _formNotificacionOpPendientesAut.labelTextoNotificacion.Text = String.Format("Tiene {0} operaciones pendientes de Autorizar.", qAutPendientes);
                 }
+
                 _formNotificacionOpPendientesAut.linkLabel1.Text = "Presione aquí para abrir la carpeta de Operaciones a Autorizar";
                 _formNotificacionOpPendientesAut.linkLabel1.LinkClicked += new LinkLabelLinkClickedEventHandler(MostrarOperacionesPendientes);
                 _formNotificacionOpPendientesAut.Show();
             }
-
         }
+
+
         private void BuscarOperacionesRechazadas()
         {
-            var qOpRech = BLLOperacion.ObtenerInstancia()
+            var qOpRech = BLLOperacion
+                .ObtenerInstancia()
                 .ObtenerCantidadRechazadasPorUsuario();
+
             if (qOpRech > 0)
             {
                 if (_formNotificacionOpRechazadas != null)
@@ -612,6 +647,7 @@ namespace FullCarMultimarca.UI
                 _formNotificacionOpRechazadas = new Notification();
                 //_formNotificacionOpPendientesAut.KeyComando = "FullCarMultimarca.UI.Ventas.FormListaOperacionesAAutorizar";
                 _formNotificacionOpRechazadas.BackColor = Color.LightYellow;
+
                 if (qOpRech == 1)
                 {
                     _formNotificacionOpRechazadas.labelTextoNotificacion.Text = "Tiene una operación rechazada para revisar.";
@@ -620,12 +656,15 @@ namespace FullCarMultimarca.UI
                 {
                     _formNotificacionOpRechazadas.labelTextoNotificacion.Text = String.Format("Tiene {0} operaciones rechazadas para revisar.", qOpRech);
                 }
+
                 _formNotificacionOpRechazadas.linkLabel1.Text = "Presione aquí para abrir la carpeta de Operaciones";
                 _formNotificacionOpRechazadas.linkLabel1.LinkClicked += new LinkLabelLinkClickedEventHandler(MostrarOperacionesRechazadas);
                 _formNotificacionOpRechazadas.Show();
             }
-
         }
+
+
+
         //Evento que procesa el click sobre el FormNotificación
         private void MostrarOperacionesPendientes(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -635,6 +674,7 @@ namespace FullCarMultimarca.UI
                 {
                     this.WindowState = FormWindowState.Normal;
                 }
+
                 this.BringToFront();
                 var instancia = FormListaOperacionesAAutorizar.ObtenerInstancia();
                 UtilUI.ObtenerInstancia().AbrirOTraerAlFrente(this, instancia);
@@ -643,8 +683,9 @@ namespace FullCarMultimarca.UI
             {
                 //Consumimos
             }
-
         }
+
+
         private void MostrarOperacionesRechazadas(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try
@@ -653,6 +694,7 @@ namespace FullCarMultimarca.UI
                 {
                     this.WindowState = FormWindowState.Normal;
                 }
+
                 this.BringToFront();
                 var instancia = FormListaOperaciones.ObtenerInstancia();
                 UtilUI.ObtenerInstancia().AbrirOTraerAlFrente(this, instancia);
@@ -663,7 +705,5 @@ namespace FullCarMultimarca.UI
             }
 
         }
-        //#endregion
-        //#endregion
     }
 }
