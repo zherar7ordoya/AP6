@@ -1,1 +1,0 @@
-dir -Path "C:\Documents\AP6" -Recurse  | Unblock-File

@@ -1,0 +1,45 @@
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   146    31  0  80   0 -  2068 do_wai pts/1    00:00:00 bash
+0 S  1000  1115   146  0  80   0 -   623 do_wai pts/1    00:00:00 16
+1 Z  1000  1116  1115  0  80   0 -     0 -      pts/1    00:00:00 16 <defunct>
+1 Z  1000  1117  1115  0  80   0 -     0 -      pts/1    00:00:00 16 <defunct>
+1 Z  1000  1118  1115  0  80   0 -     0 -      pts/1    00:00:00 16 <defunct>
+1 Z  1000  1119  1115  0  80   0 -     0 -      pts/1    00:00:00 16 <defunct>
+0 S  1000  1121  1115  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+0 R  1000  1122  1121  0  80   0 -  2204 -      pts/1    00:00:00 ps
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   146    31  0  80   0 -  2068 do_wai pts/1    00:00:00 bash
+0 S  1000  1115   146  0  80   0 -   623 do_wai pts/1    00:00:00 16
+1 Z  1000  1116  1115  0  80   0 -     0 -      pts/1    00:00:00 16 <defunct>
+1 Z  1000  1117  1115  0  80   0 -     0 -      pts/1    00:00:00 16 <defunct>
+1 Z  1000  1118  1115  0  80   0 -     0 -      pts/1    00:00:00 16 <defunct>
+0 S  1000  1123  1115  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+0 R  1000  1124  1123  0  80   0 -  2204 -      pts/1    00:00:00 ps
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   146    31  0  80   0 -  2068 do_wai pts/1    00:00:00 bash
+0 S  1000  1115   146  0  80   0 -   623 do_wai pts/1    00:00:00 16
+1 Z  1000  1116  1115  0  80   0 -     0 -      pts/1    00:00:00 16 <defunct>
+1 Z  1000  1117  1115  0  80   0 -     0 -      pts/1    00:00:00 16 <defunct>
+0 S  1000  1125  1115  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+0 R  1000  1126  1125  0  80   0 -  2204 -      pts/1    00:00:00 ps
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   146    31  0  80   0 -  2068 do_wai pts/1    00:00:00 bash
+0 S  1000  1115   146  0  80   0 -   623 do_wai pts/1    00:00:00 16
+1 Z  1000  1116  1115  0  80   0 -     0 -      pts/1    00:00:00 16 <defunct>
+0 S  1000  1127  1115  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+0 R  1000  1128  1127  0  80   0 -  2204 -      pts/1    00:00:00 ps
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   146    31  0  80   0 -  2068 do_wai pts/1    00:00:00 bash
+0 S  1000  1115   146  0  80   0 -   623 do_wai pts/1    00:00:00 16
+0 S  1000  1129  1115  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+0 R  1000  1130  1129  0  80   0 -  2204 -      pts/1    00:00:00 ps
+
+Hijo 1120 finalizado con código de salida 104 del proceso padre 1115.
+
+Hijo 1119 finalizado con código de salida 103 del proceso padre 1115.
+
+Hijo 1118 finalizado con código de salida 102 del proceso padre 1115.
+
+Hijo 1117 finalizado con código de salida 101 del proceso padre 1115.
+
+Hijo 1116 finalizado con código de salida 100 del proceso padre 1115.

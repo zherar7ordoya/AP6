@@ -1,0 +1,84 @@
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   133    31  0  80   0 -  2068 do_wai pts/1    00:00:00 bash
+0 S  1000  1821   133  0  80   0 -   623 do_wai pts/1    00:00:00 12
+1 D  1000  1822  1821  0  80   0 -   632 -      pts/1    00:00:00 12
+0 S  1000  1823  1821  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+0 R  1000  1824  1823  0  80   0 -  2204 -      pts/1    00:00:00 ps
+1 S  1000  1825  1822  0  80   0 -   623 do_wai pts/1    00:00:00 12
+1 R  1000  1826  1822  0  80   0 -   632 -      pts/1    00:00:00 12
+1 D  1000  1827  1825  0  80   0 -   632 -      pts/1    00:00:00 12
+0 S  1000  1828  1825  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+1 R  1000  1829  1827  0  80   0 -   590 -      pts/1    00:00:00 12
+1 R  1000  1830  1827  0  80   0 -   632 -      pts/1    00:00:00 12
+0 R  1000  1831  1828  0  80   0 -  2197 -      pts/1    00:00:00 ps
+
+LISTADO
+ID proceso padre:  133 
+ID proceso actual: 1821 
+ID proceso hijo:   1822 
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   133    31  0  80   0 -  2068 core_s pts/1    00:00:00 bash
+1 S  1000  1822    10  0  80   0 -   623 do_wai pts/1    00:00:00 12
+1 S  1000  1825  1822  0  80   0 -   623 do_wai pts/1    00:00:00 12
+0 S  1000  1826  1822  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+1 D  1000  1827  1825  0  80   0 -   632 -      pts/1    00:00:00 12
+0 S  1000  1828  1825  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+1 R  1000  1829  1827  0  80   0 -   590 -      pts/1    00:00:00 12
+1 R  1000  1830  1827  0  80   0 -   632 -      pts/1    00:00:00 12
+0 R  1000  1831  1828  0  80   0 -  2197 -      pts/1    00:00:00 ps
+0 R  1000  1832  1826  0  80   0 -  2204 -      pts/1    00:00:00 ps
+
+LISTADO
+ID proceso padre:  1821 
+ID proceso actual: 1822 
+ID proceso hijo:   1825 
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   133    31  0  80   0 -  2068 core_s pts/1    00:00:00 bash
+1 S  1000  1825    10  0  80   0 -   623 do_wai pts/1    00:00:00 12
+1 S  1000  1827  1825  0  80   0 -   623 do_wai pts/1    00:00:00 12
+0 S  1000  1828  1825  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+1 D  1000  1829  1827  0  80   0 -   632 -      pts/1    00:00:00 12
+0 S  1000  1830  1827  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+0 R  1000  1831  1828  0  80   0 -  2204 -      pts/1    00:00:00 ps
+
+LISTADO
+ID proceso padre:  1822 
+ID proceso actual: 1825 
+ID proceso hijo:   1827 
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   133    31  0  80   0 -  2068 core_s pts/1    00:00:00 bash
+1 S  1000  1827    10  0  80   0 -   623 do_wai pts/1    00:00:00 12
+1 D  1000  1829  1827  0  80   0 -   632 -      pts/1    00:00:00 12
+0 S  1000  1830  1827  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+0 R  1000  1833  1830  0  80   0 -  2204 -      pts/1    00:00:00 ps
+1 R  1000  1834  1829  0  80   0 -   590 -      pts/1    00:00:00 12
+1 R  1000  1835  1829  0  80   0 -   632 -      pts/1    00:00:00 12
+
+LISTADO
+ID proceso padre:  1825 
+ID proceso actual: 1827 
+ID proceso hijo:   1829 
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   133    31  0  80   0 -  2068 core_s pts/1    00:00:00 bash
+1 S  1000  1829    10  0  80   0 -   623 do_wai pts/1    00:00:00 12
+1 S  1000  1834  1829  0  80   0 -   623 do_wai pts/1    00:00:00 12
+0 S  1000  1835  1829  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+0 S  1000  1836  1834  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+0 R  1000  1837  1836  0  80   0 -  2204 -      pts/1    00:00:00 ps
+1 R  1000  1838  1835  0  80   0 -   653 -      pts/1    00:00:00 sh
+
+LISTADO
+ID proceso padre:  1829 
+ID proceso actual: 1834 
+ID proceso hijo:   0 
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   133    31  0  80   0 -  2068 core_s pts/1    00:00:00 bash
+1 S  1000  1829    10  0  80   0 -   623 do_wai pts/1    00:00:00 12
+1 Z  1000  1834  1829  0  80   0 -     0 -      pts/1    00:00:00 12 <defunct>
+0 S  1000  1835  1829  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+0 R  1000  1838  1835  0  80   0 -  2204 -      pts/1    00:00:00 ps
+
+LISTADO
+ID proceso padre:  1827 
+ID proceso actual: 1829 
+ID proceso hijo:   1834 

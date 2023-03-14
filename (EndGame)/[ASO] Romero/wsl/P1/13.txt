@@ -1,0 +1,22 @@
+
+Padre: 1568 	 Yo: 1570 	 Hijo: 0 	 Ciclo: 1 
+
+Padre: 1568 	 Yo: 1569 	 Hijo: 0 	 Ciclo: 0 
+
+Padre: 1568 	 Yo: 1572 	 Hijo: 0 	 Ciclo: 3 
+
+Padre: 1568 	 Yo: 1571 	 Hijo: 0 	 Ciclo: 2 
+
+Padre: 1568 	 Yo: 1573 	 Hijo: 0 	 Ciclo: 4 
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   133    31  0  80   0 -  2068 do_wai pts/1    00:00:00 bash
+0 S  1000  1568   133  0  80   0 -   623 do_wai pts/1    00:00:00 13
+1 Z  1000  1569  1568  0  80   0 -     0 -      pts/1    00:00:00 13 <defunct>
+1 Z  1000  1570  1568  0  80   0 -     0 -      pts/1    00:00:00 13 <defunct>
+1 Z  1000  1571  1568  0  80   0 -     0 -      pts/1    00:00:00 13 <defunct>
+1 Z  1000  1572  1568  0  80   0 -     0 -      pts/1    00:00:00 13 <defunct>
+1 Z  1000  1573  1568  0  80   0 -     0 -      pts/1    00:00:00 13 <defunct>
+0 S  1000  1574  1568  0  80   0 -   653 do_wai pts/1    00:00:00 sh
+0 R  1000  1575  1574  0  80   0 -  2204 -      pts/1    00:00:00 ps
+
+Padre: 133 	 Yo: 1568 	 Hijo: 1573 	 Ciclo: 5 
