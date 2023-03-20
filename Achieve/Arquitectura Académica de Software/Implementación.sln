@@ -26,8 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{212FB124-2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{C6FC6A76-8A9A-44D9-AFDA-06F5FAD663B5}"
 	ProjectSection(SolutionItems) = preProject
-		DataAccess\DataBase\Cardacci.mdf = DataAccess\DataBase\Cardacci.mdf
-		DataAccess\DataBase\Cardacci_log.ldf = DataAccess\DataBase\Cardacci_log.ldf
+		Cardacci.mdf = Cardacci.mdf
+		Cardacci_log.ldf = Cardacci_log.ldf
 	EndProjectSection
 EndProject
 Global

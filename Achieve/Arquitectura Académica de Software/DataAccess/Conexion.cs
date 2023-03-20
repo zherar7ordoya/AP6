@@ -13,7 +13,7 @@ namespace DataAccess
 
         public SqlConnection ObjConexion()
         {
-            VobjConexion = new SqlConnection("Data Source=.;Initial Catalog=GESTION;Integrated Security=True");
+            VobjConexion = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=GESTION;Integrated Security=True");
             return VobjConexion;
         }
 
