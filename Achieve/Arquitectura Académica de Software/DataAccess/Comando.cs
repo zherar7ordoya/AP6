@@ -10,6 +10,11 @@ namespace DataAccess
 {
     public class Comando
     {
+        /** La clase SqlCommand tiene 3 constructores: 
+         *		=> SqlCommand()
+         * 		=> SqlCommand(commandText)
+         * 		=> SqlCommand(commandText,  connection)
+         *   Aquí se está usando el 3ro  */
         SqlCommand Vcomando;
 
 
@@ -17,8 +22,8 @@ namespace DataAccess
         {
             Vcomando = new SqlCommand
             {
-                CommandText = SelectCommand,
-                CommandType = CommandType.Text,
+                CommandText = SelectCommand,	// A  SQL  statement  or  the  name  of  a  stored  procedure
+                CommandType = CommandType.Text,	// Cómo CommandText debe ser interpretado
                 Connection = Conexion
             };
             return Vcomando;
