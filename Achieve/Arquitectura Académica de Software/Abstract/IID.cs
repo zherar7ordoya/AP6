@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess
+namespace Abstract
 {
-    public class Class1
+    public interface IID
     {
+        int RetornaId();
     }
 }

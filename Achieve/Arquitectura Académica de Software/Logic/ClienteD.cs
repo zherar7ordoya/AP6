@@ -12,6 +12,8 @@ namespace Logic
 {
     public class ClienteD : IABMC<Cliente>
     {
+        private ClienteDatos VclienteDatos;
+
         public void Alta(Cliente QueObjeto = null)
         {
             throw new NotImplementedException();

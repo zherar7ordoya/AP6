@@ -17,6 +17,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstract", "Abstract\Abstract.csproj", "{92091BBD-D70C-4A51-AC08-633969D4A53E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{212FB124-29EE-47BC-A8BF-E2626A97C70F}"
+	ProjectSection(SolutionItems) = preProject
+		Arquitectura Académica de Software (Darío Cardacci).pdf = Arquitectura Académica de Software (Darío Cardacci).pdf
+		Arquitectura Cardacci (v2015).puml = Arquitectura Cardacci (v2015).puml
+		Arquitectura Prinzo (v2021).png = Arquitectura Prinzo (v2021).png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{C6FC6A76-8A9A-44D9-AFDA-06F5FAD663B5}"
+	ProjectSection(SolutionItems) = preProject
+		DataAccess\DataBase\Cardacci.mdf = DataAccess\DataBase\Cardacci.mdf
+		DataAccess\DataBase\Cardacci_log.ldf = DataAccess\DataBase\Cardacci_log.ldf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
