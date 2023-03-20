@@ -49,6 +49,10 @@
       <Project>{92091BBD-D70C-4A51-AC08-633969D4A53E}</Project>
       <Name>Abstract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ORM\ORM.csproj">
+      <Project>{687d15e4-5c77-4332-8823-4bc8c8dd5efd}</Project>
+      <Name>ORM</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Structure\Structure.csproj">
       <Project>{079d39b9-4f8a-44c4-8f67-cd6937679077}</Project>
       <Name>Structure</Name>

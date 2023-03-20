@@ -9,14 +9,17 @@ namespace DataAccess
 {
     public class Conexion
     {
-		// La clase SqlConnection tiene 2 constructores:
+        readonly string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Documents\AP6\Achieve\Arquitectura Académica de Software\DataBase\Empresa.mdf"";Integrated Security=True;Connect Timeout=30";
+
+        // La clase SqlConnection tiene 2 constructores:
         SqlConnection VobjConexion;
 
 
         // 1er constructor => new  SqlConnection()
         public SqlConnection ObjConexion()
         {
-            VobjConexion = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=GESTION;Integrated Security=True");
+            //VobjConexion = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=GESTION;Integrated Security=True");
+            VobjConexion = new SqlConnection(path);
             return VobjConexion;
         }
         

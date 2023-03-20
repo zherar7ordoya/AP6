@@ -59,7 +59,7 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(100, 20);
             this.Nombre.TabIndex = 2;
-            this.Nombre.Text = "Gerardo";
+            this.Nombre.Text = "Gerardo Tordoya";
             // 
             // FechaAlta
             // 
@@ -67,7 +67,7 @@
             this.FechaAlta.Name = "FechaAlta";
             this.FechaAlta.Size = new System.Drawing.Size(100, 20);
             this.FechaAlta.TabIndex = 3;
-            this.FechaAlta.Text = "10/10/2010";
+            this.FechaAlta.Text = "2023-03-06";
             // 
             // Activo
             // 

@@ -14,7 +14,7 @@ namespace DataAccess
          *		=> SqlCommand()
          * 		=> SqlCommand(commandText)
          * 		=> SqlCommand(commandText,  connection)
-         *   Aquí se está usando el 3ro  */
+         *   Aquí se está usando el 3ro                 */
         SqlCommand Vcomando;
 
 

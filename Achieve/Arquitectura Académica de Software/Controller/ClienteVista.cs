@@ -38,14 +38,22 @@ namespace Controller
             Vcliente.Id = int.Parse(Vgui.Controls.Find("Id", true).FirstOrDefault().Text);
             Vcliente.Nombre = Vgui.Controls.Find("Nombre", true).FirstOrDefault().Text;
             Vcliente.FechaAlta = DateTime.Parse(Vgui.Controls.Find("FechaAlta", true).FirstOrDefault().Text);
-            Vcliente.Activo = bool.Parse(Vgui.Controls.Find("Activo", true).FirstOrDefault().Text);
+            //Vcliente.Activo = bool.Parse(Vgui.Controls.Find("Activo", true).FirstOrDefault().Text);
+            Vcliente.Activo = (Vgui.Controls.Find("Activo", true).FirstOrDefault() as CheckBox).Checked;
 
-            while (MessageBox.Show(
+            DialogResult resultado = MessageBox.Show(
                 "¿Desea ingresar un teléfono?",
                 "Teléfonos",
-                MessageBoxButtons.YesNo) == DialogResult.Yes);
+                MessageBoxButtons.YesNo);
+
+            while (resultado == DialogResult.Yes)
             {
-                Vcliente.Telefonos.Add(new Telefono(InputBox("Ingrese el nuevo número de teléfono")));
+                Vcliente.Telefonos.Add(new Telefono(Vcliente.Id, InputBox("Ingrese el nuevo número de teléfono")));
+
+                resultado = MessageBox.Show(
+                    "¿Desea ingresar un teléfono?",
+                    "Teléfonos",
+                    MessageBoxButtons.YesNo);
             }
 
             VclienteD.Alta(Vcliente);
