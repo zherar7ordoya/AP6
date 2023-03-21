@@ -28,13 +28,22 @@ namespace ORM
         {
             DataTable dt1 = new DataTable();
             Comando comando = new Comando();
-            int contador;
+            
+            //int contador;
 
             dt1 = comando.ObjStructureTable("telefono");
-            contador = comando.ObjDataTable("SELECT MAX(TelefonoId) FROM Telefono").Rows(0).
-                //.Rows(0).Item(0) + 1;
-                
-                }
+
+            // *****************************************************************
+            // TODO => Completar el Alta (en esta instrucción se encontró problemas)
+            //
+            // Tener en cuenta que Id debería ser autonumérico, que la tabla 
+            // Teléfono tiene su propio Id y debe almacenar conjuntamente el Id
+            // del cliente.
+            // *****************************************************************
+            //contador = comando.ObjDataTable("SELECT MAX(TelefonoId) FROM Telefono").Rows(0).
+            //.Rows(0).Item(0) + 1;
+
+        }
 
         public void Baja(Telefono QueObjeto = null)
         {
