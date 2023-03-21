@@ -46,8 +46,10 @@ namespace Controller
                 "Teléfonos",
                 MessageBoxButtons.YesNo);
 
+            
             while (resultado == DialogResult.Yes)
             {
+
                 Vcliente.Telefonos.Add(new Telefono(Vcliente.Id, InputBox("Ingrese el nuevo número de teléfono")));
 
                 resultado = MessageBox.Show(

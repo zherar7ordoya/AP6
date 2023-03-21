@@ -11,8 +11,8 @@ namespace Structure
     public class Cliente : IID, ICloneable
     {
         // Atributos y Propiedades
-        private List<Telefono> vTelefonos = new List<Telefono>();
-        public List<Telefono> Telefonos { get; set; }
+        public List<Telefono> Telefonos = new List<Telefono>();
+        //public List<Telefono> Telefonos { get; set; }
 
         public int Id { get; set; }
         public string Nombre { get; set; }

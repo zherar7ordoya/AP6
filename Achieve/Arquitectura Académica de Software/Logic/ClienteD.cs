@@ -16,9 +16,17 @@ namespace Logic
     {
         private ClienteDatos VclienteDatos;
 
+        public ClienteDatos ClienteDatos { get => VclienteDatos; set => VclienteDatos = value; }
+
+        public ClienteD()
+        {
+            VclienteDatos = new ClienteDatos();
+        }
+
+
         public void Alta(Cliente QueObjeto = null)
         {
-            throw new NotImplementedException();
+            ClienteDatos.Alta(QueObjeto);
         }
 
         public void Baja(Cliente QueObjeto = null)

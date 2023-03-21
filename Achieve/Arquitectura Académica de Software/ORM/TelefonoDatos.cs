@@ -1,5 +1,7 @@
 ﻿using Abstract;
 
+using DataAccess;
+
 using Structure;
 
 using System;
@@ -25,7 +27,14 @@ namespace ORM
         public void Alta(Telefono QueObjeto = null)
         {
             DataTable dt1 = new DataTable();
-        }
+            Comando comando = new Comando();
+            int contador;
+
+            dt1 = comando.ObjStructureTable("telefono");
+            contador = comando.ObjDataTable("SELECT MAX(TelefonoId) FROM Telefono").Rows(0).
+                //.Rows(0).Item(0) + 1;
+                
+                }
 
         public void Baja(Telefono QueObjeto = null)
         {
