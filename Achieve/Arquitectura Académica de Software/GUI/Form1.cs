@@ -21,6 +21,8 @@ namespace GUI
     {
         readonly ClienteVista ControladorCliente;
 
+        // Falla porque no puede acceder a DataAccess
+        // readonly string CadenaConexion = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
 
         public Form1()
         {

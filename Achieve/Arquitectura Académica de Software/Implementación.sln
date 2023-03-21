@@ -24,7 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{212FB124-2
 		Arquitectura Prinzo (v2021).png = Arquitectura Prinzo (v2021).png
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{C6FC6A76-8A9A-44D9-AFDA-06F5FAD663B5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{C6FC6A76-8A9A-44D9-AFDA-06F5FAD663B5}"
 	ProjectSection(SolutionItems) = preProject
 		DataBase\Empresa.mdf = DataBase\Empresa.mdf
 	EndProjectSection

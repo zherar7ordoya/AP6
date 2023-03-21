@@ -29,20 +29,22 @@ namespace ORM
             DataTable dt1 = new DataTable();
             Comando comando = new Comando();
             
-            //int contador;
+            
 
             dt1 = comando.ObjStructureTable("telefono");
 
             // *****************************************************************
-            // TODO => Completar el Alta (en esta instrucción se encontró problemas)
-            //
             // Tener en cuenta que Id debería ser autonumérico, que la tabla 
             // Teléfono tiene su propio Id y debe almacenar conjuntamente el Id
             // del cliente.
             // *****************************************************************
-            //contador = comando.ObjDataTable("SELECT MAX(TelefonoId) FROM Telefono").Rows(0).
-            //.Rows(0).Item(0) + 1;
-
+            
+            int contador = ((int)comando.ObjDataTable("SELECT MAX(TelefonoId) FROM Telefono").Rows[0].ItemArray[0]) + 1;
+            DataRow dr1 = dt1.NewRow();
+            dr1.ItemArray= new object[] { contador, QueObjeto.Numero, VobjetoSolicitante.RetornaId() };
+            dt1.Rows.Add(dr1);
+            contador++;
+            comando.ActualizaBase("Telefono", dt1);
         }
 
         public void Baja(Telefono QueObjeto = null)
