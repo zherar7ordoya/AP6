@@ -39,7 +39,17 @@ namespace DataAccess
             return dt;
         }
 
-
+        /** Un DataAdapter contiene 4 objetos que debemos conocer:
+         *  =>  SelectCommand es el objeto encargado de realizar los trabajos
+         *      de selección de datos con una fuente de datos dada. En sí, es
+         *      el que se encarga de devolver y rellenar los datos de un origen
+         *      de datos a un DataSet.
+         *  =>  DeleteCommand es el objeto encargado de realizar las acciones
+         *      de borrado de datos.
+         *  =>  InsertCommand es el objeto encargado de realizar las acciones
+         *      inserción de datos.
+         *  =>  UpdateCommand es el objeto encargado de realizar las acciones
+         *      de actualización de datos.                                   */
         public void ActualizaBase(string TableName, DataTable dt)
         {
             Conexion conexion = new Conexion();

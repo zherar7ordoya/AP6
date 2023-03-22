@@ -28,8 +28,6 @@ namespace ORM
         {
             DataTable dt1 = new DataTable();
             Comando comando = new Comando();
-            
-            
 
             dt1 = comando.ObjStructureTable("telefono");
 
