@@ -33,7 +33,12 @@ namespace Controller
         }
 
 
-        public void Alta(Cliente QueObjeto = null)
+        // No tiene sentido que tenga como parámetro a Cliente. ¿Por qué? Porque
+        // el parámetro es el objeto que se va a modificar. En este caso, el
+        // objeto que se va a modificar es el que está en la vista. Por eso
+        // no tiene sentido que tenga parámetro.
+        /* public void Alta(Cliente QueObjeto = null) */
+        public void Alta(Cliente cliente = null)
         {
             Vcliente.Id = int.Parse(Vgui.Controls.Find("Id", true).FirstOrDefault().Text);
             Vcliente.Nombre = Vgui.Controls.Find("Nombre", true).FirstOrDefault().Text;

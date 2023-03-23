@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Button2 = new System.Windows.Forms.Button();
+            this.Alta = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.TextBox();
             this.FechaAlta = new System.Windows.Forms.TextBox();
@@ -37,18 +37,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Button2
+            // Alta
             // 
-            this.Button2.Location = new System.Drawing.Point(13, 13);
-            this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(75, 23);
-            this.Button2.TabIndex = 0;
-            this.Button2.Text = "Alta Cliente";
-            this.Button2.UseVisualStyleBackColor = true;
-            this.Button2.Click += new System.EventHandler(this.Button2_Click);
+            this.Alta.Location = new System.Drawing.Point(13, 13);
+            this.Alta.Name = "Alta";
+            this.Alta.Size = new System.Drawing.Size(75, 23);
+            this.Alta.TabIndex = 0;
+            this.Alta.Text = "Alta";
+            this.Alta.UseVisualStyleBackColor = true;
+            this.Alta.Click += new System.EventHandler(this.Alta_Click);
             // 
             // Id
             // 
+            this.Id.Enabled = false;
             this.Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Id.ForeColor = System.Drawing.Color.Red;
             this.Id.Location = new System.Drawing.Point(13, 42);
@@ -107,7 +108,7 @@
             this.Controls.Add(this.FechaAlta);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.Id);
-            this.Controls.Add(this.Button2);
+            this.Controls.Add(this.Alta);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -120,7 +121,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Button2;
+        private System.Windows.Forms.Button Alta;
         private System.Windows.Forms.TextBox Id;
         private System.Windows.Forms.TextBox Nombre;
         private System.Windows.Forms.TextBox FechaAlta;

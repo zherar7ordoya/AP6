@@ -1,4 +1,12 @@
-﻿using Abstract;
+﻿/**
+ * La capa denominada "lógica" contiene los comportamientos correspondientes a
+ * las entidades del negocio (reglas de negocio), incluyendo los definidos por
+ * las operaciones básicas del CRUD.
+ * 
+ *              => OPERACIONES PROPIAS + OPERACIONES CRUD
+ */
+
+using Abstract;
 
 using ORM;
 

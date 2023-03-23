@@ -33,7 +33,8 @@ namespace GUI
         // --- WORKBENCH ------------------------------------------------------╗
         private void Form1_Load(object sender, EventArgs e)
         {
-            string CadenaConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Documents\AP6\Achieve\Arquitectura Académica de Software\DataBase\Empresa.mdf"";Integrated Security=True;Connect Timeout=30";
+            // TODO => Actualizar BDD cuando modifico DGV (con/sin DataSet)
+            string CadenaConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=UCEMA;Integrated Security=True";
             string consulta = "SELECT * FROM Cliente";
             SqlConnection conexion = new SqlConnection(CadenaConexion);
 
@@ -44,9 +45,9 @@ namespace GUI
                 SqlDataReader lector = comando.ExecuteReader();
 
                 /** => https://stackoverflow.com/a/18151694/14009797
-                 * You can't bind a datareader directly to a datagridview in
-                 * WinForms. Instead you could load a datatable with your reader and
-                 * assign the datatable to the datasource of the DataGridView.    */
+                 * You can't bind a datareader directly to a DataGridView in
+                 * WinForms. Instead you could load a datatable with your reader
+                 * and assign it to the datasource of the DataGridView.    */
                 DataTable tabla = new DataTable();
                 tabla.Load(lector);
                 dataGridView1.DataSource = tabla;
@@ -57,8 +58,10 @@ namespace GUI
         // --- WORKBENCH ------------------------------------------------------╝
 
 
-        // TODO => ¿Por qué aquí me pide que agregue referencia a Structure?
-        private void Button2_Click(object sender, EventArgs e)
+        // TODO => Consultar a Cardacci sobre esto (Alta tiene como parámetro un
+        // objeto Cliente, pero no se usa, y aquí, incluso para no usarlo,
+        // necesito referenciarlo).
+        private void Alta_Click(object sender, EventArgs e)
         {
             ControladorCliente.Alta();
         }
