@@ -58,6 +58,10 @@ namespace DataAccess
             da.InsertCommand = cb.GetInsertCommand();
             da.DeleteCommand = cb.GetDeleteCommand();
             da.UpdateCommand = cb.GetUpdateCommand();
+
+            /** Las modificaciones efectuadas en el DataSet se pueden
+             * sincronizar con el origen de datos. El método Update del objeto
+             * DataAdapter permite actualizar el origen de datos.            */
             da.Update(dt);
         }
 
