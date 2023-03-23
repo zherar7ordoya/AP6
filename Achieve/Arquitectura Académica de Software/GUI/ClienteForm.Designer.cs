@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class Form1
+    partial class ClienteForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.

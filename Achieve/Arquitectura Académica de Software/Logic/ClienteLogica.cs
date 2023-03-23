@@ -20,39 +20,39 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class ClienteD : IABMC<Cliente>
+    public class ClienteLogica : IABMC<ClienteModelo>
     {
         private ClienteDatos VclienteDatos;
 
         public ClienteDatos ClienteDatos { get => VclienteDatos; set => VclienteDatos = value; }
 
-        public ClienteD()
+        public ClienteLogica()
         {
             VclienteDatos = new ClienteDatos();
         }
 
 
-        public void Alta(Cliente QueObjeto = null)
+        public void Alta(ClienteModelo QueObjeto = null)
         {
             ClienteDatos.Alta(QueObjeto);
         }
 
-        public void Baja(Cliente QueObjeto = null)
+        public void Baja(ClienteModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }
 
-        public List<Cliente> Consulta(Cliente QueObjeto = null)
+        public List<ClienteModelo> ConsultaObjeto(ClienteModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }
 
-        public List<Cliente> ConsultaRango(Cliente QueObjeto1 = null, Cliente QueObjeto2 = null)
+        public List<ClienteModelo> ConsultaRango(ClienteModelo QueObjeto1 = null, ClienteModelo QueObjeto2 = null)
         {
             throw new NotImplementedException();
         }
 
-        public void Modificacion(Cliente QueObjeto = null)
+        public void Modificacion(ClienteModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }

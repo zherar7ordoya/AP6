@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace ORM
 {
-    public class TelefonoDatos : IABMC<Telefono>
+    public class TelefonoDatos : IABMC<TelefonoModelo>
     {
         IID VobjetoSolicitante;
 
@@ -24,7 +24,7 @@ namespace ORM
         }
 
 
-        public void Alta(Telefono QueObjeto = null)
+        public void Alta(TelefonoModelo QueObjeto = null)
         {
             DataTable dt1 = new DataTable();
             Comando comando = new Comando();
@@ -45,22 +45,22 @@ namespace ORM
             comando.ActualizaBase("Telefono", dt1);
         }
 
-        public void Baja(Telefono QueObjeto = null)
+        public void Baja(TelefonoModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }
 
-        public List<Telefono> Consulta(Telefono QueObjeto = null)
+        public List<TelefonoModelo> ConsultaObjeto(TelefonoModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }
 
-        public List<Telefono> ConsultaRango(Telefono QueObjeto1 = null, Telefono QueObjeto2 = null)
+        public List<TelefonoModelo> ConsultaRango(TelefonoModelo QueObjeto1 = null, TelefonoModelo QueObjeto2 = null)
         {
             throw new NotImplementedException();
         }
 
-        public void Modificacion(Telefono QueObjeto = null)
+        public void Modificacion(TelefonoModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }

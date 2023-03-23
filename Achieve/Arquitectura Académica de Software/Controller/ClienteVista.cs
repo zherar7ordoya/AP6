@@ -15,21 +15,21 @@ using System.Windows.Forms;
 
 namespace Controller
 {
-    public class ClienteVista : IABMC<Cliente>
+    public class ClienteVista : IABMC<ClienteModelo>
     {
-        Cliente _vcliente;
-        ClienteD _vclienteD;
-        readonly Form Vgui;
+        ClienteModelo _clienteBE;
+        ClienteLogica _clienteBL;
 
-        public Cliente Vcliente { get => _vcliente; set => _vcliente = value; }
-        public ClienteD VclienteD { get => _vclienteD; set => _vclienteD = value; }
+        public ClienteModelo ClienteBE { get => _clienteBE; set => _clienteBE = value; }
+        public ClienteLogica ClienteBL { get => _clienteBL; set => _clienteBL = value; }
 
+        readonly Form Formulario;
 
         public ClienteVista(Form formulario)
         {
-            Vgui = formulario;
-            _vcliente = new Cliente();
-            _vclienteD = new ClienteD();
+            Formulario = formulario;
+            ClienteBE = new ClienteModelo();
+            ClienteBL = new ClienteLogica();
         }
 
 
@@ -38,24 +38,22 @@ namespace Controller
         // objeto que se va a modificar es el que está en la vista. Por eso
         // no tiene sentido que tenga parámetro.
         /* public void Alta(Cliente QueObjeto = null) */
-        public void Alta(Cliente cliente = null)
+        public void Alta(ClienteModelo cliente = null)
         {
-            Vcliente.Id = int.Parse(Vgui.Controls.Find("Id", true).FirstOrDefault().Text);
-            Vcliente.Nombre = Vgui.Controls.Find("Nombre", true).FirstOrDefault().Text;
-            Vcliente.FechaAlta = DateTime.Parse(Vgui.Controls.Find("FechaAlta", true).FirstOrDefault().Text);
-            //Vcliente.Activo = bool.Parse(Vgui.Controls.Find("Activo", true).FirstOrDefault().Text);
-            Vcliente.Activo = (Vgui.Controls.Find("Activo", true).FirstOrDefault() as CheckBox).Checked;
+            ClienteBE.Id = int.Parse(Formulario.Controls.Find("Id", true).FirstOrDefault().Text);
+            ClienteBE.Nombre = Formulario.Controls.Find("Nombre", true).FirstOrDefault().Text;
+            ClienteBE.FechaAlta = DateTime.Parse(Formulario.Controls.Find("FechaAlta", true).FirstOrDefault().Text);
+            ClienteBE.Activo = (Formulario.Controls.Find("Activo", true).FirstOrDefault() as CheckBox).Checked;
 
             DialogResult resultado = MessageBox.Show(
                 "¿Desea ingresar un teléfono?",
                 "Teléfonos",
                 MessageBoxButtons.YesNo);
-
             
             while (resultado == DialogResult.Yes)
             {
 
-                Vcliente.Telefonos.Add(new Telefono(Vcliente.Id, InputBox("Ingrese el nuevo número de teléfono")));
+                ClienteBE.Telefonos.Add(new TelefonoModelo(ClienteBE.Id, InputBox("Ingrese el nuevo número de teléfono")));
 
                 resultado = MessageBox.Show(
                     "¿Desea ingresar un teléfono?",
@@ -63,25 +61,25 @@ namespace Controller
                     MessageBoxButtons.YesNo);
             }
 
-            VclienteD.Alta(Vcliente);
+            ClienteBL.Alta(ClienteBE);
         }
 
-        public void Baja(Cliente QueObjeto = null)
+        public void Baja(ClienteModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }
 
-        public List<Cliente> Consulta(Cliente QueObjeto = null)
+        public List<ClienteModelo> ConsultaObjeto(ClienteModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }
 
-        public List<Cliente> ConsultaRango(Cliente QueObjeto1 = null, Cliente QueObjeto2 = null)
+        public List<ClienteModelo> ConsultaRango(ClienteModelo QueObjeto1 = null, ClienteModelo QueObjeto2 = null)
         {
             throw new NotImplementedException();
         }
 
-        public void Modificacion(Cliente QueObjeto = null)
+        public void Modificacion(ClienteModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }

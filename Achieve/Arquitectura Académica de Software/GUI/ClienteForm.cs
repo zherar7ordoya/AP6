@@ -17,14 +17,14 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Form1 : Form
+    public partial class ClienteForm : Form
     {
         readonly ClienteVista ControladorCliente;
 
         // Falla porque no puede acceder a DataAccess
         // readonly string CadenaConexion = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
 
-        public Form1()
+        public ClienteForm()
         {
             InitializeComponent();
             ControladorCliente = new ClienteVista(this);

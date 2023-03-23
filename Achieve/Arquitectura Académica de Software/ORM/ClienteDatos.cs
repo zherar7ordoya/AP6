@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace ORM
 {
-    public class ClienteDatos : IABMC<Cliente>
+    public class ClienteDatos : IABMC<ClienteModelo>
     {
         private TelefonoDatos VtelefonoDatos = new TelefonoDatos();
 
-        public void Alta(Cliente QueObjeto = null)
+        public void Alta(ClienteModelo QueObjeto = null)
         {
             try
             {
@@ -40,7 +40,7 @@ namespace ORM
                 {
                     VtelefonoDatos.ObjetoSolicitante = QueObjeto;
 
-                    foreach (Telefono Tr in QueObjeto.Telefonos)
+                    foreach (TelefonoModelo Tr in QueObjeto.Telefonos)
                         VtelefonoDatos.Alta(Tr);
                 }
             }
@@ -52,25 +52,25 @@ namespace ORM
         }
 
 
-        public void Baja(Cliente QueObjeto = null)
+        public void Baja(ClienteModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }
 
 
-        public List<Cliente> Consulta(Cliente QueObjeto = null)
+        public List<ClienteModelo> ConsultaObjeto(ClienteModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }
 
 
-        public List<Cliente> ConsultaRango(Cliente QueObjeto1 = null, Cliente QueObjeto2 = null)
+        public List<ClienteModelo> ConsultaRango(ClienteModelo QueObjeto1 = null, ClienteModelo QueObjeto2 = null)
         {
             throw new NotImplementedException();
         }
 
 
-        public void Modificacion(Cliente QueObjeto = null)
+        public void Modificacion(ClienteModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }
