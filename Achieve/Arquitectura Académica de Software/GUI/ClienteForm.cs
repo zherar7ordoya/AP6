@@ -22,7 +22,7 @@ namespace GUI
         readonly ClienteVista ControladorCliente;
 
         // Falla porque no puede acceder a DataAccess
-        // readonly string CadenaConexion = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
+        readonly string CadenaConexion = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
 
         public ClienteForm()
         {
@@ -34,7 +34,6 @@ namespace GUI
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO => Actualizar BDD cuando modifico DGV (con/sin DataSet)
-            string CadenaConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=UCEMA;Integrated Security=True";
             string consulta = "SELECT * FROM Cliente";
             SqlConnection conexion = new SqlConnection(CadenaConexion);
 

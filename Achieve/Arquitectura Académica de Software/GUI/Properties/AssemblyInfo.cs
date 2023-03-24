@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("GUI")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Interfaz gráfica de usuario")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GUI")]
-[assembly: AssemblyCopyright("Copyright ©  2023")]
+[assembly: AssemblyCompany("Gerardo Tordoya")]
+[assembly: AssemblyProduct("Arquitectura Académica de Software")]
+[assembly: AssemblyCopyright("Copyright © 2023 Gerardo Tordoya")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

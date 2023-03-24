@@ -37,6 +37,8 @@ namespace ORM
             // del cliente.
             // *****************************************************************
             
+            // TODO => Corregir éstas líneas de código (teniendo en cuenta lo anterior)
+
             int contador = ((int)comando.ObjDataTable("SELECT MAX(TelefonoId) FROM Telefono").Rows[0].ItemArray[0]) + 1;
             DataRow dr1 = dt1.NewRow();
             dr1.ItemArray= new object[] { contador, QueObjeto.Numero, VobjetoSolicitante.RetornaId() };

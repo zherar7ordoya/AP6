@@ -15,40 +15,38 @@ namespace ORM
 {
     public class ClienteDatos : IABMC<ClienteModelo>
     {
-        private TelefonoDatos VtelefonoDatos = new TelefonoDatos();
+        private readonly TelefonoDatos _telefonoDA = new TelefonoDatos();
 
-        public void Alta(ClienteModelo QueObjeto = null)
+        public void Alta(ClienteModelo cliente = null)
         {
             try
             {
                 Comando comando = new Comando();
-                DataTable dt = comando.ObjStructureTable("cliente");
-                DataRow dr = dt.NewRow();
+                DataTable tabla = comando.ObjStructureTable("Cliente");
+                DataRow fila = tabla.NewRow();
 
-                dr.ItemArray = new object[]
+                fila.ItemArray = new object[]
                 {
-                    QueObjeto.Id,
-                    QueObjeto.Nombre,
-                    QueObjeto.FechaAlta,
-                    QueObjeto.Activo
+                    cliente.Id,
+                    cliente.Nombre,
+                    cliente.FechaAlta,
+                    cliente.Activo
                 };
 
-                dt.Rows.Add(dr);
-                comando.ActualizaBase("cliente", dt);
+                tabla.Rows.Add(fila);
+                comando.ActualizaBase("Cliente", tabla);
 
-                if (QueObjeto.Telefonos.Count > 0)
+                if (cliente.Telefonos.Count > 0)
                 {
-                    VtelefonoDatos.ObjetoSolicitante = QueObjeto;
+                    _telefonoDA.ObjetoSolicitante = cliente;
 
-                    foreach (TelefonoModelo Tr in QueObjeto.Telefonos)
-                        VtelefonoDatos.Alta(Tr);
+                    foreach (TelefonoModelo telefono in cliente.Telefonos)
+                    {
+                        _telefonoDA.Alta(telefono);
+                    }
                 }
             }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception ex) { throw ex; }
         }
 
 

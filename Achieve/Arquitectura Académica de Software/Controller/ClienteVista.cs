@@ -45,20 +45,12 @@ namespace Controller
             ClienteBE.FechaAlta = DateTime.Parse(Formulario.Controls.Find("FechaAlta", true).FirstOrDefault().Text);
             ClienteBE.Activo = (Formulario.Controls.Find("Activo", true).FirstOrDefault() as CheckBox).Checked;
 
-            DialogResult resultado = MessageBox.Show(
+            while (MessageBox.Show(
                 "¿Desea ingresar un teléfono?",
                 "Teléfonos",
-                MessageBoxButtons.YesNo);
-            
-            while (resultado == DialogResult.Yes)
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
                 ClienteBE.Telefonos.Add(new TelefonoModelo(ClienteBE.Id, InputBox("Ingrese el nuevo número de teléfono")));
-
-                resultado = MessageBox.Show(
-                    "¿Desea ingresar un teléfono?",
-                    "Teléfonos",
-                    MessageBoxButtons.YesNo);
             }
 
             ClienteBL.Alta(ClienteBE);

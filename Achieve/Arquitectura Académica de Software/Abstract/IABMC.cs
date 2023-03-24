@@ -30,11 +30,11 @@ namespace Abstract
 {
     public interface IABMC<T>
     {
-        void Alta(T QueObjeto = default);
-        void Baja(T QueObjeto = default);
-        void Modificacion(T QueObjeto = default);
+        void Alta(T objeto = default);
+        void Baja(T objeto = default);
+        void Modificacion(T objeto = default);
 
-        List<T> ConsultaObjeto(T QueObjeto = default);
-        List<T> ConsultaRango(T QueObjeto1 = default, T QueObjeto2 = default);
+        List<T> ConsultaObjeto(T objeto = default);
+        List<T> ConsultaRango(T objetoDesde = default, T objetoHasta = default);
     }
 }

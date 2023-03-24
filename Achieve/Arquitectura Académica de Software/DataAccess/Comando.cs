@@ -15,18 +15,18 @@ namespace DataAccess
          * 		=> SqlCommand(commandText)
          * 		=> SqlCommand(commandText,  connection)
          *   Aquí se está usando el 3ro                 */
-        SqlCommand Vcomando;
+        SqlCommand _comando;
 
 
-        private SqlCommand ObjComando(string SelectCommand, SqlConnection Conexion)
+        private SqlCommand ObjComando(string sentencia, SqlConnection conexion)
         {
-            Vcomando = new SqlCommand
+            _comando = new SqlCommand
             {
-                CommandText = SelectCommand,	// A  SQL  statement  or  the  name  of  a  stored  procedure
+                CommandText = sentencia,	// A  SQL  statement  or  the  name  of  a  stored  procedure
                 CommandType = CommandType.Text,	// Cómo CommandText debe ser interpretado
-                Connection = Conexion
+                Connection = conexion
             };
-            return Vcomando;
+            return _comando;
         }
 
 

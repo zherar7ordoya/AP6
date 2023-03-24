@@ -22,20 +22,17 @@ namespace Logic
 {
     public class ClienteLogica : IABMC<ClienteModelo>
     {
-        private ClienteDatos VclienteDatos;
+        ClienteDatos _clienteDA;
+        public ClienteDatos ClienteDA { get => _clienteDA; set => _clienteDA = value; }
 
-        public ClienteDatos ClienteDatos { get => VclienteDatos; set => VclienteDatos = value; }
-
-        public ClienteLogica()
-        {
-            VclienteDatos = new ClienteDatos();
-        }
+        public ClienteLogica() { _clienteDA = new ClienteDatos(); }
 
 
         public void Alta(ClienteModelo QueObjeto = null)
         {
-            ClienteDatos.Alta(QueObjeto);
+            ClienteDA.Alta(QueObjeto);
         }
+
 
         public void Baja(ClienteModelo QueObjeto = null)
         {
