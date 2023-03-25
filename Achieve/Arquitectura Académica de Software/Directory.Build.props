@@ -1,0 +1,11 @@
+<Project>
+   
+    <PropertyGroup>
+        <Title>Arquitectura Académica de Software</Title>
+        <Authors>Gerardo Tordoya</Authors>
+        <Description>Implementación en C# de un "paper" (2015) de Darío Cardacci</Description>
+		<!-- Created: 2023-03-25 -->
+		<!-- Updated: XXXX-XX-XX -->
+    </PropertyGroup>
+
+</Project>

@@ -1,9 +1,6 @@
 ﻿using Abstract;
-
 using DataAccess;
-
 using Structure;
-
 using System;
 using System.Collections.Generic;
 using System.Data;
