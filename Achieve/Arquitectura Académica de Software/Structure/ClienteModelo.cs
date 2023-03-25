@@ -5,13 +5,14 @@ using System.Collections.Generic;
 
 namespace Structure
 {
-    public class ClienteModelo : IEstandarId, ICloneable
+    public class ClienteModelo : IId, ICloneable
     {
-        public List<TelefonoModelo> Telefonos = new List<TelefonoModelo>();
         public int Id { get; set; }
         public string Nombre { get; set; }
         public DateTime FechaAlta { get; set; }
         public bool Activo { get; set; }
+
+        public List<TelefonoModelo> Telefonos = new List<TelefonoModelo>();
 
 
         // Constructores
@@ -28,6 +29,8 @@ namespace Structure
         /// <summary>
         /// Este constructor es el que se usa en las operaciones de alta y de
         /// modificación
+        /// (Se incluye el Id en las operaciones de alta por lo expuesto en las
+        /// notas hechas en el ORM)
         /// </summary>
         /// <param name="id">Id del cliente</param>
         /// <param name="nombre">Nombre del cliente</param>
@@ -51,16 +54,16 @@ namespace Structure
 
         public object Clone()
         {
-            ClienteModelo RetornoCliente = (ClienteModelo)MemberwiseClone();
+            ClienteModelo clienteModelo = (ClienteModelo)MemberwiseClone();
 
             if (Telefonos != null) // *--------------------> Clonación Profunda
             {
                 foreach (TelefonoModelo T in Telefonos)
                 {
-                    RetornoCliente.Telefonos.Add((TelefonoModelo)T.Clone());
+                    clienteModelo.Telefonos.Add((TelefonoModelo)T.Clone());
                 }
             }
-            return RetornoCliente;
+            return clienteModelo;
         }
     }
 }

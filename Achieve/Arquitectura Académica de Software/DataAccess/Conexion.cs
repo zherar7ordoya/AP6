@@ -7,12 +7,13 @@ namespace DataAccess
 {
     public class Conexion
     {
+        SqlConnection _conexion;
+
         readonly string CadenaConexion = 
             ConfigurationManager
             .ConnectionStrings["CadenaConexion"].ConnectionString;
-        SqlConnection _conexion;
 
-
+        
         public SqlConnection RetornaConexion()
         {
             _conexion = new SqlConnection(CadenaConexion);

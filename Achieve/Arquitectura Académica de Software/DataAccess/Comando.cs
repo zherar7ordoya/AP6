@@ -35,13 +35,13 @@ namespace DataAccess
         }
 
 
-        public DataTable RetornaTablaEstructura(string nombre)
+        public DataTable RetornaTablaEstructura(string nombreTabla)
         {
             Conexion conexion = new Conexion();
 
             SqlDataAdapter adaptador = 
                 new SqlDataAdapter(
-                    RetornaComando($"SELECT * FROM {nombre}", conexion.RetornaConexion()));
+                    RetornaComando($"SELECT * FROM {nombreTabla}", conexion.RetornaConexion()));
 
             DataTable tabla = new DataTable();
             adaptador.FillSchema(tabla, SchemaType.Mapped);
@@ -49,13 +49,13 @@ namespace DataAccess
         }
 
 
-        public void ActualizaBase(string nombre, DataTable tabla)
+        public void ActualizaBase(string nombreTabla, DataTable tabla)
         {
             Conexion conexion = new Conexion();
 
             SqlDataAdapter adaptador = 
                 new SqlDataAdapter(
-                    RetornaComando($"SELECT * FROM {nombre}", conexion.RetornaConexion()));
+                    RetornaComando($"SELECT * FROM {nombreTabla}", conexion.RetornaConexion()));
             
             SqlCommandBuilder builder = new SqlCommandBuilder(adaptador);
             adaptador.InsertCommand = builder.GetInsertCommand();

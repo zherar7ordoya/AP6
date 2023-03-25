@@ -8,10 +8,10 @@ using System.Data;
 
 namespace ORM
 {
-    public class ClienteDatos : IEstandarCRUD<ClienteModelo>, IEstandarId
+    public class ClienteDatos : ICRUD<ClienteModelo>, IId
     {
-        private Comando _comando = new Comando();
-        private readonly TelefonoDatos _telefonoDA = new TelefonoDatos();
+        private readonly Comando _comando = new Comando();
+        private readonly TelefonoDatos _telefonoDatos = new TelefonoDatos();
 
 
         public int RetornaId()
@@ -25,6 +25,11 @@ namespace ORM
 
         public void Alta(ClienteModelo cliente = null)
         {
+            /**
+             * Para ver una explicación de la redundancia de un "tabla.NewRow"
+             * y el posterior "tabla.Rows.Add", ver:
+             * https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable
+             */
             try
             {
                 DataTable tabla = _comando.RetornaTablaEstructura("Cliente");
@@ -37,11 +42,11 @@ namespace ORM
                  * functionality when the rows are already in the table.
                  * https://stackoverflow.com/a/16179861/14009797
                  */
-                int id = RetornaId();
+            int clienteId = RetornaId();
 
                 fila.ItemArray = new object[]
                 {
-                    id,
+                    clienteId,
                     cliente.Nombre,
                     cliente.FechaAlta,
                     cliente.Activo
@@ -52,11 +57,11 @@ namespace ORM
 
                 if (cliente.Telefonos.Count > 0)
                 {
-                    _telefonoDA.ClienteId = cliente;
+                    _telefonoDatos.Cliente = cliente;
 
                     foreach (TelefonoModelo telefono in cliente.Telefonos)
                     {
-                        _telefonoDA.Alta(telefono);
+                        _telefonoDatos.Alta(telefono);
                     }
                 }
             }

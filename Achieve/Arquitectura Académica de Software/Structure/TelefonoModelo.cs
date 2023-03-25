@@ -4,7 +4,7 @@ using System;
 
 namespace Structure
 {
-    public class TelefonoModelo : IEstandarId, ICloneable
+    public class TelefonoModelo : IId, ICloneable
     {
         public int Id { get; set; }
         public int ClienteId { get; set; }
@@ -23,7 +23,9 @@ namespace Structure
 
         /// <summary>
         /// Este constructor es el que se usa en las operaciones de alta y de
-        /// modificación
+        /// modificación.
+        /// (Se incluye el Id en las operaciones de alta por lo expuesto en las
+        /// notas hechas en el ORM)
         /// </summary>
         /// <param name="id">Id del teléfono</param>
         /// <param name="clienteId">Id del cliente</param>

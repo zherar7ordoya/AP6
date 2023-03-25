@@ -1,26 +1,26 @@
 ﻿using Abstract;
+
 using ORM;
+
 using Structure;
+
 using System;
 using System.Collections.Generic;
 
 
 namespace Logic
 {
-    public class ClienteLogica : IEstandarCRUD<ClienteModelo>
+    public class ClienteLogica : ICRUD<ClienteModelo>
     {
-        readonly ClienteDatos _clienteDA = new ClienteDatos();
-        readonly TelefonoDatos _telefonoDA = new TelefonoDatos();
+        readonly ClienteDatos _clienteDatos = new ClienteDatos();
+        readonly TelefonoDatos _telefonoDatos = new TelefonoDatos();
 
 
-        public int RetornaClienteId() { return _clienteDA.RetornaId(); }
-        public int RetornaTelefonoId() { return _telefonoDA.RetornaId(); }
+        public int RetornaClienteId() { return _clienteDatos.RetornaId(); }
+        public int RetornaTelefonoId() { return _telefonoDatos.RetornaId(); }
 
 
-        public void Alta(ClienteModelo cliente = null)
-        {
-            _clienteDA.Alta(cliente);
-        }
+        public void Alta(ClienteModelo cliente = null) { _clienteDatos.Alta(cliente); }
 
 
         public void Baja(ClienteModelo QueObjeto = null)

@@ -18,8 +18,9 @@ namespace Controller
     public class ClienteVista
     {
         readonly Form _formulario;
-        ClienteModelo _clienteBE = new ClienteModelo();
-        ClienteLogica _clienteBL = new ClienteLogica();
+
+        private ClienteModelo _clienteBE = new ClienteModelo();
+        private ClienteLogica _clienteBL = new ClienteLogica();
 
         public ClienteModelo ClienteBE { get => _clienteBE; set => _clienteBE = value; }
         public ClienteLogica ClienteBL { get => _clienteBL; set => _clienteBL = value; }
