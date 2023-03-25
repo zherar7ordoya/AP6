@@ -1,41 +1,30 @@
 ﻿using System.Configuration;
-
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace DataAccess
 {
     public class Conexion
     {
-        readonly string CadenaConexion = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
-
-        //readonly string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Documents\AP6\Achieve\Arquitectura Académica de Software\DataBase\Empresa.mdf"";Integrated Security=True;Connect Timeout=30";
-
-        // La clase SqlConnection tiene 2 constructores:
-        SqlConnection VobjConexion;
+        readonly string CadenaConexion = 
+            ConfigurationManager
+            .ConnectionStrings["CadenaConexion"].ConnectionString;
+        SqlConnection _conexion;
 
 
-        // 1er constructor => new  SqlConnection()
-        public SqlConnection ObjConexion()
+        public SqlConnection RetornaConexion()
         {
-            //VobjConexion = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=GESTION;Integrated Security=True");
-            VobjConexion = new SqlConnection(CadenaConexion);
-            return VobjConexion;
+            _conexion = new SqlConnection(CadenaConexion);
+            return _conexion;
         }
-        
 
-		// 2do constructor => new  SqlConnection(connectionString) 
-        public SqlConnection ObjConexion(string QueStringDeConexion)
+
+        [Obsolete("Este método aún no se ha usado")]
+        public SqlConnection RetornaConexion(string cadenaConexion)
         {
-            VobjConexion = new SqlConnection(QueStringDeConexion);
-            return VobjConexion;
+            _conexion = new SqlConnection(cadenaConexion);
+            return _conexion;
         }
-        
-        // Aunque se termina usando el 2do constructor en ambos casos
     }
 }

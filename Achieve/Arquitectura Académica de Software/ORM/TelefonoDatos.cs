@@ -1,68 +1,70 @@
 ﻿using Abstract;
-
 using DataAccess;
-
 using Structure;
-
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ORM
 {
-    public class TelefonoDatos : IABMC<TelefonoModelo>
+    public class TelefonoDatos : IEstandarCRUD<TelefonoModelo>, IEstandarId
     {
-        IID VobjetoSolicitante;
+        private readonly Comando comando = new Comando();
+        private IEstandarId _clienteId;
 
-        public IID ObjetoSolicitante
+        public IEstandarId ClienteId
         {
-            get => VobjetoSolicitante;
-            set => VobjetoSolicitante = value;
+            get => _clienteId;
+            set => _clienteId = value;
         }
 
-
-        public void Alta(TelefonoModelo QueObjeto = null)
+        public int RetornaId()
         {
-            DataTable dt1 = new DataTable();
-            Comando comando = new Comando();
-
-            dt1 = comando.ObjStructureTable("telefono");
-
-            // *****************************************************************
-            // Tener en cuenta que Id debería ser autonumérico, que la tabla 
-            // Teléfono tiene su propio Id y debe almacenar conjuntamente el Id
-            // del cliente.
-            // *****************************************************************
-            
-            // TODO => Corregir éstas líneas de código (teniendo en cuenta lo anterior)
-
-            int contador = ((int)comando.ObjDataTable("SELECT MAX(TelefonoId) FROM Telefono").Rows[0].ItemArray[0]) + 1;
-            DataRow dr1 = dt1.NewRow();
-            dr1.ItemArray= new object[] { contador, QueObjeto.Numero, VobjetoSolicitante.RetornaId() };
-            dt1.Rows.Add(dr1);
-            contador++;
-            comando.ActualizaBase("Telefono", dt1);
+            return ((int)comando
+                .RetornaTablaCompleta("SELECT MAX(TelefonoId) FROM Telefono")
+                .Rows[0]
+                .ItemArray[0]) + 1;
         }
 
+        public void Alta(TelefonoModelo telefono = null)
+        {
+            DataTable tabla = comando.RetornaTablaEstructura("Telefono");
+
+            /**
+             * Las modificaciones que se hicieron aquí viene dadas porque, para
+             * poder relacionar la tabla Cliente y Telefono, necesito que un
+             * teléfono dado de alta contenga el id del cliente al que
+             * pertenece.
+             */
+
+            DataRow fila = tabla.NewRow();
+
+            fila.ItemArray= new object[]
+            {
+                RetornaId(),
+                _clienteId.RetornaId(),
+                telefono.Numero,
+                true
+            };
+            tabla.Rows.Add(fila);
+            comando.ActualizaBase("Telefono", tabla);
+        }
+
+        
         public void Baja(TelefonoModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }
-
+        public void Modificacion(TelefonoModelo QueObjeto = null)
+        {
+            throw new NotImplementedException();
+        }
         public List<TelefonoModelo> ConsultaObjeto(TelefonoModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }
-
         public List<TelefonoModelo> ConsultaRango(TelefonoModelo QueObjeto1 = null, TelefonoModelo QueObjeto2 = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Modificacion(TelefonoModelo QueObjeto = null)
         {
             throw new NotImplementedException();
         }

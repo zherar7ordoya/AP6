@@ -33,13 +33,11 @@
             this.Nombre = new System.Windows.Forms.TextBox();
             this.FechaAlta = new System.Windows.Forms.TextBox();
             this.Activo = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Alta
             // 
-            this.Alta.Location = new System.Drawing.Point(13, 13);
+            this.Alta.Location = new System.Drawing.Point(63, 143);
             this.Alta.Name = "Alta";
             this.Alta.Size = new System.Drawing.Size(75, 23);
             this.Alta.TabIndex = 0;
@@ -52,7 +50,7 @@
             this.Id.Enabled = false;
             this.Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Id.ForeColor = System.Drawing.Color.Red;
-            this.Id.Location = new System.Drawing.Point(13, 42);
+            this.Id.Location = new System.Drawing.Point(38, 42);
             this.Id.Name = "Id";
             this.Id.Size = new System.Drawing.Size(100, 23);
             this.Id.TabIndex = 1;
@@ -60,7 +58,7 @@
             // 
             // Nombre
             // 
-            this.Nombre.Location = new System.Drawing.Point(13, 68);
+            this.Nombre.Location = new System.Drawing.Point(38, 68);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(100, 20);
             this.Nombre.TabIndex = 2;
@@ -68,7 +66,7 @@
             // 
             // FechaAlta
             // 
-            this.FechaAlta.Location = new System.Drawing.Point(13, 94);
+            this.FechaAlta.Location = new System.Drawing.Point(38, 94);
             this.FechaAlta.Name = "FechaAlta";
             this.FechaAlta.Size = new System.Drawing.Size(100, 20);
             this.FechaAlta.TabIndex = 3;
@@ -79,41 +77,26 @@
             this.Activo.AutoSize = true;
             this.Activo.Checked = true;
             this.Activo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Activo.Location = new System.Drawing.Point(13, 120);
+            this.Activo.Location = new System.Drawing.Point(82, 120);
             this.Activo.Name = "Activo";
             this.Activo.Size = new System.Drawing.Size(56, 17);
             this.Activo.TabIndex = 5;
             this.Activo.Text = "Activo";
             this.Activo.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(188, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(368, 150);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // Form1
+            // ClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 178);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(167, 190);
             this.Controls.Add(this.Activo);
             this.Controls.Add(this.FechaAlta);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.Id);
             this.Controls.Add(this.Alta);
-            this.Name = "Form1";
+            this.Name = "ClienteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +109,6 @@
         private System.Windows.Forms.TextBox Nombre;
         private System.Windows.Forms.TextBox FechaAlta;
         private System.Windows.Forms.CheckBox Activo;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
