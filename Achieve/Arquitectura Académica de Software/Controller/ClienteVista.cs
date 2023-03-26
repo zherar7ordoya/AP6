@@ -1,4 +1,22 @@
-﻿using Logic;
+﻿/**
+ * LA GRAN OBSERVACIÓN QUE TENGO QUE HACER:
+ * Aquí, en ModeloVista (por varias cuestiones que ya expuse) es donde termino
+ * armando los objetos (creando una instancia con todos los datos que requiera
+ * la misma). Todos, pero queda un tema: los famosos Id (que por cuestiones que
+ * ya expuse, no pude hasta ahora hacer que ADO.NET entienda que, en una base
+ * de datos con PK autoincrementales, no es necesario que me los pida).
+ * Para obtener "a mano" esos Id, necesito a ORM. Podría obtenerlos allí. 
+ * Entonces, ¿por qué los pido aquí? (Lo cual me requiere dos "viajes" a ORM).
+ * Bueno, ya que estoy armando aquí todo el objeto, pensé que probablemente sea
+ * buena idea armarlos completos, Id incluído, y seguir operando a partir de
+ * aquí con el objeto completo.
+ */
+
+// ****************************************************************************
+//   Sigo sosteniendo que es mejor dejar que el SGBD se haga cargo de los Id.
+// ****************************************************************************
+
+using Logic;
 using static Microsoft.VisualBasic.Interaction;
 using Structure;
 using System;

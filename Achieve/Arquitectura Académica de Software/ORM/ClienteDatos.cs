@@ -42,11 +42,13 @@ namespace ORM
                  * functionality when the rows are already in the table.
                  * https://stackoverflow.com/a/16179861/14009797
                  */
-            int clienteId = RetornaId();
+                // Esto no está bien. Ya estoy enviando el objeto Cliente, 
+                // desde ClienteVista, completo, con su Id.
+                //int clienteId = RetornaId();
 
                 fila.ItemArray = new object[]
                 {
-                    clienteId,
+                    cliente.Id,
                     cliente.Nombre,
                     cliente.FechaAlta,
                     cliente.Activo
@@ -57,7 +59,8 @@ namespace ORM
 
                 if (cliente.Telefonos.Count > 0)
                 {
-                    _telefonoDatos.Cliente = cliente;
+                    // Al enviar los objetos completos, ¿necesito esto?
+                    //_telefonoDatos.Cliente = cliente;
 
                     foreach (TelefonoModelo telefono in cliente.Telefonos)
                     {

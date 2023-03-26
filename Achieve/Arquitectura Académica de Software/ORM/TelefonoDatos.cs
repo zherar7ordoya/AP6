@@ -18,13 +18,15 @@ namespace ORM
          * (propia) que implementan. Y en este caso, reciben como objeto a una
          * instancia de ClienteDatos (que implementa IId). Es por eso que se
          * puede acceder al método RetornaId() de la clase ClienteDatos. *** */
-        private IId _cliente;
 
-        public IId Cliente
-        {
-            get => _cliente;
-            set => _cliente = value;
-        }
+        // Pregunta: si estoy enviando los objetos completos, ¿necesito esto?
+        //private IId _cliente;
+
+        //public IId Cliente
+        //{
+        //    get => _cliente;
+        //    set => _cliente = value;
+        //}
 
         public int RetornaId()
         {
@@ -47,10 +49,14 @@ namespace ORM
              */
             DataRow fila = tabla.NewRow();
 
+            // Esto no está bien. Estoy enviando desde ModeloVista el objeto
+            // Telefono completo, con su Id y con el Id del Cliente.
             fila.ItemArray = new object[]
             {
-                RetornaId(),            // <-- TelefonoId
-                _cliente.RetornaId(),   // <-- ClienteId
+                //RetornaId(),            // <-- TelefonoId
+                //_cliente.RetornaId(),   // <-- ClienteId
+                telefono.Id,
+                telefono.ClienteId,
                 telefono.Numero,
                 true
             };
