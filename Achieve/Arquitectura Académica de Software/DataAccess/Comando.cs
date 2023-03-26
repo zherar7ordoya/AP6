@@ -7,6 +7,7 @@ namespace DataAccess
     public class Comando
     {
         SqlCommand _comando;
+        Conexion _conexion;
 
 
         private SqlCommand RetornaComando(string sentencia, SqlConnection conexion)
@@ -23,11 +24,11 @@ namespace DataAccess
 
         public DataTable RetornaTablaCompleta(string sentencia)
         {
-            Conexion conexion = new Conexion();
+            _conexion = new Conexion();
 
             SqlDataAdapter adaptador = 
                 new SqlDataAdapter(
-                    RetornaComando(sentencia, conexion.RetornaConexion()));
+                    RetornaComando(sentencia, _conexion.RetornaConexion()));
             
             DataTable tabla = new DataTable();
             adaptador.Fill(tabla);
@@ -37,11 +38,11 @@ namespace DataAccess
 
         public DataTable RetornaTablaEstructura(string nombreTabla)
         {
-            Conexion conexion = new Conexion();
+            _conexion = new Conexion();
 
             SqlDataAdapter adaptador = 
                 new SqlDataAdapter(
-                    RetornaComando($"SELECT * FROM {nombreTabla}", conexion.RetornaConexion()));
+                    RetornaComando($"SELECT * FROM {nombreTabla}", _conexion.RetornaConexion()));
 
             DataTable tabla = new DataTable();
             adaptador.FillSchema(tabla, SchemaType.Mapped);
@@ -51,11 +52,11 @@ namespace DataAccess
 
         public void ActualizaBase(string nombreTabla, DataTable tabla)
         {
-            Conexion conexion = new Conexion();
+            _conexion = new Conexion();
 
             SqlDataAdapter adaptador = 
                 new SqlDataAdapter(
-                    RetornaComando($"SELECT * FROM {nombreTabla}", conexion.RetornaConexion()));
+                    RetornaComando($"SELECT * FROM {nombreTabla}", _conexion.RetornaConexion()));
             
             SqlCommandBuilder builder = new SqlCommandBuilder(adaptador);
             adaptador.InsertCommand = builder.GetInsertCommand();

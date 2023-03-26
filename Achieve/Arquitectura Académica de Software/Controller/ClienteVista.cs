@@ -19,11 +19,11 @@ namespace Controller
     {
         readonly Form _formulario;
 
-        private ClienteModelo _clienteBE = new ClienteModelo();
-        private ClienteLogica _clienteBL = new ClienteLogica();
+        private ClienteModelo _clienteBEL = new ClienteModelo();
+        private ClienteLogica _clienteBLL = new ClienteLogica();
 
-        public ClienteModelo ClienteBE { get => _clienteBE; set => _clienteBE = value; }
-        public ClienteLogica ClienteBL { get => _clienteBL; set => _clienteBL = value; }
+        public ClienteModelo ClienteBEL { get => _clienteBEL; set => _clienteBEL = value; }
+        public ClienteLogica ClienteBLL { get => _clienteBLL; set => _clienteBLL = value; }
 
         // Constructores
         public ClienteVista(Form formulario) { _formulario = formulario; }
@@ -33,11 +33,11 @@ namespace Controller
          * No tiene sentido que tenga como parámetro a Cliente. ¿Por qué?
          * Porque el parámetro es el objeto que se va a modificar. Pero en este
          * caso, estoy construyendo un objeto nuevo a partir de lo que obtengo
-         * de lavista.
+         * de la vista.
          */
         public void Alta()
         {
-            int clienteId = _clienteBL.RetornaClienteId();
+            int clienteId = _clienteBLL.RetornaClienteId();
 
             /**
              * Bueno, aquí hay todo un tema. Tiene que ver con cómo se ha
@@ -60,12 +60,13 @@ namespace Controller
              * tener tampoco el error de que el SGBD me rechace el Id siguiente
              * al máximo que obra en esa columna.
              */
-            //ClienteBE.Id = int.Parse(Formulario.Controls.Find("Id", true).FirstOrDefault().Text);
 
-            _clienteBE.Id = clienteId;
-            _clienteBE.Nombre = _formulario.Controls.Find("Nombre", true).FirstOrDefault().Text;
-            _clienteBE.FechaAlta = DateTime.Parse(_formulario.Controls.Find("FechaAlta", true).FirstOrDefault().Text);
-            _clienteBE.Activo = (_formulario.Controls.Find("Activo", true).FirstOrDefault() as CheckBox).Checked;
+            //_clienteBEL.Id = int.Parse(Formulario.Controls.Find("Id", true).FirstOrDefault().Text);
+
+            _clienteBEL.Id = clienteId;
+            _clienteBEL.Nombre = _formulario.Controls.Find("Nombre", true).FirstOrDefault().Text;
+            _clienteBEL.FechaAlta = DateTime.Parse(_formulario.Controls.Find("FechaAlta", true).FirstOrDefault().Text);
+            _clienteBEL.Activo = (_formulario.Controls.Find("Activo", true).FirstOrDefault() as CheckBox).Checked;
 
             /**
              * ¿Por qué un contador?  Necesito un contador porque, en una
@@ -81,18 +82,18 @@ namespace Controller
                 "Teléfonos",
                 MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                int telefonoId = _clienteBL.RetornaTelefonoId() + contador;
+                int telefonoId = _clienteBLL.RetornaTelefonoId() + contador;
                 contador++; // Incremento el contador para que en la siguiente
                             // iteración, el Id que recupere sea el siguiente.
 
-                _clienteBE.Telefonos.Add(
+                _clienteBEL.Telefonos.Add(
                     new TelefonoModelo(
                         telefonoId,
                         clienteId,
                         InputBox("Ingrese el nuevo número de teléfono"),
                         true));
             }
-            _clienteBL.Alta(_clienteBE);
+            _clienteBLL.Alta(_clienteBEL);
         }
 
 
