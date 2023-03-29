@@ -1,0 +1,1 @@
+﻿// https://www.dreamincode.net/forums/topic/342849-introducing-mvp-model-view-presenter-pattern-winforms/
