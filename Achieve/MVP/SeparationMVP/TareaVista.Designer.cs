@@ -1,6 +1,6 @@
 ﻿namespace SeparationMVP
 {
-    partial class Vista
+    partial class TareaVista
     {
         /// <summary>
         /// Required designer variable.
@@ -54,7 +54,7 @@
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.btnNew.Click += new System.EventHandler(this.New_Click);
             // 
             // btnNext
             // 
@@ -64,7 +64,7 @@
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.btnNext.Click += new System.EventHandler(this.Next_Click);
             // 
             // btnPrev
             // 
@@ -74,7 +74,7 @@
             this.btnPrev.TabIndex = 2;
             this.btnPrev.Text = "Prev";
             this.btnPrev.UseVisualStyleBackColor = true;
-            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            this.btnPrev.Click += new System.EventHandler(this.Previous_Click);
             // 
             // btnSave
             // 
@@ -84,7 +84,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.Save_Click);
             // 
             // cboPriority
             // 
@@ -148,11 +148,11 @@
             // 
             // lblStatus
             // 
-            this.lblStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStatus.Location = new System.Drawing.Point(12, 236);
+            this.lblStatus.Location = new System.Drawing.Point(15, 268);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(30, 15);
+            this.lblStatus.Size = new System.Drawing.Size(380, 23);
             this.lblStatus.TabIndex = 10;
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtCompletionDate
             // 
@@ -195,7 +195,7 @@
             this.txtTask.TabIndex = 15;
             this.txtTask.TextChanged += new System.EventHandler(this.txtTask_TextChanged);
             // 
-            // Vista
+            // TareaVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -216,8 +216,9 @@
             this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnNew);
-            this.Name = "Vista";
+            this.Name = "TareaVista";
             this.Text = "frmTasks";
+            this.Load += new System.EventHandler(this.TareaVista_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
