@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Usuarios";
+}
+
+<h2>Bienvenido a MVC</h2>
+
+@for (int i = 0; i <= 5; i++)
+{
+    <b>Esta es la línea # @i.ToString()</b>
+    <br />
+}
+
+<br />
+
+@Html.ActionLink("Ver lista de usuarios", "ListaUsuarios")
