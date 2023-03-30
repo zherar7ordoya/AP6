@@ -1,7 +1,7 @@
-/**
+/** START FOR DUMMIES
  * COMPILAR: gcc alo.c -o alo
  * EJECUTAR: ./alo (Ubuntu) alo (Windows)
-*/
+ */
 
 #include <stdio.h>
 
