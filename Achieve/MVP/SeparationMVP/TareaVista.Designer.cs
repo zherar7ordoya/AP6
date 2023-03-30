@@ -44,6 +44,7 @@
             this.txtStartDate = new System.Windows.Forms.TextBox();
             this.lblTask = new System.Windows.Forms.Label();
             this.txtTask = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.SuspendLayout();
             // 
             // btnNew
@@ -97,7 +98,7 @@
             this.cboPriority.Name = "cboPriority";
             this.cboPriority.Size = new System.Drawing.Size(121, 21);
             this.cboPriority.TabIndex = 4;
-            this.cboPriority.SelectedIndexChanged += new System.EventHandler(this.cboPriority_SelectedIndexChanged);
+            this.cboPriority.SelectedIndexChanged += new System.EventHandler(this.PriorityCbox_SelectedIndexChanged);
             // 
             // ckbCompleted
             // 
@@ -108,7 +109,7 @@
             this.ckbCompleted.TabIndex = 5;
             this.ckbCompleted.Text = "Completed";
             this.ckbCompleted.UseVisualStyleBackColor = true;
-            this.ckbCompleted.CheckedChanged += new System.EventHandler(this.ckbCompleted_CheckedChanged);
+            this.ckbCompleted.CheckedChanged += new System.EventHandler(this.CompletedCheckbox_CheckedChanged);
             // 
             // lblCompletionDate
             // 
@@ -160,7 +161,7 @@
             this.txtCompletionDate.Name = "txtCompletionDate";
             this.txtCompletionDate.Size = new System.Drawing.Size(100, 20);
             this.txtCompletionDate.TabIndex = 11;
-            this.txtCompletionDate.TextChanged += new System.EventHandler(this.txtCompletionDate_TextChanged);
+            this.txtCompletionDate.TextChanged += new System.EventHandler(this.CompletionDateTbox_TextChanged);
             // 
             // txtDueDate
             // 
@@ -168,7 +169,7 @@
             this.txtDueDate.Name = "txtDueDate";
             this.txtDueDate.Size = new System.Drawing.Size(100, 20);
             this.txtDueDate.TabIndex = 12;
-            this.txtDueDate.TextChanged += new System.EventHandler(this.txtDueDate_TextChanged);
+            this.txtDueDate.TextChanged += new System.EventHandler(this.DueDateTbox_TextChanged);
             // 
             // txtStartDate
             // 
@@ -176,7 +177,7 @@
             this.txtStartDate.Name = "txtStartDate";
             this.txtStartDate.Size = new System.Drawing.Size(100, 20);
             this.txtStartDate.TabIndex = 13;
-            this.txtStartDate.TextChanged += new System.EventHandler(this.txtStartDate_TextChanged);
+            this.txtStartDate.TextChanged += new System.EventHandler(this.StartDateTbox_TextChanged);
             // 
             // lblTask
             // 
@@ -193,13 +194,22 @@
             this.txtTask.Name = "txtTask";
             this.txtTask.Size = new System.Drawing.Size(100, 20);
             this.txtTask.TabIndex = 15;
-            this.txtTask.TextChanged += new System.EventHandler(this.txtTask_TextChanged);
+            this.txtTask.TextChanged += new System.EventHandler(this.TaskTbox_TextChanged);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 278);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(407, 22);
+            this.statusStrip1.TabIndex = 16;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // TareaVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 300);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.txtTask);
             this.Controls.Add(this.lblTask);
             this.Controls.Add(this.txtStartDate);
@@ -242,6 +252,7 @@
         private System.Windows.Forms.TextBox txtStartDate;
         private System.Windows.Forms.Label lblTask;
         private System.Windows.Forms.TextBox txtTask;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
 

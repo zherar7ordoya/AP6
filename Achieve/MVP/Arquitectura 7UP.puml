@@ -1,0 +1,93 @@
+@startuml Arquitectura 7UP
+
+' ================================================================
+' Author:       Gerardo Tordoya
+' Create date:  2023-03-30
+' Description:  Arquitectura 7UP (basada en Arquitectura Cardacci)
+' ================================================================
+
+
+' --- CONFIGURACION DEL DIAGRAMA (Tipo: Diagrama de Clases) --------------------
+
+' skin rose
+' skinparam classFontName Calibri
+' skinparam shadowing false
+' hide circle
+skinparam linetype ortho
+
+
+' --- TITULO DEL DIAGRAMA ------------------------------------------------------
+
+title Arquitectura 7UP
+
+
+' --- ENTIDADES ----------------------------------------------------------------
+
+package View <<Node>> {
+}
+
+
+package Presenter <<Node>> {
+}
+
+note right of Presenter
+    Controladora
+    de la GUI
+end note
+
+package Model <<Node>> {
+}
+
+note bottom of Model
+    Business Entities (BE)
+    Estructura (Cardacci)
+end note
+
+package Abstract <<Node>> {
+}
+
+
+package Logic <<Node>> {
+}
+
+
+package Mapper <<Node>> {
+}
+
+
+package DataAccess <<Node>> {
+}
+
+
+package Database <<Database>> {
+}
+
+
+' --- RELACIONES ---------------------------------------------------------------
+
+View        --> Presenter
+View         ---> Abstract
+
+Presenter  --> Model
+Presenter  --> Logic
+Presenter  -> Abstract
+
+Logic       --> Model
+Logic       --> Mapper
+Logic       -> Abstract
+
+Mapper         --> Model
+Mapper         --> DataAccess
+Mapper         -> Abstract
+
+Model   -> Abstract
+
+DataAccess --> Database
+
+
+' --- PIE DE DIAGRAMA ----------------------------------------------------------
+
+caption Copyright © 2023 Gerardo Tordoya
+
+
+@enduml

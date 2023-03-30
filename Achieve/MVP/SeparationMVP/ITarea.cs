@@ -11,6 +11,9 @@ namespace SeparationMVP
         DateTime? FechaCompletado { get; set; }
         bool Completado { get; set; }
 
+
+        /* **************************** ESTADO ***************************** */
+
         // communication/messaging
         string StatusChange { set; }
 
@@ -20,6 +23,8 @@ namespace SeparationMVP
         /// one of the control's-values has been changed.
         /// </summary>
         bool IsDirty { get; set; }
+
+        /* ***************************************************************** */
 
         event EventHandler<EventArgs> SaveTask;
         event EventHandler<EventArgs> NewTask;

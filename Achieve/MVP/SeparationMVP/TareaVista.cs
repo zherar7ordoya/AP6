@@ -14,14 +14,70 @@ namespace SeparationMVP
 
     public partial class TareaVista : Form, ITarea
     {
-        /* ***************************** SETUP ***************************** */
-
         //private TareaPresentador _presentador;
+
         public bool IsDirty { get; set; }
+
+
+        /* **************************** EVENTOS **************************** */
+
+        // => EVIDENTEMENTE, ESTA CLASE ES "DUEÑA" DE LOS EVENTOS
+
+        // Declaro variables" tipo evento
         public event EventHandler<EventArgs> SaveTask;
         public event EventHandler<EventArgs> NewTask;
         public event EventHandler<EventArgs> PrevTask;
         public event EventHandler<EventArgs> NextTask;
+
+        // Declaro los disparadores de esos eventos
+        private void Save_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTask.Text))
+            {
+                MessageBox.Show(
+                    "Enter the task name/description.",
+                    "Task Detail",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                txtTask.Focus();
+                return;
+            }
+            SaveTask?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void New_Click(object sender, EventArgs e)
+        {
+            if (IsDirty)
+            {
+                if (AbandonEdit() == DialogResult.Yes) IsDirty = false;
+                else { return; }
+            }
+            NewTask?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void Previous_Click(object sender, EventArgs e)
+        {
+            if (IsDirty)
+            {
+                if (AbandonEdit() == DialogResult.Yes) IsDirty = false;
+                else { return; }
+            }
+            PrevTask?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void Next_Click(object sender, EventArgs e)
+        {
+            if (IsDirty)
+            {
+                if (AbandonEdit() == DialogResult.Yes) IsDirty = false;
+                else { return; }
+            }
+            NextTask?.Invoke(this, EventArgs.Empty);
+        }
+
+        /* ***************************************************************** */
+
+
 
         public TareaVista()
         {
@@ -74,7 +130,7 @@ namespace SeparationMVP
             }
             set
             {
-                if (value == null) txtDueDate.Text = String.Empty;
+                if (value == null) txtDueDate.Text = string.Empty;
                 else { txtDueDate.Text = value.Value.ToShortDateString(); }
             }
         }
@@ -96,7 +152,7 @@ namespace SeparationMVP
             }
             set
             {
-                if (value == null) txtCompletionDate.Text = String.Empty;
+                if (value == null) txtCompletionDate.Text = string.Empty;
                 else { txtCompletionDate.Text = value.Value.ToShortDateString(); }
             }
         }
@@ -116,54 +172,7 @@ namespace SeparationMVP
 
 
 
-        private void Save_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtTask.Text))
-            {
-                MessageBox.Show(
-                    "Enter the task name/description.",
-                    "Task Detail",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                txtTask.Focus();
-                return;
-            }
-            SaveTask?.Invoke(this, EventArgs.Empty);
-        }
-
-
-        private void New_Click(object sender, EventArgs e)
-        {
-            if (IsDirty)
-            {
-                if (AbandonEdit() == DialogResult.Yes) IsDirty = false;
-                else { return; }
-            }
-            NewTask?.Invoke(this, EventArgs.Empty);
-        }
-
-
-        private void Previous_Click(object sender, EventArgs e)
-        {
-            if (IsDirty)
-            {
-                if (AbandonEdit() == DialogResult.Yes) IsDirty = false;
-                else { return; }
-            }
-            PrevTask?.Invoke(this, EventArgs.Empty);
-        }
-
-
-        private void Next_Click(object sender, EventArgs e)
-        {
-            if (IsDirty)
-            {
-                if (AbandonEdit() == DialogResult.Yes) IsDirty = false;
-                else { return; }
-            }
-            NextTask?.Invoke(this, EventArgs.Empty);
-        }
-
+        
 
         private DialogResult AbandonEdit()
         {
@@ -175,37 +184,37 @@ namespace SeparationMVP
         }
 
 
-        private void txtTask_TextChanged(object sender, EventArgs e)
+        private void TaskTbox_TextChanged(object sender, EventArgs e)
         {
             IsDirty = true;
         }
 
 
-        private void cboPriority_SelectedIndexChanged(object sender, EventArgs e)
+        private void PriorityCbox_SelectedIndexChanged(object sender, EventArgs e)
         {
             IsDirty = true;
         }
 
 
-        private void txtStartDate_TextChanged(object sender, EventArgs e)
+        private void StartDateTbox_TextChanged(object sender, EventArgs e)
         {
             IsDirty = true;
         }
 
 
-        private void txtDueDate_TextChanged(object sender, EventArgs e)
+        private void DueDateTbox_TextChanged(object sender, EventArgs e)
         {
             IsDirty = true;
         }
 
 
-        private void ckbCompleted_CheckedChanged(object sender, EventArgs e)
+        private void CompletedCheckbox_CheckedChanged(object sender, EventArgs e)
         {
             IsDirty = true;
         }
 
 
-        private void txtCompletionDate_TextChanged(object sender, EventArgs e)
+        private void CompletionDateTbox_TextChanged(object sender, EventArgs e)
         {
             IsDirty = true;
         }
