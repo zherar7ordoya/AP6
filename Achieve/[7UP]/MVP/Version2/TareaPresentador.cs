@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using static System.Windows.Forms.MonthCalendar;
 
 namespace Version2
 {
@@ -26,7 +21,7 @@ namespace Version2
         private void Inicializar()
         {
             _tareas = new List<TareaModelo>();
-            _tarea.AgregarTarea += AgregarTarea;
+            _tarea.NuevaTarea += NuevaTarea;
             _tarea.GuardarTarea += GuardarTarea;
             _tarea.TareaAnterior += TareaAnterior;
             _tarea.TareaSiguiente += TareaSiguiente;
@@ -58,7 +53,7 @@ namespace Version2
 
 
         // Métodos principales
-        private void AgregarTarea(object sender, EventArgs e)
+        private void NuevaTarea(object sender, EventArgs e)
         {
             VaciarTarea();
             _nueva = true;

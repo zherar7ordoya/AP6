@@ -3,6 +3,7 @@
 ' ================================================================
 ' Author:       Gerardo Tordoya
 ' Create date:  2023-03-30
+' Update date:  2023-03-31
 ' Description:  Arquitectura 7UP (basada en Arquitectura Cardacci)
 ' ================================================================
 
@@ -13,7 +14,9 @@
 ' skinparam classFontName Calibri
 ' skinparam shadowing false
 ' hide circle
+' skinparam handwritten true
 skinparam linetype ortho
+!theme aws-orange
 
 
 ' --- TITULO DEL DIAGRAMA ------------------------------------------------------
@@ -30,9 +33,9 @@ package View <<Rectangle>> {
 package Presenter <<Rectangle>> {
 }
 
-' note right of Presenter
+' note bottom of Presenter
 '     Controladora
-'     de la GUI
+'     xxx
 ' end note
 
 package Model <<Rectangle>> {
@@ -65,24 +68,20 @@ package Database <<Database>> {
 
 ' --- RELACIONES ---------------------------------------------------------------
 
-View       --> Abstract
-Presenter   -> Abstract
-Model     ---> Abstract
-Logic       -> Abstract
-Mapper      -> Abstract
+View       -[dashed]->  Abstract
+Model      -[dashed]->  Abstract
+Logic      -[dashed]->  Abstract
+Mapper     -[dashed]->  Abstract
 
-View       --> Presenter
+Presenter  -[plain]>    Model
+Logic      -[plain]>    Model
+Mapper     -[plain]>    Model
 
-Presenter  --> Model
-Presenter  --> Logic
-
-Logic      --> Model
-Logic      --> Mapper
-
-Mapper     --> Model
-Mapper     --> DataAccess
-
-DataAccess --> Database
+View       -[bold]>     Presenter
+Presenter  -[bold]>     Logic
+Logic      -[bold]>     Mapper
+Mapper     -[bold]>     DataAccess
+DataAccess -[bold]>     Database
 
 
 ' --- PIE DE DIAGRAMA ----------------------------------------------------------

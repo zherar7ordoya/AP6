@@ -1,6 +1,6 @@
 ﻿namespace Version2
 {
-    partial class TareaForm
+    partial class TareaVista
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             this.FechaTerminacionCtrl = new System.Windows.Forms.TextBox();
             this.SiguienteBtn = new System.Windows.Forms.Button();
             this.AnteriorBtn = new System.Windows.Forms.Button();
-            this.AgregarBtn = new System.Windows.Forms.Button();
+            this.NuevaBtn = new System.Windows.Forms.Button();
             this.GuardarBtn = new System.Windows.Forms.Button();
             this.CompletadaCtrl = new System.Windows.Forms.CheckBox();
             this.StatusStrip.SuspendLayout();
@@ -175,19 +175,19 @@
             this.AnteriorBtn.UseVisualStyleBackColor = true;
             this.AnteriorBtn.Click += new System.EventHandler(this.AnteriorBtn_Click);
             // 
-            // AgregarBtn
+            // NuevaBtn
             // 
-            this.AgregarBtn.Location = new System.Drawing.Point(12, 145);
-            this.AgregarBtn.Name = "AgregarBtn";
-            this.AgregarBtn.Size = new System.Drawing.Size(75, 23);
-            this.AgregarBtn.TabIndex = 13;
-            this.AgregarBtn.Text = "Agregar";
-            this.AgregarBtn.UseVisualStyleBackColor = true;
-            this.AgregarBtn.Click += new System.EventHandler(this.AgregarBtn_Click);
+            this.NuevaBtn.Location = new System.Drawing.Point(93, 145);
+            this.NuevaBtn.Name = "NuevaBtn";
+            this.NuevaBtn.Size = new System.Drawing.Size(75, 23);
+            this.NuevaBtn.TabIndex = 13;
+            this.NuevaBtn.Text = "Nueva";
+            this.NuevaBtn.UseVisualStyleBackColor = true;
+            this.NuevaBtn.Click += new System.EventHandler(this.NuevaBtn_Click);
             // 
             // GuardarBtn
             // 
-            this.GuardarBtn.Location = new System.Drawing.Point(93, 145);
+            this.GuardarBtn.Location = new System.Drawing.Point(12, 145);
             this.GuardarBtn.Name = "GuardarBtn";
             this.GuardarBtn.Size = new System.Drawing.Size(75, 23);
             this.GuardarBtn.TabIndex = 14;
@@ -213,7 +213,7 @@
             this.ClientSize = new System.Drawing.Size(434, 211);
             this.Controls.Add(this.CompletadaCtrl);
             this.Controls.Add(this.GuardarBtn);
-            this.Controls.Add(this.AgregarBtn);
+            this.Controls.Add(this.NuevaBtn);
             this.Controls.Add(this.AnteriorBtn);
             this.Controls.Add(this.SiguienteBtn);
             this.Controls.Add(this.FechaTerminacionCtrl);
@@ -254,7 +254,7 @@
         private System.Windows.Forms.TextBox FechaTerminacionCtrl;
         private System.Windows.Forms.Button SiguienteBtn;
         private System.Windows.Forms.Button AnteriorBtn;
-        private System.Windows.Forms.Button AgregarBtn;
+        private System.Windows.Forms.Button NuevaBtn;
         private System.Windows.Forms.Button GuardarBtn;
         private System.Windows.Forms.CheckBox CompletadaCtrl;
     }

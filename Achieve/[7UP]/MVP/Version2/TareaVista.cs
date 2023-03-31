@@ -1,22 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Version2
 {
-    public partial class TareaForm : Form, ITareaVista
+    public partial class TareaVista : Form, ITareaVista
     {
         public string Estado { set { StatusLabel.Text = value; } }
         public bool Cambiado { get; set; }
 
         
-        public TareaForm()
+        public TareaVista()
         {
             InitializeComponent();
         }
@@ -28,7 +21,7 @@ namespace Version2
         }
 
 
-        public event EventHandler<EventArgs> AgregarTarea;
+        public event EventHandler<EventArgs> NuevaTarea;
         public event EventHandler<EventArgs> GuardarTarea;
         public event EventHandler<EventArgs> TareaAnterior;
         public event EventHandler<EventArgs> TareaSiguiente;
@@ -42,19 +35,20 @@ namespace Version2
                 MessageBoxIcon.Question);
         }
 
-        private void AgregarBtn_Click(object sender, EventArgs e)
-        {
-            AgregarTarea?.Invoke(this, EventArgs.Empty);
-        }
 
         private void GuardarBtn_Click(object sender, EventArgs e)
+        {
+            GuardarTarea?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void NuevaBtn_Click(object sender, EventArgs e)
         {
             if (Cambiado)
             {
                 if (AbandonaEdicion() == DialogResult.Yes) Cambiado = false;
                 else { return; }
             }
-            GuardarTarea?.Invoke(this, EventArgs.Empty);
+            NuevaTarea?.Invoke(this, EventArgs.Empty);
         }
 
         private void AnteriorBtn_Click(object sender, EventArgs e)
@@ -94,14 +88,30 @@ namespace Version2
 
         public DateTime? FechaComienzo
         {
-            get { return DateTime.Parse(FechaComienzoCtrl.Text); }
-            set => FechaComienzoCtrl.Text = value.ToString();
+            get
+            {
+                if (string.IsNullOrWhiteSpace(FechaComienzoCtrl.Text)) return null;
+                else { return DateTime.Parse(FechaComienzoCtrl.Text); }
+            }
+            set
+            {
+                if (value == null) FechaComienzoCtrl.Text = string.Empty;
+                else { FechaComienzoCtrl.Text = value.ToString(); }
+            }
         }
 
         public DateTime? FechaVencimiento
         {
-            get { return DateTime.Parse(FechaVencimientoCtrl.Text); }
-            set => FechaVencimientoCtrl.Text = value.ToString();
+            get
+            {
+                if (string.IsNullOrWhiteSpace(FechaVencimientoCtrl.Text)) return null;
+                else { return DateTime.Parse(FechaVencimientoCtrl.Text); }
+            }
+            set
+            {
+                if (value == null) FechaVencimientoCtrl.Text = string.Empty;
+                else { FechaVencimientoCtrl.Text = value.ToString(); }
+            }
         }
 
         public bool Completada
@@ -112,8 +122,16 @@ namespace Version2
 
         public DateTime? FechaTerminacion
         {
-            get { return DateTime.Parse(FechaTerminacionCtrl.Text); }
-            set => FechaTerminacionCtrl.Text = value.ToString();
+            get
+            {
+                if (string.IsNullOrWhiteSpace(FechaTerminacionCtrl.Text)) return null;
+                else { return DateTime.Parse(FechaTerminacionCtrl.Text); }
+            }
+            set
+            {
+                if (value == null) FechaTerminacionCtrl.Text = string.Empty;
+                else { FechaTerminacionCtrl.Text = value.ToString(); }
+            }
         }
 
 
