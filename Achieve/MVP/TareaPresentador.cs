@@ -10,6 +10,8 @@ namespace SeparationMVP
      */
     public class TareaPresentador
     {
+        // ¿Por qué declaro a _tarea acá y no en el constructor?
+        // Porque necesito que _tarea esté disponible para toda la clase
         private readonly ITarea _tarea;
         private List<TareaModelo> _tareas;
 
@@ -20,11 +22,13 @@ namespace SeparationMVP
 
         public TareaPresentador(ITarea tarea)
         {
+            // ¿Por que inicializo _tarea acá? Porque en el constructor me
+            // llega el objeto "tarea"
             _tarea = tarea;
             Initialize();
         }
 
-
+        // Clase consumidora de los eventos
         private void Initialize()
         {
             _tareas = new List<TareaModelo>();
@@ -75,7 +79,7 @@ namespace SeparationMVP
             _tarea.StatusChange = "New task";
         }
 
-
+        // Otro método, nada que ver con los eventos
         private void BlankTask()
         {
             _tarea.Nombre = string.Empty;
@@ -92,11 +96,11 @@ namespace SeparationMVP
             if (_posicion > 0)
             {
                 _posicion--;
-                loadTask(_tareas[_posicion]);
+                LoadTask(_tareas[_posicion]);
                 _tarea.IsDirty = false;
                 _tarea.StatusChange = "Task: " + (_posicion + 1);
             }
-            else            {                _tarea.StatusChange = "No previous task";            }
+            else { _tarea.StatusChange = "No previous task"; }
         }
 
         private void Next(object sender, EventArgs e)
@@ -104,15 +108,15 @@ namespace SeparationMVP
             if (_posicion < _tareas.Count - 1)
             {
                 _posicion++;
-                loadTask(_tareas[_posicion]);
+                LoadTask(_tareas[_posicion]);
                 _tarea.IsDirty = false;
                 _tarea.StatusChange = "Task: " + (_posicion + 1);
             }
-            else             {                _tarea.StatusChange = "No next task";            }
+            else { _tarea.StatusChange = "No next task"; }
         }
 
 
-        private void loadTask(TareaModelo tarea)
+        private void LoadTask(TareaModelo tarea)
         {
             _tarea.Nombre = tarea.Name;
             _tarea.Prioridad = tarea.Priority;

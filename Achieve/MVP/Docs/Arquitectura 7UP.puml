@@ -23,39 +23,39 @@ title Arquitectura 7UP
 
 ' --- ENTIDADES ----------------------------------------------------------------
 
-package View <<Node>> {
+package View <<Rectangle>> {
 }
 
 
-package Presenter <<Node>> {
+package Presenter <<Rectangle>> {
 }
 
-note right of Presenter
-    Controladora
-    de la GUI
-end note
+' note right of Presenter
+'     Controladora
+'     de la GUI
+' end note
 
-package Model <<Node>> {
+package Model <<Rectangle>> {
 }
 
-note bottom of Model
-    Business Entities (BE)
-    Estructura (Cardacci)
-end note
+' note bottom of Model
+'     Business Entities (BE)
+'     Estructura (Cardacci)
+' end note
 
-package Abstract <<Node>> {
-}
-
-
-package Logic <<Node>> {
+package Abstract <<Rectangle>> {
 }
 
 
-package Mapper <<Node>> {
+package Logic <<Rectangle>> {
 }
 
 
-package DataAccess <<Node>> {
+package Mapper <<Rectangle>> {
+}
+
+
+package DataAccess <<Rectangle>> {
 }
 
 
@@ -65,22 +65,22 @@ package Database <<Database>> {
 
 ' --- RELACIONES ---------------------------------------------------------------
 
-View        --> Presenter
-View         ---> Abstract
+View       --> Abstract
+Presenter   -> Abstract
+Model     ---> Abstract
+Logic       -> Abstract
+Mapper      -> Abstract
+
+View       --> Presenter
 
 Presenter  --> Model
 Presenter  --> Logic
-Presenter  -> Abstract
 
-Logic       --> Model
-Logic       --> Mapper
-Logic       -> Abstract
+Logic      --> Model
+Logic      --> Mapper
 
-Mapper         --> Model
-Mapper         --> DataAccess
-Mapper         -> Abstract
-
-Model   -> Abstract
+Mapper     --> Model
+Mapper     --> DataAccess
 
 DataAccess --> Database
 
