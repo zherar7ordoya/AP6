@@ -6,7 +6,7 @@
 | Linq      | No       |
 | Material  | Sí       |
 | Murach    | No       |
-| MVP       | No       |
+| MVP       | Sí       |
 | Ribbon    | No*      |
 | XML       | No       |
 
