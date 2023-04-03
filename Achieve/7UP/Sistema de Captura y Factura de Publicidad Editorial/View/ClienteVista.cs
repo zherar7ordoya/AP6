@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class ClienteVista : MaterialForm, IClienteVista
+    public partial class ClienteVista :  MaterialForm, IClienteVista
     {
         ClientePresentador _presentador;
         public ClienteVista()

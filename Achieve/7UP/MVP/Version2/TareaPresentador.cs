@@ -5,49 +5,49 @@ namespace Version2
 {
     public class TareaPresentador
     {
-        private readonly ITareaVista _tarea;
+        private readonly ITareaVista _vista;
         private List<TareaModelo> _tareas;
 
         private int _posicion = 0;
         private bool _nueva = true;
 
 
-        public TareaPresentador(ITareaVista tarea)
+        public TareaPresentador(ITareaVista vista)
         {
-            _tarea = tarea;
+            _vista = vista;
             Inicializar();
         }
 
         private void Inicializar()
         {
             _tareas = new List<TareaModelo>();
-            _tarea.NuevaTarea += NuevaTarea;
-            _tarea.GuardarTarea += GuardarTarea;
-            _tarea.TareaAnterior += TareaAnterior;
-            _tarea.TareaSiguiente += TareaSiguiente;
-            VaciarTarea();
-            _tarea.Estado = "Listo";
+            _vista.NuevaTarea += NuevaTarea;
+            _vista.GuardarTarea += GuardarTarea;
+            _vista.TareaAnterior += TareaAnterior;
+            _vista.TareaSiguiente += TareaSiguiente;
+            LimpiarVista();
+            _vista.Estado = "Listo";
         }
 
         // Métodos auxiliares
-        private void VaciarTarea()
+        private void LimpiarVista()
         {
-            _tarea.Nombre = string.Empty;
-            _tarea.Prioridad = "Baja";
-            _tarea.FechaComienzo = null;
-            _tarea.FechaVencimiento = null;
-            _tarea.Completada = false;
-            _tarea.FechaTerminacion = null;
+            _vista.Nombre = string.Empty;
+            _vista.Prioridad = "Alta";
+            _vista.FechaComienzo = null;
+            _vista.FechaVencimiento = null;
+            _vista.Completada = false;
+            _vista.FechaTerminacion = null;
         }
 
         private void CargarTarea(TareaModelo tarea)
         {
-            _tarea.Nombre = tarea.Nombre;
-            _tarea.Prioridad = tarea.Prioridad;
-            _tarea.FechaComienzo = tarea.FechaComienzo;
-            _tarea.FechaVencimiento = tarea.FechaVencimiento;
-            _tarea.Completada = tarea.Completada;
-            _tarea.FechaTerminacion = tarea.FechaTerminacion;
+            _vista.Nombre = tarea.Nombre;
+            _vista.Prioridad = tarea.Prioridad;
+            _vista.FechaComienzo = tarea.FechaComienzo;
+            _vista.FechaVencimiento = tarea.FechaVencimiento;
+            _vista.Completada = tarea.Completada;
+            _vista.FechaTerminacion = tarea.FechaTerminacion;
             _nueva = false;
         }
 
@@ -55,11 +55,11 @@ namespace Version2
         // Métodos principales
         private void NuevaTarea(object sender, EventArgs e)
         {
-            VaciarTarea();
+            LimpiarVista();
             _nueva = true;
-            _tarea.Cambiado = false;
+            _vista.Cambiado = false;
             _posicion = _tareas.Count;
-            _tarea.Estado = "Nueva tarea";
+            _vista.Estado = "Nueva tarea";
         }
 
         private void GuardarTarea(object sender, EventArgs e)
@@ -69,12 +69,12 @@ namespace Version2
             if (_nueva) tarea = new TareaModelo();
             else { tarea = _tareas[_posicion]; }
 
-            tarea.Nombre = _tarea.Nombre;
-            tarea.Prioridad = _tarea.Prioridad;
-            tarea.FechaComienzo = _tarea.FechaComienzo;
-            tarea.FechaVencimiento = _tarea.FechaVencimiento;
-            tarea.Completada = _tarea.Completada;
-            tarea.FechaTerminacion = _tarea.FechaTerminacion;
+            tarea.Nombre = _vista.Nombre;
+            tarea.Prioridad = _vista.Prioridad;
+            tarea.FechaComienzo = _vista.FechaComienzo;
+            tarea.FechaVencimiento = _vista.FechaVencimiento;
+            tarea.Completada = _vista.Completada;
+            tarea.FechaTerminacion = _vista.FechaTerminacion;
 
             if (_nueva)
             {
@@ -82,8 +82,8 @@ namespace Version2
                 _nueva = false;
                 _posicion = _tareas.Count - 1;
             }
-            _tarea.Cambiado = false;
-            _tarea.Estado = "Tarea guardada";
+            _vista.Cambiado = false;
+            _vista.Estado = "Tarea guardada";
         }
 
         private void TareaAnterior(object sender, EventArgs e)
@@ -92,10 +92,10 @@ namespace Version2
             {
                 _posicion--;
                 CargarTarea(_tareas[_posicion]);
-                _tarea.Cambiado = false;
-                _tarea.Estado = $"Tarea: {_posicion + 1}";
+                _vista.Cambiado = false;
+                _vista.Estado = $"Tarea: {_posicion + 1}";
             }
-            else { _tarea.Estado = "No hay tarea previa"; }
+            else { _vista.Estado = "No hay tarea previa"; }
         }
 
         private void TareaSiguiente(object sender, EventArgs e)
@@ -104,10 +104,10 @@ namespace Version2
             {
                 _posicion++;
                 CargarTarea(_tareas[_posicion]);
-                _tarea.Cambiado = false;
-                _tarea.Estado = $"Tarea: {_posicion + 1}";
+                _vista.Cambiado = false;
+                _vista.Estado = $"Tarea: {_posicion + 1}";
             }
-            else { _tarea.Estado = "No hay tarea siguiente"; }
+            else { _vista.Estado = "No hay tarea siguiente"; }
         }
     }
 }
