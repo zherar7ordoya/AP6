@@ -54,12 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClienteAltaModificacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClienteAltaModificacion.Designer.cs">
-      <DependentUpon>ClienteAltaModificacion.cs</DependentUpon>
-    </Compile>
     <Compile Include="ClienteVista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,9 +62,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ClienteAltaModificacion.resx">
-      <DependentUpon>ClienteAltaModificacion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClienteVista.resx">
       <DependentUpon>ClienteVista.cs</DependentUpon>
     </EmbeddedResource>

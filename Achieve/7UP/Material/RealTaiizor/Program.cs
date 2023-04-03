@@ -22,9 +22,9 @@ namespace ReaLTaiizor.UI
                 CultureInfo cultureInfo = new(CultureInfo.CurrentCulture.TextInfo.CultureName);
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.CurrentCulture = cultureInfo;
-                Application.Run(FormHelper.Open(Arg));
-                // string[] seleccion = { "poison" };
-                // Application.Run(FormHelper.Open(seleccion));
+                // Application.Run(FormHelper.Open(Arg));
+                string[] seleccion = { "poison" };
+                Application.Run(FormHelper.Open(seleccion));
             }
             catch (Exception ex)
             {

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mapper
+namespace Abstract
 {
-    public class Class1
+    public interface IId
     {
+        int Id { get; set; }
     }
 }

@@ -44,7 +44,11 @@
     <Compile Include="..\View\Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="IClienteModelo.cs" />
+    <Compile Include="IClienteVista.cs" />
+    <Compile Include="ICRUD.cs" />
+    <Compile Include="IId.cs" />
+    <Compile Include="ITelefonoModelo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

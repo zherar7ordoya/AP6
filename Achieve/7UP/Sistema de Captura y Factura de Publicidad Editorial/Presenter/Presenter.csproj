@@ -44,9 +44,13 @@
     <Compile Include="..\View\Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ClientePresentador.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Abstract\Abstract.csproj">
+      <Project>{98704000-bbb2-4ea8-bae8-d28935568699}</Project>
+      <Name>Abstract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{88cf31fe-9f0b-430e-8178-9fb72737359b}</Project>
       <Name>Logic</Name>

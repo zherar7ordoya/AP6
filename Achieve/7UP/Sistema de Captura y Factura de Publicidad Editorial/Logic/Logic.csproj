@@ -44,7 +44,7 @@
     <Compile Include="..\View\Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ClienteLogica.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abstract\Abstract.csproj">
