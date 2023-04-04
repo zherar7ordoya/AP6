@@ -1,12 +1,11 @@
-﻿using System.Windows;
-
-namespace Libreria
+﻿namespace ArchivoDLL
 {
     public class Cita
     {
-        public static void MostrarCita()
+        public static string MostrarCita()
         {
-            MessageBox.Show("No he venido, amigos, a robar vuestros corazones.");
+            // ALT + 0151
+            return "No he venido, amigos, a robar vuestros corazones.\n—Julio César";
         }
     }
 }
