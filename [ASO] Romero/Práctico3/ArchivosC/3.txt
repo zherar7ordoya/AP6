@@ -1,2 +1,0 @@
-
-El valor de BUFSIZE es 128
