@@ -33,7 +33,7 @@ namespace Presenter
         {
             _clientes = new List<IClienteModelo>();
 
-            _cliente.GetAllClientes += GetAllClientes;
+            //_cliente.GetAllClientes += GetAllClientes;
             _cliente.GetCliente += GetCliente;
             _cliente.AddCliente += AddCliente;
             _cliente.RemoveCliente += RemoveCliente;
@@ -67,9 +67,9 @@ namespace Presenter
         }
 
         // Métodos principales
-        private void GetAllClientes(object sender, EventArgs e)
+        private DataTable GetAllClientes(object sender, EventArgs e)
         {
-            //return _logica.GetAll();
+            return _logica.GetAll();
         }
 
 

@@ -57,8 +57,8 @@
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
             this.materialButton1.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton1.Location = new System.Drawing.Point(589, 325);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
+            this.materialButton1.Location = new System.Drawing.Point(524, 276);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.materialButton1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -77,8 +77,8 @@
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
             this.materialButton2.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton2.Location = new System.Drawing.Point(667, 325);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
+            this.materialButton2.Location = new System.Drawing.Point(593, 276);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.materialButton2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -95,8 +95,8 @@
             this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(27, 84);
-            this.materialLabel1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.materialLabel1.Location = new System.Drawing.Point(24, 71);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.materialLabel1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(57, 19);
@@ -114,8 +114,8 @@
             this.NombreCtrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.NombreCtrl.HideSelection = true;
             this.NombreCtrl.LeadingIcon = null;
-            this.NombreCtrl.Location = new System.Drawing.Point(136, 84);
-            this.NombreCtrl.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.NombreCtrl.Location = new System.Drawing.Point(121, 71);
+            this.NombreCtrl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.NombreCtrl.MaxLength = 32767;
             this.NombreCtrl.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.NombreCtrl.Name = "NombreCtrl";
@@ -127,7 +127,7 @@
             this.NombreCtrl.SelectionLength = 0;
             this.NombreCtrl.SelectionStart = 0;
             this.NombreCtrl.ShortcutsEnabled = true;
-            this.NombreCtrl.Size = new System.Drawing.Size(266, 48);
+            this.NombreCtrl.Size = new System.Drawing.Size(236, 48);
             this.NombreCtrl.TabIndex = 3;
             this.NombreCtrl.TabStop = false;
             this.NombreCtrl.Text = "Gerardo Tordoya";
@@ -143,8 +143,8 @@
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
             this.materialButton3.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton3.Location = new System.Drawing.Point(745, 325);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
+            this.materialButton3.Location = new System.Drawing.Point(662, 276);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.materialButton3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton3.Name = "materialButton3";
             this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -160,8 +160,8 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(27, 140);
-            this.materialLabel2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.materialLabel2.Location = new System.Drawing.Point(24, 119);
+            this.materialLabel2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.materialLabel2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(97, 19);
@@ -170,11 +170,11 @@
             // 
             // FechaAltaCtrl
             // 
-            this.FechaAltaCtrl.Location = new System.Drawing.Point(136, 140);
-            this.FechaAltaCtrl.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.FechaAltaCtrl.Location = new System.Drawing.Point(121, 119);
+            this.FechaAltaCtrl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.FechaAltaCtrl.MinimumSize = new System.Drawing.Size(0, 29);
             this.FechaAltaCtrl.Name = "FechaAltaCtrl";
-            this.FechaAltaCtrl.Size = new System.Drawing.Size(266, 29);
+            this.FechaAltaCtrl.Size = new System.Drawing.Size(237, 29);
             this.FechaAltaCtrl.TabIndex = 4;
             this.FechaAltaCtrl.Value = new System.DateTime(2023, 9, 27, 0, 0, 0, 0);
             // 
@@ -184,7 +184,7 @@
             this.ActivoCtrl.Checked = true;
             this.ActivoCtrl.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ActivoCtrl.Depth = 0;
-            this.ActivoCtrl.Location = new System.Drawing.Point(136, 181);
+            this.ActivoCtrl.Location = new System.Drawing.Point(121, 154);
             this.ActivoCtrl.Margin = new System.Windows.Forms.Padding(0);
             this.ActivoCtrl.MouseLocation = new System.Drawing.Point(-1, -1);
             this.ActivoCtrl.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
@@ -209,8 +209,8 @@
             this.IdCtrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.IdCtrl.HideSelection = true;
             this.IdCtrl.LeadingIcon = null;
-            this.IdCtrl.Location = new System.Drawing.Point(136, 26);
-            this.IdCtrl.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.IdCtrl.Location = new System.Drawing.Point(121, 22);
+            this.IdCtrl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.IdCtrl.MaxLength = 32767;
             this.IdCtrl.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.IdCtrl.Name = "IdCtrl";
@@ -222,7 +222,7 @@
             this.IdCtrl.SelectionLength = 0;
             this.IdCtrl.SelectionStart = 0;
             this.IdCtrl.ShortcutsEnabled = true;
-            this.IdCtrl.Size = new System.Drawing.Size(103, 48);
+            this.IdCtrl.Size = new System.Drawing.Size(92, 48);
             this.IdCtrl.TabIndex = 2;
             this.IdCtrl.TabStop = false;
             this.IdCtrl.Text = "1";
@@ -236,8 +236,8 @@
             this.materialLabel3.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(27, 26);
-            this.materialLabel3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.materialLabel3.Location = new System.Drawing.Point(24, 22);
+            this.materialLabel3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.materialLabel3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(14, 19);
@@ -252,8 +252,8 @@
             this.materialButton4.HighEmphasis = true;
             this.materialButton4.Icon = null;
             this.materialButton4.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton4.Location = new System.Drawing.Point(299, 180);
-            this.materialButton4.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
+            this.materialButton4.Location = new System.Drawing.Point(266, 153);
+            this.materialButton4.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.materialButton4.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton4.Name = "materialButton4";
             this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -268,10 +268,10 @@
             // 
             this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EstadoCtrl});
-            this.StatusStrip.Location = new System.Drawing.Point(6, 371);
+            this.StatusStrip.Location = new System.Drawing.Point(5, 351);
             this.StatusStrip.Name = "StatusStrip";
-            this.StatusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 20, 0);
-            this.StatusStrip.Size = new System.Drawing.Size(871, 22);
+            this.StatusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
+            this.StatusStrip.Size = new System.Drawing.Size(791, 22);
             this.StatusStrip.TabIndex = 21;
             this.StatusStrip.Text = "statusStrip1";
             // 
@@ -291,11 +291,11 @@
             this.groupBox1.Controls.Add(this.NombreCtrl);
             this.groupBox1.Controls.Add(this.materialLabel2);
             this.groupBox1.Controls.Add(this.materialLabel3);
-            this.groupBox1.Location = new System.Drawing.Point(447, 77);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.groupBox1.Location = new System.Drawing.Point(397, 65);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.groupBox1.Size = new System.Drawing.Size(423, 235);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.groupBox1.Size = new System.Drawing.Size(376, 200);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
@@ -304,37 +304,36 @@
             // 
             this.ClientesCtrl.AllowUserToAddRows = false;
             this.ClientesCtrl.AllowUserToDeleteRows = false;
-            this.ClientesCtrl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.ClientesCtrl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
             this.ClientesCtrl.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.ClientesCtrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ClientesCtrl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ClientesCtrl.Location = new System.Drawing.Point(12, 77);
-            this.ClientesCtrl.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.ClientesCtrl.Location = new System.Drawing.Point(11, 71);
+            this.ClientesCtrl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.ClientesCtrl.Name = "ClientesCtrl";
             this.ClientesCtrl.ReadOnly = true;
             this.ClientesCtrl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ClientesCtrl.Size = new System.Drawing.Size(423, 284);
+            this.ClientesCtrl.Size = new System.Drawing.Size(376, 241);
             this.ClientesCtrl.TabIndex = 23;
             // 
             // ClienteVista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 397);
+            this.ClientSize = new System.Drawing.Size(801, 376);
             this.Controls.Add(this.ClientesCtrl);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.StatusStrip);
             this.Controls.Add(this.materialButton2);
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.materialButton3);
-            this.Font = new System.Drawing.Font("Cascadia Mono", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Cascadia Mono", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ClienteVista";
-            this.Padding = new System.Windows.Forms.Padding(6, 99, 6, 4);
+            this.Padding = new System.Windows.Forms.Padding(5, 84, 5, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM Clientes";
             this.Load += new System.EventHandler(this.ClienteVista_Load);

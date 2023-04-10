@@ -19,6 +19,13 @@ namespace View
     public partial class ClienteVista :  MaterialForm, IClienteVista
     {
         ClientePresentador _presentador;
+
+        public event EventHandler<EventArgs> GetAllClientes;
+        public event EventHandler<EventArgs> GetCliente;
+        public event EventHandler<EventArgs> AddCliente;
+        public event EventHandler<EventArgs> RemoveCliente;
+        public event EventHandler<EventArgs> UpdateCliente;
+
         public ClienteVista()
         {
             InitializeComponent();
@@ -28,6 +35,7 @@ namespace View
         {
             _presentador = new ClientePresentador(this);
             CargarGrilla();
+            //ClientesCtrl.DataSource = GetAllClientes;
         }
 
         private void CargarGrilla()
@@ -36,9 +44,9 @@ namespace View
             ClientesCtrl.DataSource = _presentador.CargarClientes();
         }
 
-        private void ClientesCtrl_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void ClientesCtrl_RowEnter(object sender, EventArgs e)
         {
-            //CargarGrilla();
+            CargarGrilla();
         }
 
         public string BarraEstado
@@ -75,11 +83,7 @@ namespace View
         public List<ITelefonoModelo> Telefonos { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
 
-        public event EventHandler<EventArgs> GetAllClientes;
-        public event EventHandler<EventArgs> GetCliente;
-        public event EventHandler<EventArgs> AddCliente;
-        public event EventHandler<EventArgs> RemoveCliente;
-        public event EventHandler<EventArgs> UpdateCliente;
+        
 
 
         public object Clone()
