@@ -2,7 +2,7 @@ Hola Gerardo,
 
 Diagrama de clases
 Envia diagrama de paquetes con relacion de clases adentro.
-Descuento cualculado no es una clase aparte sino que es un método de Gidftacard.
+Descuento cualculado no es una clase aparte sino que es un método de GiftCard.
 Es relacion de agregación no de composición.
 
 
@@ -11,7 +11,7 @@ Código
 
 BE
 el cliente podia tener solo 1 tj asociada no muchas..
-r reglamentación de la empresa al cliente solo se puede asociar una Gif Card.
+r reglamentación de la empresa al cliente solo se puede asociar una GiftCard.
 
 Tarjeta
 public string Pais { get; set; }es de Tajeta Internacional no de Tarjeta..
