@@ -1,9 +1,0 @@
-<Project>
-    <PropertyGroup>
-    <!-- Properties common to all projects -->
-        <Title>7UP</Title>
-        <Version>0.0.1</Version>
-        <Authors>Gerardo Tordoya</Authors>
-        <Description>Trabajo Final de la carrera Analista Programador</Description>
-    </PropertyGroup>
-</Project>
