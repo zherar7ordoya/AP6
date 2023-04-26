@@ -1,0 +1,1 @@
+Get-ChildItem -Path C:\Documents\AP6 -Recurse -Force | unblock-file
