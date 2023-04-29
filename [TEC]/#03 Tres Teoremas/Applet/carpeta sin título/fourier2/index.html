@@ -1,0 +1,134 @@
+<title>Fourier Series Simulation</title>
+<body bgcolor="#505050" text="#ffd000" vlink="#ffa000"
+      link="#ffff80" alink="#ffffff" >
+<hr>
+<OBJECT classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93" WIDTH = 600 HEIGHT = 50
+  codebase="http://java.sun.com/products/plugin/1.3/jinstall-13-win32.cab#Version=1,3,0,0">
+<param name="code" value="Fourier.class">
+<param name="archive" value="fourier.jar">
+<param name="pause" value="20">
+</object>
+<hr>
+If you get a message "need java2 for this applet" then you 
+can use the <a href="/fourier/">Java 1 version of this applet</a>
+(but the sound
+won't be as good).  If you don't have Java 2 I recommend
+you go get the <a target="_blank"
+href="/cgi-bin/go.pl?http://java.sun.com/getjava/">Java plug-in</a>
+if you are on Windows.  If you have an older browser like IE5, the
+Java plug-in is faster anyway.  But the latest Microsoft VM (in IE6) seems to
+be slightly faster than the Java plug-in so you might not want to use the
+plug-in
+all the time, since most applets out there do not require Java 2
+features.  The plug-in can be enabled and disabled as needed in the
+IE configuration.
+<hr>
+This java applet is a simulation that demonstrates
+<A href="http://mwt.e-technik.uni-ulm.de/world/lehre/basic_mathematics/fourier/node2.php3">Fourier series</a>,
+which is a method of expressing an arbitrary periodic function as
+a sum of cosine terms.  In other words, Fourier series can be used to express a
+function in terms of the frequencies (harmonics) it is composed of.
+<p>
+To select a function, you may press one of the following buttons:
+Sine, Triangle, Sawtooth, Square, and Noise.  The function is
+displayed in white, with the Fourier series approximation in red.
+If you only see a red graph, that means the Fourier approximation is
+nearly the same as the original function.  (The red graph is drawn
+on top of the white one.)
+<p>
+Below the function you will see a graph of the Fourier coefficients.
+Each one represents a frequency, or harmonic.
+There are two sets of terms; on top are the magnitude terms, and on
+the bottom are the phase terms.  Low frequencies are on the left and
+higher frequencies are on the right.  (If you're only familiar
+with Fourier series expansions that involve sines and cosines, rather
+than phases, check out
+<A href="http://mwt.e-technik.uni-ulm.de/world/lehre/basic_mathematics/fourier/node2.php3">this page</a>.)
+<p>
+The "Number of Terms" slider will adjust the number of terms in the
+expansion.  The more terms there are, the
+better the approximation.  Try sliding the "Number of Terms" slider from left
+to right slowly to see the Fourier terms added up one by one.
+<p>
+If you move the mouse over one of the harmonics, it will turn
+yellow, and the corresponding Fourier term (frequency) will be
+drawn on top of the function in yellow.  So if you move the mouse
+over all the harmonics, you can see each of the terms individually.
+Also, if you click with the right mouse button on one of the harmonics,
+the "Number of Terms" slider will be changed so that all higher-frequency
+terms will be taken out of the series.
+<p>
+You can modify the function in one of two ways.  You can
+edit the function directly by clicking on it; in this case,
+the Fourier coefficients will be regenerated when you are done.
+Or, you can modify the Fourier coefficients, in which case the
+function will be changed to match.  If you want to create a function
+from scratch, hit the "Clear" button.
+<p>
+The "Play" button will play the function at 220 Hz.  The
+frequency is adjustable using the "Playing Frequency" slider.
+Try playing
+various functions to see what they sound like.  Also try isolating each
+harmonic, or mixing two or three harmonics together.  The "Number of
+Terms" slider will affect how many harmonics are played.
+<p>
+(The sampling rate used for playing is 22khz, so frequencies higher
+than 11000 Hz will be flitered out.)
+<p>
+The "Clip" button can be used to simulate clipping.  It will
+increase the amplitude of the function,
+but will clip it if it goes out of range.  Try doing this with a
+sine function.  Using this button generally results in more jagged
+edges, which means more high-frequency terms will be involved in the
+expansion.  Some functions, like the square wave, aren't affected
+much by clipping.  Try playing the noise waveform and then hit "Clip"
+a few times to see if it changes.
+<p>
+The "Resample" button can be used to demonstrate aliasing.
+This is one of the effects which causes the "Play" button to produce such
+poor results.
+The function is replaced with samples at 12 points.  This corresponds to
+a sampling frequency of 2640 Hz (at the default playing frequency of
+220 Hz).  In almost all cases this will cause
+aliasing, where new, unwanted frequencies will be introduced.  For
+frequencies over 1320 Hz, the aliases will be stronger than the original
+frequency.
+<p>
+For example
+a frequency of 440 Hz, when resampled, will have aliases at 2200 Hz
+(2640-440), 3080 Hz (2640+440), 4840 Hz (2640*2-440), 5720 Hz (2640*2+440),
+and so on.
+<p>
+When the "Quantize" button is pressed, the values in the function are rounded
+off to the nearest multiple of 1/2.  The resulting roundoff error causes
+new frequencies to be introduced; these can be heard when the function
+is played.  This is called quantization distortion.
+<p>
+The "Rectify" button will zero out the function wherever it is negative.
+The "Full Rectify" button will take the absolute value of the function
+at all points.  Try this with the sine or sawtooth function.
+<p>
+Other things to try:
+<ul>
+<li>Draw a rapidly varying sine wave (as best you can), and check out
+the Fourier coefficients to see if the frequency is picked up by the
+Fourier decomposition.  One of the magnitudes should be much higher
+than the others.
+<li>Start with a function, and remove Fourier terms one by one by
+setting the coefficients to zero.
+<li>Start with a sine wave, and then hit the "Clip" button repeatedly.
+Watch how higher-frequency terms become more and more prominent.
+<li>Hit "Clear" and then add two frequencies to the function by
+clicking on the magnitudes.  See how the frequencies interact.
+If the frequencies are fairly close together, you should see beats;
+the amplitude of the overall function will oscillate at a frequency
+which is equal to the difference in the original two frequencies.
+</ul>
+<hr>
+<a href="Fourier.java">The source.</a>
+<hr>
+<a href="/mathphysics.html"><img src="/mathphysics_small.gif"></a>
+<a href="/index.html"><img src="/me_small.gif"></a>
+<a href="http://www.openwave.com/"><img src="/softcom_small.gif"></a>
+<br><i>java@</i><i>falstad.com</i>
+</body>
