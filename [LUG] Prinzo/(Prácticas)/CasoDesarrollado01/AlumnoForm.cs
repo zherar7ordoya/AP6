@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace CasoDesarrollado01
 {
-    public partial class Form1 : Form
+    public partial class AlumnoForm : Form
     {
         public event EventHandler Calcular;
         public event EventHandler Limpiar;
         public event EventHandler Salir;
 
-        public Form1()
+        public AlumnoForm()
         {
             InitializeComponent();
             CalcularButton.Click += delegate { Calcular?.Invoke(this, EventArgs.Empty); };

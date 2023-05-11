@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CasoDesarrollado01
+namespace CasoDesarrollado01.Abstraccion
 {
-    class Controlador
+    interface IAlumnoModelo
     {
     }
 }

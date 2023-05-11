@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BD2945C6-59BC-40DE-9178-5668D3C55CE5}</ProjectGuid>
+    <ProjectGuid>{8DEAEDBE-C6D1-4578-BF8C-36DDB695EB44}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CasoDesarrollado01</RootNamespace>
-    <AssemblyName>CasoDesarrollado01</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>MVPExample</RootNamespace>
+    <AssemblyName>MVPExample</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,22 +48,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstraccion\IAlumnoModelo.cs" />
-    <Compile Include="Abstraccion\IAlumnoPresentador.cs" />
-    <Compile Include="Abstraccion\IAlumnoVista.cs" />
-    <Compile Include="AlumnoForm.cs">
+    <Compile Include="Factory.cs" />
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AlumnoForm.Designer.cs">
-      <DependentUpon>AlumnoForm.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fabrica.cs" />
-    <Compile Include="Modelo\AlumnoModelo.cs" />
-    <Compile Include="Presentador\AlumnoPresentador.cs" />
+    <Compile Include="Interfaces\ICalcPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AlumnoForm.resx">
-      <DependentUpon>AlumnoForm.cs</DependentUpon>
+    <Compile Include="CalcForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalcForm.Designer.cs">
+      <DependentUpon>CalcForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ICalcModel.cs" />
+    <Compile Include="Interfaces\ICalcView.cs" />
+    <Compile Include="Models\CalcModel.cs" />
+    <Compile Include="Presenters\CalcPresenter.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +81,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="CalcForm.resx">
+      <DependentUpon>CalcForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
