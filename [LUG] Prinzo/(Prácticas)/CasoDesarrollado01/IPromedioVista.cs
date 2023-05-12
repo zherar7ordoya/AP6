@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CasoDesarrollado01.Abstraccion
+namespace CasoDesarrollado01
 {
-    interface IAlumnoVista
+    public interface IPromedioVista
     {
         event EventHandler Calcular;
         event EventHandler Limpiar;
         event EventHandler Salir;
-
+         
         string Alumno { get; set; }
         string Promedio { get; set; }
         string Baja { get; set; }
@@ -20,5 +20,6 @@ namespace CasoDesarrollado01.Abstraccion
         string Nota2 { get; set; }
         string Nota3 { get; set; }
         string Nota4 { get; set; }
+
     }
 }

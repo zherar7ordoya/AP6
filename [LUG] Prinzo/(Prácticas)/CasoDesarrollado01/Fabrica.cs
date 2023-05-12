@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace CasoDesarrollado01
 {
-    class Fabrica
+    public static class Fabrica
     {
+        public static PromedioPresentador CrearPromedioPresentador()
+        {
+            return new PromedioPresentador(CrearPromedioModelo(), CrearPromedioVista());
+        }
+        public static IPromedioModelo CrearPromedioModelo()
+        {
+            return new PromedioModelo();
+        }
+
+        public static IPromedioVista CrearPromedioVista()
+        {
+            return new PromedioVista();
+        }
     }
 }

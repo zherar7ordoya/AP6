@@ -10,15 +10,16 @@ using System.Windows.Forms;
 
 namespace CasoDesarrollado01
 {
-    public partial class AlumnoForm : Form
+    public partial class PromedioVista : Form, IPromedioVista
     {
         public event EventHandler Calcular;
         public event EventHandler Limpiar;
         public event EventHandler Salir;
 
-        public AlumnoForm()
+        public PromedioVista()
         {
             InitializeComponent();
+
             CalcularButton.Click += delegate { Calcular?.Invoke(this, EventArgs.Empty); };
             LimpiarButton.Click += delegate { Limpiar?.Invoke(this, EventArgs.Empty); };
             SalirButton.Click += delegate { Salir?.Invoke(this, EventArgs.Empty); };
