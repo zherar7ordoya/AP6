@@ -16,7 +16,7 @@ namespace CasoDesarrollado01
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AlumnoForm());
+            Application.Run(new PrincipalForm());
         }
     }
 }

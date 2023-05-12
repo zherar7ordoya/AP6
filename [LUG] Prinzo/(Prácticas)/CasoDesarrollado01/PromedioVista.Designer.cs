@@ -1,7 +1,7 @@
 ﻿
 namespace CasoDesarrollado01
 {
-    partial class AlumnoForm
+    partial class PromedioVista
     {
         /// <summary>
         /// Variable del diseñador necesaria.
