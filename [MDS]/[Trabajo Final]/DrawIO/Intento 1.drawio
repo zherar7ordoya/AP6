@@ -1,10 +1,10 @@
-<mxfile host="Electron" modified="2023-05-16T15:21:01.153Z" agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="kMljJ24mwV3mzLcAHBl5" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2023-05-16T15:28:01.661Z" agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="UuYV1g4sYQrFLTSsfpKV" version="21.1.2" type="device">
   <diagram name="Page-1" id="2a216829-ef6e-dabb-86c1-c78162f3ba2b">
     <mxGraphModel dx="2255" dy="532" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="aIT9Nde6jPvjy9GI7aws-13" value="PN1 - Proceso de Ventas" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=20;horizontalStack=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" parent="1" vertex="1">
+        <mxCell id="aIT9Nde6jPvjy9GI7aws-13" value="Diagrama de Proceso (1 &amp;amp; 2)" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=20;horizontalStack=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" parent="1" vertex="1">
           <mxGeometry x="-1160" y="10" width="1210" height="640" as="geometry" />
         </mxCell>
         <mxCell id="aIT9Nde6jPvjy9GI7aws-14" value="Cliente" style="swimlane;html=1;startSize=20;horizontal=0;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" parent="aIT9Nde6jPvjy9GI7aws-13" vertex="1">
