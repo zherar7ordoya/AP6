@@ -1,6 +1,6 @@
 ﻿namespace Presentador
 {
-    public interface IVistaOperaciones
+    public interface IOperacionVista
     {
         double Num1 { get; set; }
         double Num2 { get; set; }

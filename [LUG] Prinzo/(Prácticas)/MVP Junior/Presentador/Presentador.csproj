@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PresentadorOperaciones.cs" />
-    <Compile Include="IVistaOperaciones.cs" />
+    <Compile Include="OperacionPresentador.cs" />
+    <Compile Include="IOperacionVista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
