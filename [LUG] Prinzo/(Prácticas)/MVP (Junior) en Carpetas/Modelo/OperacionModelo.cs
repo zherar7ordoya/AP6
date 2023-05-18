@@ -1,4 +1,9 @@
-﻿namespace Modelo
+﻿/**
+ * Modelo es el MODELO DE NEGOCIO como tal.
+ */
+
+
+namespace Aplicativo
 {
     public class OperacionModelo
     {

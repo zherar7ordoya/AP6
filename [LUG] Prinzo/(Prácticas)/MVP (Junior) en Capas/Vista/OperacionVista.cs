@@ -8,6 +8,34 @@ URL:            https://nicolocodev.wordpress.com/2011/08/31/patronmvpnet/
 ==========================================================================
 */
 
+
+/*
+       Actualiza       ┌────────┐
+       ┌──────────────►│ IVista │
+       │               └────────┘
+       │                   △
+       │                   │
+       │               ┌───┴────┐
+       │               │ Vista  │◄────── Interacción del Usuario
+       │               └───┬────┘
+┌──────┴──────┐ Llamadas   │
+│             │◄───────────┘
+│ Presentador │
+│             │◄───────────┐
+└──────┬──────┘ Eventos    │
+       │               ┌───┴────┐
+       └──────────────►│ Modelo │
+        Maneja         └────────┘
+
+
+Entendemos entonces que:
+      *=> El Modelo es el MODELO DE NEGOCIO como tal
+      *=> La Vista será nuestra tecnología de INTERFAZ DE USUARIO
+      *=> El Presentador será el encargado de desacoplar la comunicación
+          entre el Modelo y la Vista
+*/
+
+
 using Presentador;
 using System;
 using System.Windows.Forms;
@@ -35,6 +63,7 @@ namespace Vista
             _presentador.ActualizaVista();
         }
 
+        #region ||||||||||||||||||||||||||| IMPLEMENTACIÓN DE «IOperacionVista»
         public double Num1
         {
             get { return !string.IsNullOrEmpty(Num1TextBox.Text) ? Convert.ToDouble(Num1TextBox.Text) : 0; }
@@ -51,6 +80,7 @@ namespace Vista
         {
             set { ResultadoLabel.Text = value.ToString(); }
         }
+        #endregion
     }
 
 }

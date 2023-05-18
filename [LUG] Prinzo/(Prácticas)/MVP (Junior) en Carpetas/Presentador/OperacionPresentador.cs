@@ -1,6 +1,9 @@
-﻿using Modelo;
+﻿/**
+ * Presentador se encarga de desacoplar la comunicación entre Modelo y Vista.
+ */
 
-namespace Presentador
+
+namespace Aplicativo
 {
     public class OperacionPresentador
     {
