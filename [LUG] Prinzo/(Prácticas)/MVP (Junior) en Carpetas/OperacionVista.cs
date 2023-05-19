@@ -67,7 +67,7 @@ namespace Aplicativo
             // Evento: Momento 2 => Desencadenamiento
             // (se produce en clase propietaria del evento)
             // ResultadoButton.Click += delegate { Actualizar?.Invoke(this, EventArgs.Empty); };
-            ResultadoButton.Click += Actualizar; 
+            ResultadoButton.Click += Actualizar;
         }
 
 
@@ -76,14 +76,8 @@ namespace Aplicativo
         {
             get
             {
-                try
-                {
-                    return Convert.ToDouble(Num1TextBox.Text);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Num1 tiene que ser un número válido.");
-                }
+                try { return Convert.ToDouble(Num1TextBox.Text); }
+                catch (Exception) { MessageBox.Show("Num1 tiene que ser un número válido."); }
                 return 0;
             }
             set { Num1TextBox.Text = value.ToString(); }
@@ -93,16 +87,9 @@ namespace Aplicativo
         {
             get
             {
-                try
-                {
-                    return Convert.ToDouble(Num2TextBox.Text);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Num2 tiene que ser un número válido.");
-                }
+                try { return Convert.ToDouble(Num2TextBox.Text); }
+                catch (Exception) { MessageBox.Show("Num2 tiene que ser un número válido."); }
                 return 0;
-
             }
             set { Num2TextBox.Text = value.ToString(); }
         }
