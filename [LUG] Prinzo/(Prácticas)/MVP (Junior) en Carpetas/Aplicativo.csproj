@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fabrica.cs" />
     <Compile Include="Modelo\OperacionModelo.cs" />
     <Compile Include="OperacionVista.cs">
       <SubType>Form</SubType>

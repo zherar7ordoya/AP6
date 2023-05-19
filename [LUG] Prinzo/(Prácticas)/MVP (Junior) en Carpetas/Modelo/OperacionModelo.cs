@@ -1,10 +1,8 @@
-﻿/**
- * Modelo es el MODELO DE NEGOCIO como tal.
- */
-
-
-namespace Aplicativo
+﻿namespace Aplicativo
 {
+    // ---------------------------------------
+    // Modelo es el MODELO DE NEGOCIO como tal
+    // ---------------------------------------
     public class OperacionModelo
     {
         public double Suma(double num1, double num2)

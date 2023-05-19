@@ -39,45 +39,71 @@ Entendemos entonces que:
 
 
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
 
 namespace Aplicativo
 {
-
+    // ---------------------------------------------
+    // Vista es la tecnología de INTERFAZ DE USUARIO
+    // ---------------------------------------------
     public partial class OperacionVista : Form, IOperacionVista
     {
         private readonly OperacionPresentador _presentador;
 
+        // Evento: Momento 1 => Declaración
+        // (se hace en clase propietaria del evento)
+        public event EventHandler Actualizar;
+
         public OperacionVista()
         {
             InitializeComponent();
-            _presentador = new OperacionPresentador(this);
+            _presentador = Fabrica.CreaOperacionPresentador(this);
         }
 
         private void OperacionVista_Load(object sender, EventArgs e)
         {
             _presentador.IniciaVista();
+
+            // Evento: Momento 2 => Desencadenamiento
+            // (se produce en clase propietaria del evento)
+            // ResultadoButton.Click += delegate { Actualizar?.Invoke(this, EventArgs.Empty); };
+            ResultadoButton.Click += Actualizar; 
         }
 
-        private void Resultado_Click(object sender, EventArgs e)
-        {
-            _presentador.ActualizaVista();
-        }
 
         #region ||||||||||||||||||||||||||| IMPLEMENTACIÓN DE «IOperacionVista»
-        [Required]
-        [RegularExpression(@"^[0-9]*$", ErrorMessage = "Please enter valid integer Number")]
         public double Num1
         {
-            // get { return !string.IsNullOrEmpty(Num1TextBox.Text) ? Convert.ToDouble(Num1TextBox.Text) : 0; }
-            get { return Convert.ToDouble(Num1TextBox.Text); }
+            get
+            {
+                try
+                {
+                    return Convert.ToDouble(Num1TextBox.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Num1 tiene que ser un número válido.");
+                }
+                return 0;
+            }
             set { Num1TextBox.Text = value.ToString(); }
         }
 
         public double Num2
         {
-            get { return !string.IsNullOrEmpty(Num2TextBox.Text) ? Convert.ToDouble(Num2TextBox.Text) : 0; }
+            get
+            {
+                try
+                {
+                    return Convert.ToDouble(Num2TextBox.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Num2 tiene que ser un número válido.");
+                }
+                return 0;
+
+            }
             set { Num2TextBox.Text = value.ToString(); }
         }
 

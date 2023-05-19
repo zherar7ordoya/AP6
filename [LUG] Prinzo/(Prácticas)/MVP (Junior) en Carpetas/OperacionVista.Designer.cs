@@ -37,32 +37,31 @@ namespace Aplicativo
             // 
             // Num1TextBox
             // 
-            this.Num1TextBox.Location = new System.Drawing.Point(13, 13);
+            this.Num1TextBox.Location = new System.Drawing.Point(61, 25);
             this.Num1TextBox.Name = "Num1TextBox";
             this.Num1TextBox.Size = new System.Drawing.Size(100, 20);
             this.Num1TextBox.TabIndex = 0;
             // 
             // Num2TextBox
             // 
-            this.Num2TextBox.Location = new System.Drawing.Point(119, 13);
+            this.Num2TextBox.Location = new System.Drawing.Point(61, 51);
             this.Num2TextBox.Name = "Num2TextBox";
             this.Num2TextBox.Size = new System.Drawing.Size(100, 20);
             this.Num2TextBox.TabIndex = 1;
             // 
             // ResultadoButton
             // 
-            this.ResultadoButton.Location = new System.Drawing.Point(225, 13);
+            this.ResultadoButton.Location = new System.Drawing.Point(61, 98);
             this.ResultadoButton.Name = "ResultadoButton";
             this.ResultadoButton.Size = new System.Drawing.Size(100, 20);
             this.ResultadoButton.TabIndex = 2;
             this.ResultadoButton.Text = "Resultado";
             this.ResultadoButton.UseVisualStyleBackColor = true;
-            this.ResultadoButton.Click += new System.EventHandler(this.Resultado_Click);
             // 
             // ResultadoLabel
             // 
             this.ResultadoLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ResultadoLabel.Location = new System.Drawing.Point(331, 13);
+            this.ResultadoLabel.Location = new System.Drawing.Point(61, 146);
             this.ResultadoLabel.Name = "ResultadoLabel";
             this.ResultadoLabel.Size = new System.Drawing.Size(100, 20);
             this.ResultadoLabel.TabIndex = 3;
@@ -73,7 +72,7 @@ namespace Aplicativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 50);
+            this.ClientSize = new System.Drawing.Size(237, 214);
             this.Controls.Add(this.ResultadoLabel);
             this.Controls.Add(this.ResultadoButton);
             this.Controls.Add(this.Num2TextBox);
@@ -81,6 +80,7 @@ namespace Aplicativo
             this.Name = "OperacionVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Operación (Suma)";
+            this.Load += new System.EventHandler(this.OperacionVista_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
