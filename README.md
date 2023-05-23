@@ -35,7 +35,7 @@
 | :- | :- | :- | :- | :- |
 |09|Programación Orientada a Objetos\*|08|06|96|
 |10|Metodología de Desarrollo de Sistemas I|-|06|96|
-|${\color{yellow}11}$|${\color{red}Arquitecturas \space de \space Sistemas \space Operativos}$|05|05|80|
+|${\color{green}11}$|${\color{red}Arquitecturas \space de \space Sistemas \space Operativos}$|05|05|80|
 |12|Problemática del Mundo Actual|-|05|80|
 | | | | | |
 
@@ -44,9 +44,9 @@
 
 |Código Asignat.|Asignaturas|Correlativas|Hs. Semanales|Hs. Totales|
 | :- | :- | :- | :- | :- |
-|13|${\color{lightgreen}Tecnología \space de \space las \space Comunicaciones}$|${\color{yellow}11}$|06|96|
+|13|${\color{green}Tecnología \space de \space las \space Comunicaciones}$|${\color{red}11}$|06|96|
 |14|Lenguajes de Última Generación\*|09|06|96|
-|15|${\color{lightgreen}Metodología \space de \space Desarrollo \space de \space Sistemas \space II}$|10|06|96|
+|15|${\color{green}Metodología \space de \space Desarrollo \space de \space Sistemas \space II}$|10|06|96|
 |16|Base de Datos\*|10|04|64|
 | | | | | |
 
