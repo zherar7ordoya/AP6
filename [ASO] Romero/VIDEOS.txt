@@ -1,0 +1,6 @@
+ULTRA
+VC 7
+
+PLAYLIST
+Video 14 - SO Simulación de memoria contigua con particiones de igual tamaño 01
+
