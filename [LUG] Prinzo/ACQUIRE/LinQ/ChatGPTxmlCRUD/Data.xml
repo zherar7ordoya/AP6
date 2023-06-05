@@ -1,35 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Data>
   <Persona id="1">
-    <Nombre>Gerardo</Nombre>
-    <Edad>50</Edad>
+    <Nombre>Aldo Ambrosetti</Nombre>
+    <Edad>65</Edad>
   </Persona>
   <Persona id="2">
-    <Nombre>Persona 2</Nombre>
-    <Edad>30</Edad>
+    <Nombre>Betina Bilbao</Nombre>
+    <Edad>54</Edad>
   </Persona>
   <Persona id="3">
-    <Nombre>Persona 3</Nombre>
-    <Edad>42</Edad>
+    <Nombre>Carlos Colqui</Nombre>
+    <Edad>43</Edad>
+  </Persona>
+  <Persona id="4">
+    <Nombre>Damián Donatello</Nombre>
+    <Edad>32</Edad>
   </Persona>
   <Persona id="5">
-    <Nombre>Persona 5</Nombre>
-    <Edad>37</Edad>
-  </Persona>
-  <Persona id="6">
-    <Nombre>Persona 6</Nombre>
-    <Edad>28</Edad>
-  </Persona>
-  <Persona id="7">
-    <Nombre>Persona 7</Nombre>
-    <Edad>55</Edad>
-  </Persona>
-  <Persona id="8">
-    <Nombre>Persona 8</Nombre>
+    <Nombre>Esteban Echeverría</Nombre>
     <Edad>21</Edad>
-  </Persona>
-  <Persona id="9">
-    <Nombre>Persona 9</Nombre>
-    <Edad>47</Edad>
   </Persona>
 </Data>

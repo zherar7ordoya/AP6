@@ -4,7 +4,7 @@
 
 
 # ------------------------------------------------------------------------------
-# ||| INICIA MODIFICACIONES/ANULACIONES HECHAS POR GERARDO TORDOYA (YO) ||||||||
+# ||| INICIA MODIFICACIONES ||||||||||||||||||||||||||||||||||||||||||||||||||||
 # ------------------------------------------------------------------------------
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
@@ -47,7 +47,6 @@ __pycache__/
 *.pyc
 env/
 
-<<<<<<< HEAD
 
 # Build results
 # [Dd]ebug/
@@ -60,17 +59,13 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
-[Bb]in/
+# [Bb]in/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
 
 
 
-=======
-# ------------------------------------------------------------------------------
-# ||| FINALIZA MODIFICACIONES/ANULACIONES HECHAS POR GERARDO TORDOYA (YO) ||||||
->>>>>>> parent of cd720ee (2023-06-05)
 # ------------------------------------------------------------------------------
 
 
