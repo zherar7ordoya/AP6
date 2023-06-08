@@ -10,9 +10,13 @@ PROBLEMA 1
 En términos de comunicaciones digitales, supongamos que un mensaje de capa superior se divide en 10 tramas, cada una de las cuales tiene 80% de probabilidad de llegar sin daño. Si el protocolo de enlace de datos no lleva a cabo control de errores, ¿cuántas veces debe reenviarse el mensaje en promedio para conseguir que pase todo?
 
 Si cada trama tiene una probabilidad del 80% de llegar sin daño, eso significa que tiene una probabilidad del 20% de dañarse o perderse durante la transmisión. Si consideramos cada trama como un evento independiente, la probabilidad de que todas las tramas lleguen sin daño es el producto de las probabilidades individuales. En este caso, sería:
+
     Probabilidad de que todas las tramas lleguen sin daño = (0.8)^10 = 0.1073741824
+
 Esto implica que hay una probabilidad del 10.7% de que todas las tramas pasen sin ningún problema. Si el mensaje no se reenvía automáticamente en caso de errores, para asegurarse de que todas las tramas pasen sin daño, se deberían reenviar todas las tramas en promedio 1 / 0.1073741824 veces.
+
     1 / 0.1073741824 ≈ 9.31
+
 Por lo tanto, en promedio, el mensaje debería reenviarse aproximadamente 9.31 veces para garantizar que todas las tramas lleguen sin daño.
 
 
@@ -35,15 +39,17 @@ Muestre la secuencia de bits transmitida (en binario) para la trama de cuatro ca
 (a) Conteo de caracteres:
 En el método de conteo de caracteres, se utiliza un campo de conteo para indicar la longitud de la trama. Aquí está la secuencia de bits transmitida para la trama de cuatro caracteres:
 Trama: A B ESC FLAG
-Conteo: 00000100 (4 en binario)
-Secuencia de bits transmitida: 00000100 01000111 11100011 11100000 01111110
+Conteo: 00000101 (5 en binario)
+Secuencia de bits transmitida: 00000101 01000111 11100011 11100000 01111110
 
 (b) Bytes de bandera con relleno de bytes:
 En el método de bytes de bandera con relleno de bytes, se utiliza un byte de bandera (FLAG) para indicar el inicio y el final de la trama. Si algún byte de datos coincide con el byte de bandera, se utiliza el carácter de escape (ESC) para evitar ambigüedades. Además, se agrega un relleno de bytes después de cada byte de escape. Aquí está la secuencia de bits transmitida para la trama de cuatro caracteres:
 Trama: A B ESC FLAG
-Secuencia de bits transmitida: 01111110 01000111 11100011 11100000 11100000 01111110
+                               FLAG     A        B        ESC      ESC      ESC      FLAG     FLAG
+Secuencia de bits transmitida: 01111110 01000111 11100011 11100000 11100000 11100000 01111110 01111110
 
 (c) Bytes de bandera de inicio y final, con relleno de bits:
 En el método de bytes de bandera de inicio y final, con relleno de bits, se utiliza un byte de bandera de inicio (FLAG) y un byte de bandera de final (FLAG) para indicar el inicio y el final de la trama. Si algún byte de datos coincide con el byte de bandera, se utiliza el carácter de escape (ESC) para evitar ambigüedades. Además, se agrega un relleno de bits después de cada byte de escape. Aquí está la secuencia de bits transmitida para la trama de cuatro caracteres:
 Trama: A B ESC FLAG
+                               FLAG     A        B        ESC      ESC      FLAG
 Secuencia de bits transmitida: 01111110 01000111 11100011 11100000 11100000 01111110
