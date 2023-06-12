@@ -27,16 +27,16 @@ QLi[5]=1
 0
 1
 0
-731
+636
 QLc[8]="5.0.10c"
-QLc[64]="m≠öåπ£ÇVÇâ°ô≥ùmb_I"
-N.1="plot"*85x1*113x24
+QLc[64]="bÖõsπÄzQwáíqπº§8iLI"
+N.1="plot"*85x1*118x62
 px="Time (sec)"
 pax=0
 pf=H
 pf=F
-pb=2,-2
-pbx=4,2
+pb=1,-1
+pbx=3,1
 pbY=0,0
 pbX=0,0
 pm=-1,0
@@ -65,7 +65,7 @@ DLs[3]=0
 "0."
 "0.5"
 DLE
-N.8="plot"*77x40*71x21
+N.8="plot"*11x51*71x21
 px="Frequency (Hz)"
 pax=0
 pf=H

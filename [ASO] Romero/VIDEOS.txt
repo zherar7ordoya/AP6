@@ -1,5 +1,5 @@
 ULTRA
-VC 8
+VC 11
 
 
 MINISTRO:
@@ -22,4 +22,5 @@ Mapeo de páginas a marcos: El sistema operativo establece una tabla de páginas
 Traducción de direcciones: Cuando un proceso intenta acceder a una dirección virtual, el sistema operativo utiliza la tabla de páginas para traducir esa dirección virtual a una dirección física correspondiente. Esta traducción implica buscar en la tabla de páginas y encontrar la entrada que corresponde a la página virtual deseada. La dirección física asociada al marco correspondiente se utiliza para acceder a los datos o instrucciones almacenados en ese marco físico.
 
 Administración de la memoria: El sistema operativo se encarga de asignar y administrar los marcos físicos disponibles y las páginas virtuales de los procesos. Cuando un proceso necesita más memoria de la que está disponible en los marcos físicos, el sistema operativo puede utilizar técnicas como el intercambio de páginas (swap) para mover páginas entre la memoria principal y un espacio de almacenamiento secundario, como el disco duro.
+
 
