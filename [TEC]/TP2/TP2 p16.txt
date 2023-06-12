@@ -1,0 +1,56 @@
+MODULACIÓN ASK
+En este tipo de modulación, la señal a transmitir puede variar en función del dato que transmite:
+*) Si el valor del dato es 0 (cero), lo toma como una ausencia de señal
+*) Si el valor del dato es 1 (uno), lo toma como una presencia de señal
+En su espectro podemos ver la fundamental con sus respectivas armónicas.
+El ancho de banda viene dada por la banda de paso en la que la señal modulada va a ocupar el total del canal.
+Es importante mencionar que, por su carácterísticas, la modulación ASK es muy sensible al ruido (lo que implica, más que pérdida, una modificación en los datos demodulados).
+
+MODULACIÓN FSK
+En este tipo de modulación, se afecta a la frecuencia portadora según el dato. Con un dato 0 (cero) se envía una frecuencia A, y con un dato 1 (uno) se envía una frecuencia B.
+Su espectro es similar a sumar dos espectros de modulación ASK. La diferencia de las señales portadoras define la cantidad de armónicos que podrá usarse sin que se superpongan entre sí. Esta restricción determina el anco de la banda disponible para la modulación.
+Esta modulación, a diferencia de la ASK, resiste mejor al ruido ya que su señal modulada codifica al 0 (cero) o al 1 (uno) según cambia la frecuencia, logrando así que, al recibirla, el receptor solo deba identificar los cambios de frecuencia.
+
+MODULACIÓN PSK
+Esta modulación desplaza la fase de la señal portadora. El espectro y el ancho de banda son muy similares a los de la modulación ASK.
+La modulación PSK también es resistente al ruido ya que solo diferencia entre 0 (cero) y 1 (uno).
+
+
+Conclusión 
+
+En resumen lo primero que podemos avismar al momento de estudiar, de manera básica,  la tres técnicas de Modulación descriptas en este Trabajo práctico 
+es que tanto la ASK ( Variación de Amplitud ) , la FSK ( variación de Frecuencia ) y la PSK ( Variación de Fase ) son muy importantes para el desarrollo 
+de los sistemas de comunicación ya que cada una de ellas permite, a su manera, aprobechar distintas dimensiones de las señales con las cuales transportamos
+la información ( que es lo más valioso en sistemas ) tanto para su mejor eficiencia al momento de se transportada enormes distancias, cómo así también para 
+optimizar su capacidad de trasnimisión de datos. A continuación daremos un breve repaso por los aspecto más relevantes que nos presenta cada una de ellas a 
+modo de raconto y aprovecharemos para comentar detalles que nos han parecido tanto interesantes como así también relevantes al momento de su estudio. 
+
+MODULACIÓN ASK
+En este tipo de modulación, la señal a transmitir puede variar en función del dato que transmite:
+*) Si el valor del dato es 0 (cero), lo toma como una ausencia de señal
+*) Si el valor del dato es 1 (uno), lo toma como una presencia de señal
+En su espectro podemos ver la fundamental con sus respectivas armónicas, tanto positivas cómo negaticas en ambas bandas laterales.
+El ancho de banda viene dada por la banda de paso en la que la señal modulada va a ocupar el total del canal.
+Es importante mencionar que, por su carácterísticas, la modulación ASK es muy sensible al ruido (lo que implica, más que pérdida, una modificación en los datos demodulados).
+La modulación ASK es de las técnicas más sencillas al momento de modular, ya que trabaja multplicando la señal Data por la señal Portadora y así logra su cometido. Si bien 
+esta simplesa tiene ciertas debilidades asociada a sencibilidad al ruido, no deja de hacer a la técinca de la ASK fundamental para el entendimiento y el desarrollo de las 
+demás tipos de modulaciones. 
+
+MODULACIÓN FSK
+En este tipo de modulación, se afecta a la frecuencia portadora según el dato. Con un dato 0 (cero) se envía una frecuencia A, y con un dato 1 (uno) se envía una frecuencia B.
+Su espectro es similar a sumar dos espectros de modulación ASK( es acá donde se empieza a vislumbrar lo último comentado en el parrafo anterior). Aquí al estar trabajando con 2 señales portadoras de distinta frecuencia y ( cómo en todos los sistemas de comunicación ) contar con un ancho de banda restringido, es muy importante que en base a la señal que se va a modular y al ancho de banda, se elijan de manera eficiente las señales portadores, ya que esto va a evitar que el contenido armónico de la suma de ambas ASK no perjudique a la sñal resultante. También es importante comentar de que esta técnica exige que la señal data sea duplicada e invertida al momento del modularse con cada una de las portadores, este proceso es de vital importancia ya que permite recrear los momentos en donde la señal data es 1 o en donde la misma es 0.  
+Esta modulación, a diferencia de la ASK, resiste mejor al ruido ya que su señal modulada codifica al 0 (cero) o al 1 (uno) según cambia la frecuencia, logrando así que, al recibirla, el receptor solo deba identificar los cambios de frecuencia.
+
+MODULACIÓN PSK
+Esta modulación desplaza la fase de la señal portadora. El espectro y el ancho de banda son muy similares a los de la modulación ASK.
+La modulación PSK también es resistente al ruido ya que solo diferencia entre 0 (cero) y 1 (uno). Admeás al cancelar a la portadora por los mismos cambios de fase que va realizando
+deja por consecuencia más energía disponible en la transmisión de la señal para el resto de los armónicos, pudiendo así optimizar recursos. Hay varias técincas para lograr este proceso. 
+En principio nosotros hemos trabajo con la técinca de duplicar la señal data y la portadora, en este caso y a diferencia de la FSK, sin cambiar frecuencias, pero si invirtiendo tanto la data como la portadora para lograr el resultado esperado. 
+
+Cómo última conclusión y luego de haber hecho un breve recorrido por estás técnicas lo que más interesante nos resulta es la posibilidad de encontrar tantas formas diversar de manipular 
+las señales para sacarles el mejor provecho posible tan sólo usando 3 herramientas muy elementales; la multiplicación entre señales, la suma entre señales y la inversión de señales. 
+Ver cómo es posible abrir un abanico de posibilidades tan amplio y del cual entendemos que hemos visto sólo la punta del iceberg resulta muy motivador. 
+
+
+
+ 

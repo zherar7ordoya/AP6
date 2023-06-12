@@ -1,0 +1,16 @@
+MODULACIÓN ASK
+En este tipo de modulación, la señal a transmitir puede variar en función del dato que transmite:
+*) Si el valor del dato es 0 (cero), lo toma como una ausencia de señal
+*) Si el valor del dato es 1 (uno), lo toma como una presencia de señal
+En su espectro podemos ver la fundamental con sus respectivas armónicas.
+El ancho de banda viene dada por la banda de paso en la que la señal modulada va a ocupar el total del canal.
+Es importante mencionar que, por su carácterísticas, la modulación ASK es muy sensible al ruido (lo que implica, más que pérdida, una modificación en los datos demodulados).
+
+MODULACIÓN FSK
+En este tipo de modulación, se afecta a la frecuencia portadora según el dato. Con un dato 0 (cero) se envía una frecuencia A, y con un dato 1 (uno) se envía una frecuencia B.
+Su espectro es similar a sumar dos espectros de modulación ASK. La diferencia de las señales portadoras define la cantidad de armónicos que podrá usarse sin que se superpongan entre sí. Esta restricción determina el anco de la banda disponible para la modulación.
+Esta modulación, a diferencia de la ASK, resiste mejor al ruido ya que su señal modulada codifica al 0 (cero) o al 1 (uno) según cambia la frecuencia, logrando así que, al recibirla, el receptor solo deba identificar los cambios de frecuencia.
+
+MODULACIÓN PSK
+Esta modulación desplaza la fase de la señal portadora. El espectro y el ancho de banda son muy similares a los de la modulación ASK.
+La modulación PSK también es resistente al ruido ya que solo diferencia entre 0 (cero) y 1 (uno).
