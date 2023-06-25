@@ -24,7 +24,7 @@ namespace GUI
 {
     class DataAccessLayer
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["PrinzoBBDD"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["DAT"].ConnectionString;
         int agenciaId = 1;
         string action = "SELECT";
 
