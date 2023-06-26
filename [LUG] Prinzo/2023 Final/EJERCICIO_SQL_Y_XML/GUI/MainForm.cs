@@ -1,45 +1,78 @@
-﻿using System;
+﻿// ============================================================================
+// Developer/s: Gerardo Tordoya
+// Description: https://www.codeproject.com/Articles/7505/Singleton-pattern-for-MDI-child-forms
+// Create Date: 2023-06-25
+// Update Date: XXXX-XX-XX
+// ============================================================================
+
+
+using GUI.Forms;
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL;
-using BEL;
 
 namespace GUI
 {
     public partial class MainForm : Form
     {
-        private ITransportAgency transportAgency;
-
         public MainForm()
         {
             InitializeComponent();
-            transportAgency = new TransportAgency(); // Instancia de la capa de lógica de negocio
         }
 
-        private void btnRentVehicle_Click(object sender, EventArgs e)
+        private void AlquilerMenuItem_Click(object sender, EventArgs e)
         {
-            // Lógica para registrar el alquiler de un vehículo por un cliente
-            // utilizando los datos de los controles en el formulario
+            Form formulario = AlquilerForm.Instance();
+            formulario.MdiParent = this;
+            formulario.Show();
+            formulario.Activate();
         }
 
-        private void btnReturnVehicle_Click(object sender, EventArgs e)
+        private void ClienteMenuItem_Click(object sender, EventArgs e)
         {
-            // Lógica para registrar la devolución de un vehículo por un cliente
-            // utilizando los datos de los controles en el formulario
+            Form formulario = ClienteForm.Instance();
+            formulario.MdiParent = this;
+            formulario.Show();
+            formulario.Activate();
         }
 
-        private void btnMostRentedVehicles_Click(object sender, EventArgs e)
+        private void VehiculoMenuItem_Click(object sender, EventArgs e)
         {
-            // Lógica para mostrar los vehículos más alquilados en un DataGridView
+            Form formulario = VehiculoForm.Instance();
+            formulario.MdiParent = this;
+            formulario.Show();
+            formulario.Activate();
         }
 
-        private void btnLeastRentedVehicles_Click(object sender, EventArgs e)
+        private void MasMenuItem_Click(object sender, EventArgs e)
         {
-            // Lógica para mostrar los vehículos menos alquilados en un DataGridView
+            Form formulario = MasForm.Instance();
+            formulario.MdiParent = this;
+            formulario.Show();
+            formulario.Activate();
         }
 
-        private void btnTotalRevenueByVehicleType_Click(object sender, EventArgs e)
+        private void MenosMenuItem_Click(object sender, EventArgs e)
         {
-            // Lógica para mostrar el monto total recaudado por tipo de vehículo
+            Form formulario = MenosForm.Instance();
+            formulario.MdiParent = this;
+            formulario.Show();
+            formulario.Activate();
+        }
+
+        private void TotalMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = TotalForm.Instance();
+            formulario.MdiParent = this;
+            formulario.Show();
+            formulario.Activate();
         }
     }
 }
