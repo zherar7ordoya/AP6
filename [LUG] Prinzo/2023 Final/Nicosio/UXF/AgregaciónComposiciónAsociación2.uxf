@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>60</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Simcard</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>120</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Memorycard</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>60</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Celular</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>0</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Message</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>60</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Camera</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>120</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Software</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>0</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Battery</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>60</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+Agregación</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>60</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+Composición</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>70</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;70.0;60.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>70</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>70.0;10.0;70.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>10</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>70.0;70.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>10</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;70.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>370</x>
+      <y>180</y>
+      <w>340</w>
+      <h>540</h>
+    </coordinates>
+    <panel_attributes>Un objeto está instanciando a otros objetos
+dentro de su propio código. Eso significa que
+en algún lado, dentro del cuerpo de la clase
+Mobile (o sea, dentro de su código), están 
+escritas las líneas:
+
+    new Message()
+    new Camera()
+    new Software()
+
+Por ejemplo:
+
+public class Mobile
+{
+    //Compuesto por Message
+    Message message = new Message(); 
+    Camera camera;
+    Software software;
+
+    public Mobile()
+    {
+        //Compuesto por Camera
+        camera = new Camera(); 
+    }
+
+    public void inicializarSoftware()
+    {
+        //Compuesto por Software
+        software = new Software(); 
+    }
+
+    class Software { }
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>180</y>
+      <w>340</w>
+      <h>540</h>
+    </coordinates>
+    <panel_attributes>Un objeto tiene como atributos a otros objetos, 
+que fueron pasados como parámetros. Eso significa 
+que dentro del cuerpo de la clase Mobile se definen 
+atributos del tipo Battery, Simcard y Memorycard. Y 
+que Mobile NO es quien tiene la responsabilidad de 
+instanciar esos objetos. Solamente guarda las 
+referencias a esos objetos luego de haberlas recibido 
+de alguna forma como parámetros. 
+
+Por ejemplo:
+
+public class Mobile
+{
+    Battery battery;
+    Simcard simcard;
+    Memorycard memorycard;
+
+    public Mobile(Battery parametroBattery)
+    {
+        //Agregando a Battery
+        battery = parametroBattery; 
+    }
+
+    public void unMetodo(Simcard pSimcard, Otro o)
+    {
+        //Agregando a Simcard
+        simcard = pSimcard; 
+        
+        //Agregando MemoryCard solo si 
+        //getMemoryCard() devuelve una.
+        memorycard = o.getMemoryCard();
+    }
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

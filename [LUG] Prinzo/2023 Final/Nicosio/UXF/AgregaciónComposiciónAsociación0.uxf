@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>430</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Simcard</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>490</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Memorycard</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>430</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Celular</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>370</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Message</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>430</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Camera</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>490</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Software</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>370</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Battery</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>430</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+Agregación</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>430</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+Composición</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>440</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;70.0;60.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>440</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>70.0;10.0;70.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>380</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>70.0;70.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>380</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;70.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>370</x>
+      <y>550</y>
+      <w>340</w>
+      <h>540</h>
+    </coordinates>
+    <panel_attributes>Un objeto está instanciando a otros objetos
+dentro de su propio código. Eso significa que
+en algún lado, dentro del cuerpo de la clase
+Mobile (o sea, dentro de su código), están 
+escritas las líneas:
+
+    new Message()
+    new Camera()
+    new Software()
+
+Por ejemplo:
+
+public class Mobile
+{
+    //Compuesto por Message
+    Message message = new Message(); 
+    Camera camera;
+    Software software;
+
+    public Mobile()
+    {
+        //Compuesto por Camera
+        camera = new Camera(); 
+    }
+
+    public void inicializarSoftware()
+    {
+        //Compuesto por Software
+        software = new Software(); 
+    }
+
+    class Software { }
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>550</y>
+      <w>340</w>
+      <h>540</h>
+    </coordinates>
+    <panel_attributes>Un objeto tiene como atributos a otros objetos, 
+que fueron pasados como parámetros. Eso significa 
+que dentro del cuerpo de la clase Mobile se definen 
+atributos del tipo Battery, Simcard y Memorycard. Y 
+que Mobile NO es quien tiene la responsabilidad de 
+instanciar esos objetos. Solamente guarda las 
+referencias a esos objetos luego de haberlas recibido 
+de alguna forma como parámetros. 
+
+Por ejemplo:
+
+public class Mobile
+{
+    Battery battery;
+    Simcard simcard;
+    Memorycard memorycard;
+
+    public Mobile(Battery parametroBattery)
+    {
+        //Agregando a Battery
+        battery = parametroBattery; 
+    }
+
+    public void unMetodo(Simcard pSimcard, Otro o)
+    {
+        //Agregando a Simcard
+        simcard = pSimcard; 
+        
+        //Agregando MemoryCard solo si 
+        //getMemoryCard() devuelve una.
+        memorycard = o.getMemoryCard();
+    }
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>230</x>
+      <y>0</y>
+      <w>260</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>class mobile
+{
+    bateria a = new bateria(); 
+    simcard b = new simcard(); 
+    memorycard c = new memorycard();
+    msj d = new msj();
+    soft e = new soft();
+    camara f = new camara();
+
+    public class msj { codigo }
+    public class soft { codigo}
+    public class camara {codigo }
+}
+    
+class bateria
+{ 
+}
+    
+class simcard
+{ 
+}
+    
+class memorycard
+{ 
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>370</x>
+      <y>1110</y>
+      <w>340</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>Cuando quieras instanciar un objeto de la clase 
+Mobile [ m = new Mobile(); ], dentro de esa instancia 
+de tipo Mobile (objeto) que se encuentra siendo 
+referenciada por la variable m; se encuentran las 
+referencias a las instancias de los objetos Message, 
+Camera y Software. (En las variables privadas 
+message, camera y software). Por lo tanto, cuando 
+pierdas la referencia a esa instancia de Mobile, no 
+deberías poder acceder tampoco a las referencias de 
+las instancias de Message, Camera y Software que 
+se encontraban dentro.
+Suponiendo que ahora elimino la única referencia 
+que tengo al objeto Mobile (una forma podría ser 
+m=null;), lo que ocurriría normalmente, es que el 
+recolector de basura (Garbage Collector), detectaría 
+que ya no hay formas de acceder a esa instancia de 
+Mobile, por lo tanto destruiría la misma eliminándola 
+de memoria. A su vez, como nadie más tiene 
+referencias a las instancias de Message, Camera y 
+Software que se encontraban dentro, entonces se 
+destruyen también.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>1110</y>
+      <w>340</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>public static void Main()
+{
+    Battery battery = new Battery();
+    Mobile mobile = new Mobile(battery);
+    // Más código...
+}
+
+public class Otro
+{
+    public Memorycard getMemoryCard()
+    {
+        return new Memorycard();
+    }
+}
+
+Ahora, si decides en algún momento escribir dentro 
+del Main(), algo como 
+[ mobile = new Mobile(new Battery()); ],
+la variable mobile ahora estará referenciando a una 
+nueva instancia de Mobile, mientras que la vieja 
+instancia ya quedó destruida para siempre.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>510</x>
+      <y>190</y>
+      <w>200</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>
+Composición:
+
+Un objeto A está compuesto 
+por un objeto B, siempre que 
+se cumpla que todas las 
+referencias a las instancias de 
+B creadas por A, se destruyan 
+antes o durante la destrucción 
+de A.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>510</x>
+      <y>0</y>
+      <w>200</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>
+COMPOSITION:
+
+If the Mobile (container object)
+is destroyed/deleted, then its
+contents (contained object: 
+Message, Camera, Software)
+will be destroyed because of
+strong-life cycle dependancy.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>0</y>
+      <w>200</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>
+AGGREGATION:
+
+If the Mobile (container object)
+is destroyed/deleted, then its
+contents (contained object: 
+Battery, Simcard, Memorycard) 
+will not be destroyed.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>190</y>
+      <w>200</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>
+Agregación:
+
+Un objeto A está agregando 
+a un objeto B, siempre que se 
+cumpla que A mantiene una 
+referencia a una instancia de 
+B que puede evitar ser 
+destruida durante la 
+destrucción de A.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>1480</y>
+      <w>700</w>
+      <h>1280</h>
+    </coordinates>
+    <panel_attributes>ASOCIACIÓN
+
+¿Qué pasa en el caso del método crearSoftware? Mobile no se encuentra manteniendo ninguna referencia 
+hacia los objetos Software que crea.
+
+public class Mobile
+{
+    //Referencia pública
+    public Message message = new Message(); 
+    Camera camera = new Camera();
+
+    public getCamera()
+    {
+        //Entregando referencia
+        return camera; 
+    }
+
+    public Software crearSoftware()
+    {
+        return new Software();
+    }
+}
+
+¿Qué pasa en el caso del método algunMetodo con respecto a la clase Otro? La clase Otro figura en el código 
+de la clase Mobile, por lo tanto es claro que existe un tipo de relación entre ellos.
+Existen asociaciones que no pueden ser clasificadas como asociaciones por composición o por agregación. 
+Son solamente simples asociaciones. Y el único significado que expresan es que existe alguna dependencia 
+(se conocen) entre los objetos involucrados.
+
+Estas asociaciones pueden ser llamadas:
+
+Fuertes: 
+    Cuando un objeto mantiene una referencia sobre el otro. 
+    En otras palabras, un objeto tiene como atributo al otro.
+    
+Débiles:
+    Cuando un objeto simplemente conoce a otro sin mantener referencias con él.
+    
+Por lo tanto, se podría decir que las asociaciones entre objetos por composición y por agregación, son tipos de 
+asociaciones fuertes. Mientras que en el caso de los métodos mencionados, crearSoftware y algunMetodo, son 
+algunos ejemplos de asociaciones débiles.
+
+public static void Main()
+{
+    Battery battery = new Battery();
+    Mobile mobile = new Mobile(battery);
+
+    Simcard simcard = new Simcard();
+    Otro otroObjeto = new Otro();
+    mobile.algunMetodo(simcard, otroObjeto);
+    // Más código...
+}
+
+public class Otro
+{
+    public Memorycard getMemoryCard()
+    {
+        return new Memorycard();
+    }
+}
+
+public class Mobile
+{
+    Battery battery;
+    Simcard simcard;
+    Memorycard memorycard;
+
+    public Mobile(Battery parametroBattery)
+    {
+        battery = parametroBattery; //Agregando a Battery
+    }
+
+    public void algunMetodo(Simcard parametroSimcard, Otro otroObjeto)
+    {
+        simcard = parametroSimcard; //Agregando a Simcard
+        memorycard = otroObjeto.getMemoryCard();
+        //Agregando MemoryCard solo si getMemoryCard() devuelve una.
+    }
+}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>2780</y>
+      <w>700</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>RESUMEN
+
+Composición:
+    Una instancia Mobile está compuesta por Message si todas las referencias a las instancias de Message 
+    creadas dentro de Mobile son destruidas cuando se destruye la instancia de Mobile.
+
+Agregación: 
+    Una instancia de Mobile esta agregando a Battery si la instancia de Battery a la que está haciendo 
+    referencia la instancia de Mobile puede continuar existiendo cuando se destruye la instancia de Mobile.
+
+Asociación: 
+    Una instancia de Mobile está asociado a Otro objeto, si es que dentro del código de Mobile aparece escrito 
+    Otro objeto. (Por lo tanto, Mobile dependería de Otro objeto).
+
+--
+
+*En UML la agregacion se representa con un rombo y la herencia con una flecha.</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

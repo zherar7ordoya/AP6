@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>20</x>
+      <y>180</y>
+      <w>700</w>
+      <h>470</h>
+    </coordinates>
+    <panel_attributes>ASOCIACIÓN
+
+¿Qué pasa en el caso del método crearSoftware? Mobile no se encuentra manteniendo ninguna referencia 
+hacia los objetos Software que crea.
+
+public class Mobile
+{
+    //Referencia pública
+    public Message message = new Message(); 
+    Camera camera = new Camera();
+
+    public getCamera()
+    {
+        //Entregando referencia
+        return camera; 
+    }
+
+    public Software crearSoftware()
+    {
+        return new Software();
+    }
+}
+
+¿Qué pasa en el caso del método algunMetodo con respecto a la clase Otro? La clase Otro figura en el código 
+de la clase Mobile, por lo tanto es claro que existe un tipo de relación entre ellos.
+Existen asociaciones que no pueden ser clasificadas como asociaciones por composición o por agregación. 
+Son solamente simples asociaciones. Y el único significado que expresan es que existe alguna dependencia 
+(se conocen) entre los objetos involucrados.
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>60</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Simcard</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>120</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Memorycard</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>60</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Celular</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>0</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Message</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>60</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Camera</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>120</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Software</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>0</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Battery</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>110</x>
+      <y>60</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+Agregación</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>60</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+Composición</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>70</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;70.0;60.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>110</x>
+      <y>70</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>70.0;10.0;70.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>110</x>
+      <y>10</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>70.0;70.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>10</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;70.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>20</x>
+      <y>670</y>
+      <w>700</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>RESUMEN
+
+Composición:
+    Una instancia Mobile está compuesta por Message si todas las referencias a las instancias de Message 
+    creadas dentro de Mobile son destruidas cuando se destruye la instancia de Mobile.
+
+Agregación: 
+    Una instancia de Mobile esta agregando a Battery si la instancia de Battery a la que está haciendo 
+    referencia la instancia de Mobile puede continuar existiendo cuando se destruye la instancia de Mobile.
+
+Asociación: 
+    Una instancia de Mobile está asociado a Otro objeto, si es que dentro del código de Mobile aparece escrito 
+    Otro objeto. (Por lo tanto, Mobile dependería de Otro objeto).
+
+--
+
+*En UML la agregacion se representa con un rombo y la herencia con una flecha.</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

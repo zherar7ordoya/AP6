@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>430</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Simcard</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>490</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Memorycard</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>430</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Celular</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>370</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Message</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>430</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Camera</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>490</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Software</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>370</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Battery</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>430</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+Agregación</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>430</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+Composición</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>440</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;70.0;60.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>440</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>70.0;10.0;70.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>380</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>70.0;70.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>380</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;70.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>230</x>
+      <y>0</y>
+      <w>260</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>class mobile
+{
+    bateria a = new bateria(); 
+    simcard b = new simcard(); 
+    memorycard c = new memorycard();
+    msj d = new msj();
+    soft e = new soft();
+    camara f = new camara();
+
+    public class msj { codigo }
+    public class soft { codigo}
+    public class camara {codigo }
+}
+    
+class bateria
+{ 
+}
+    
+class simcard
+{ 
+}
+    
+class memorycard
+{ 
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>510</x>
+      <y>190</y>
+      <w>200</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>
+Composición:
+
+Un objeto A está compuesto 
+por un objeto B, siempre que 
+se cumpla que todas las 
+referencias a las instancias de 
+B creadas por A, se destruyan 
+antes o durante la destrucción 
+de A.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>510</x>
+      <y>0</y>
+      <w>200</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>
+COMPOSITION:
+
+If the Mobile (container object)
+is destroyed/deleted, then its
+contents (contained object: 
+Message, Camera, Software)
+will be destroyed because of
+strong-life cycle dependancy.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>0</y>
+      <w>200</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>
+AGGREGATION:
+
+If the Mobile (container object)
+is destroyed/deleted, then its
+contents (contained object: 
+Battery, Simcard, Memorycard) 
+will not be destroyed.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>190</y>
+      <w>200</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>
+Agregación:
+
+Un objeto A está agregando 
+a un objeto B, siempre que se 
+cumpla que A mantiene una 
+referencia a una instancia de 
+B que puede evitar ser 
+destruida durante la 
+destrucción de A.</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

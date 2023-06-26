@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>60</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Simcard</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>120</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Memorycard</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>60</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Celular</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>0</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Message</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>60</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Camera</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>120</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Software</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>0</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Battery</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>60</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+Agregación</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>60</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+Composición</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>70</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;70.0;60.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>70</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>70.0;10.0;70.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>10</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>70.0;70.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>10</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;70.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>370</x>
+      <y>180</y>
+      <w>340</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>Cuando quieras instanciar un objeto de la clase 
+Mobile [ m = new Mobile(); ], dentro de esa instancia 
+de tipo Mobile (objeto) que se encuentra siendo 
+referenciada por la variable m; se encuentran las 
+referencias a las instancias de los objetos Message, 
+Camera y Software. (En las variables privadas 
+message, camera y software). Por lo tanto, cuando 
+pierdas la referencia a esa instancia de Mobile, no 
+deberías poder acceder tampoco a las referencias de 
+las instancias de Message, Camera y Software que 
+se encontraban dentro.
+Suponiendo que ahora elimino la única referencia 
+que tengo al objeto Mobile (una forma podría ser 
+m=null;), lo que ocurriría normalmente, es que el 
+recolector de basura (Garbage Collector), detectaría 
+que ya no hay formas de acceder a esa instancia de 
+Mobile, por lo tanto destruiría la misma eliminándola 
+de memoria. A su vez, como nadie más tiene 
+referencias a las instancias de Message, Camera y 
+Software que se encontraban dentro, entonces se 
+destruyen también.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>180</y>
+      <w>340</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>public static void Main()
+{
+    Battery battery = new Battery();
+    Mobile mobile = new Mobile(battery);
+    // Más código...
+}
+
+public class Otro
+{
+    public Memorycard getMemoryCard()
+    {
+        return new Memorycard();
+    }
+}
+
+Ahora, si decides en algún momento escribir dentro 
+del Main(), algo como 
+[ mobile = new Mobile(new Battery()); ],
+la variable mobile ahora estará referenciando a una 
+nueva instancia de Mobile, mientras que la vieja 
+instancia ya quedó destruida para siempre.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>550</y>
+      <w>700</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>RESUMEN
+
+Composición:
+    Una instancia Mobile está compuesta por Message si todas las referencias a las instancias de Message 
+    creadas dentro de Mobile son destruidas cuando se destruye la instancia de Mobile.
+
+Agregación: 
+    Una instancia de Mobile esta agregando a Battery si la instancia de Battery a la que está haciendo 
+    referencia la instancia de Mobile puede continuar existiendo cuando se destruye la instancia de Mobile.
+
+Asociación: 
+    Una instancia de Mobile está asociado a Otro objeto, si es que dentro del código de Mobile aparece escrito 
+    Otro objeto. (Por lo tanto, Mobile dependería de Otro objeto).
+
+--
+
+*En UML la agregacion se representa con un rombo y la herencia con una flecha.</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
