@@ -46,7 +46,7 @@
     <Compile Include="Componente.cs" />
     <Compile Include="Compuesto.cs" />
     <Compile Include="IComponente.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

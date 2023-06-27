@@ -2,17 +2,18 @@
 
 namespace PatronComposite
 {
-    class Program
+    class Cliente
     {
         static void Main()
         {
             IComponente<string> arbol = new Compuesto<string>("root");
             IComponente<string> trabajo = arbol;
+
             string opcion = string.Empty;
 
             while (opcion != "6")
             {
-                WriteLine("Estoy en {0}", trabajo.Nombre);
+                WriteLine($"\nEstoy en {trabajo.Nombre}\n");
                 WriteLine
                     (
                     "1) Adicionar Compuesto\n" +
@@ -20,7 +21,7 @@ namespace PatronComposite
                     "3) Borrar\n" +
                     "4) Buscar\n" +
                     "5) Mostrar\n" +
-                    "6) Salir\n"
+                    "6) Salir\n\n"
                     );
 
                 opcion = ReadLine();
@@ -33,30 +34,30 @@ namespace PatronComposite
                     WriteLine("Nombre del Compuesto: ");
                     dato = ReadLine();
                     IComponente<string> c = new Compuesto<string>(dato);
-                    trabajo.Adiciona(c);
+                    trabajo.Adicionar(c);
                     trabajo = c;
                 }
                 if (opcion == "2")
                 {
                     WriteLine("Nombre del Componente: ");
                     dato = ReadLine();
-                    trabajo.Adiciona(new Componente<string>(dato));
+                    trabajo.Adicionar(new Componente<string>(dato));
                 }
                 if (opcion == "3")
                 {
                     WriteLine("Elemento a Borrar: ");
                     dato = ReadLine();
-                    trabajo = trabajo.Borra(dato);
+                    trabajo = trabajo.Borrar(dato);
                 }
                 if (opcion == "4")
                 {
                     WriteLine("Elemento a Buscar: ");
                     dato = ReadLine();
-                    trabajo = arbol.Busca(dato);
+                    trabajo = arbol.Buscar(dato);
                 }
                 if (opcion == "5")
                 {
-                    WriteLine(arbol.Muestra(0));
+                    WriteLine(arbol.Mostrar(0));
                 }
             }
         }

@@ -14,11 +14,11 @@ namespace PatronComposite
             elementos = new List<IComponente<T>>();
         }
 
-        public void Adiciona(IComponente<T> pElemento) => elementos.Add(pElemento);
+        public void Adicionar(IComponente<T> pElemento) => elementos.Add(pElemento);
 
-        public IComponente<T> Borra(T pElemento)
+        public IComponente<T> Borrar(T pElemento)
         {
-            IComponente<T> elemento = this.Busca(pElemento);
+            IComponente<T> elemento = this.Buscar(pElemento);
             if (elemento != null)
             {
                 (this as Compuesto<T>).elementos.Remove(elemento);
@@ -26,26 +26,26 @@ namespace PatronComposite
             return this;
         }
 
-        public IComponente<T> Busca(T pElemento)
+        public IComponente<T> Buscar(T pElemento)
         {
             if (Nombre.Equals(pElemento)) { return this; }
             IComponente<T> encontrado = null;
             foreach (IComponente<T> elemento in elementos)
             {
-                encontrado = elemento.Busca(pElemento);
+                encontrado = elemento.Buscar(pElemento);
                 if (encontrado != null) { break; }
             }
             return encontrado;
         }
 
-        public string Muestra(int pProfundidad)
+        public string Mostrar(int pProfundidad)
         {
             StringBuilder infoElemento = new StringBuilder(new String('-', pProfundidad));
             infoElemento.Append("Compuesto: " + Nombre + " elementos: " + elementos.Count + "\r\n");
 
             foreach (IComponente<T> elemento in elementos)
             {
-                infoElemento.Append(elemento.Muestra(pProfundidad + 1));
+                infoElemento.Append(elemento.Mostrar(pProfundidad + 1));
             }
 
             return infoElemento.ToString();
