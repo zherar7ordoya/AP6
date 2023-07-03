@@ -83,12 +83,9 @@ namespace PatronComposite
             //         "5) Mostrar\n" +
             //         "6) Salir\n\n"
             //         );
-
             //     opcion = ReadLine();
             //     WriteLine("*-----------------------*");
-
             //     string dato;
-
             //     if (opcion == "1")
             //     {
             //         WriteLine("Nombre del Compuesto: ");
