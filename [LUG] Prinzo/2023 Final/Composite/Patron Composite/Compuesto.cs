@@ -18,10 +18,10 @@ namespace PatronComposite
 
         public IComponente<T> Borrar(T pElemento)
         {
-            IComponente<T> elemento = this.Encontrar(pElemento);
+            IComponente<T> elemento = Encontrar(pElemento);
             if (elemento != null)
             {
-                (this as Compuesto<T>).elementos.Remove(elemento);
+                elementos.Remove(elemento);
             }
             return this;
         }
