@@ -54,7 +54,7 @@ namespace PatronComposite
                     case "4":
                         WriteLine("Elemento a Buscar: ");
                         dato = ReadLine();
-                        trabajo = arbol.Buscar(dato);
+                        trabajo = arbol.Encontrar(dato);
                         break;
 
                     case "5":

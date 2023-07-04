@@ -14,9 +14,7 @@ namespace PatronComposite
 
         public void Adicionar(IComponente<T> pElemento)
         {
-            WriteLine(
-                "Solo se adiciona a los compuestos, " +
-                "no a los componentes");
+            WriteLine("Solo se adiciona a los compuestos, no a los componentes");
         }
 
         public IComponente<T> Borrar(T pElemento)
@@ -25,7 +23,7 @@ namespace PatronComposite
             return this;
         }
 
-        public IComponente<T> Buscar(T pElemento)
+        public IComponente<T> Encontrar(T pElemento)
         {
             if (pElemento.Equals(Nombre)) { return this; }
             else { return null; }

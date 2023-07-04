@@ -18,7 +18,7 @@ namespace PatronComposite
 
         public IComponente<T> Borrar(T pElemento)
         {
-            IComponente<T> elemento = this.Buscar(pElemento);
+            IComponente<T> elemento = this.Encontrar(pElemento);
             if (elemento != null)
             {
                 (this as Compuesto<T>).elementos.Remove(elemento);
@@ -26,13 +26,13 @@ namespace PatronComposite
             return this;
         }
 
-        public IComponente<T> Buscar(T pElemento)
+        public IComponente<T> Encontrar(T pElemento)
         {
             if (Nombre.Equals(pElemento)) { return this; }
             IComponente<T> encontrado = null;
             foreach (IComponente<T> elemento in elementos)
             {
-                encontrado = elemento.Buscar(pElemento);
+                encontrado = elemento.Encontrar(pElemento);
                 if (encontrado != null) { break; }
             }
             return encontrado;
