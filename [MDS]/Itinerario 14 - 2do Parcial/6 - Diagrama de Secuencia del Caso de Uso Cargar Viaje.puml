@@ -1,4 +1,4 @@
-@startuml
+@startuml Parcial 2 MDS2 2023
 
 ' Explicación: El diagrama de secuencia muestra la interacción entre el actor
 ' "Usuario" y el sistema durante el caso de uso "Cargar Viaje". El actor inicia

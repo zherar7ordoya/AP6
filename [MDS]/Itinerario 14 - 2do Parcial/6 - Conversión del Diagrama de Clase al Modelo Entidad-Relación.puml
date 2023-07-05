@@ -1,4 +1,4 @@
-@startuml
+@startuml Parcial 2 MDS2 2023
 
 ' En el Modelo Entidad-Relación, se utilizan las entidades "Usuario", "Tarjeta",
 ' "Viaje", "Premio" y "Resumen". Cada entidad se representa como una tabla, y
@@ -6,6 +6,7 @@
 ' las entidades se muestran a través de las líneas entre ellas.
 
 skinparam linetype ortho
+hide circle
 
 entity Usuario {
   + nombre: String

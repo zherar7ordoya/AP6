@@ -1,4 +1,4 @@
-@startuml
+@startuml Parcial 2 MDS2 2023
 
 ' Explicación: El diagrama de actividad muestra las acciones y decisiones que se
 ' toman durante el caso de uso "Cargar Viaje". Comienza con la carga del viaje y

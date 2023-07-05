@@ -1,4 +1,4 @@
-@startuml
+@startuml Parcial 2 MDS2 2023
 interface Objetivo {
     + metodoEsperado()
 }
