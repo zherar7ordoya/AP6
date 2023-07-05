@@ -1,1 +1,0 @@
-docker run --rm -v ~/dejavusansmonocode/src/vendor:/in -v ~/dejavusansmonocode/src/patched:/out nerdfonts/patcher --powerline --powerlineextra --careful
