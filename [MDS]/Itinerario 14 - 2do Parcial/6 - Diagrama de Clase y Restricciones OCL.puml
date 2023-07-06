@@ -1,23 +1,27 @@
-@startuml Parcial 2 MDS2 2023
-
-' Explicación: El diagrama de clase representa las clases principales del
-' sistema de gestión del programa de viajeros frecuentes de una línea aérea. Las
-' clases incluyen "Usuario", "Tarjeta", "Viaje", "Premio" y "Resumen". La clase
-' "Usuario" tiene una asociación de uno a uno con la clase "Tarjeta" y una
-' asociación de uno a muchos con las clases "Viaje", "Premio" y "Resumen".
-
-skinparam linetype ortho
-
+@startuml Parcial 2 MDS2
 class Usuario {
   - nombre: String
   - nacionalidad: String
   - direccionPostal: String
   - email: String
   - numeroPasaporte: String
+  + RegistrarUsuario()
 }
 
-class Tarjeta {
+abstract class Tarjeta {
   - nivel: String
+  + calcularMillas(viaje: Viaje): int
+  + calcularMillasAdicionales(viaje: Viaje): int
+}
+
+class TarjetaPlata {
+  + calcularMillas(viaje: Viaje): int
+  + calcularMillasAdicionales(viaje: Viaje): int
+}
+
+class TarjetaOro {
+  + calcularMillas(viaje: Viaje): int
+  + calcularMillasAdicionales(viaje: Viaje): int
 }
 
 class Viaje {
@@ -26,12 +30,14 @@ class Viaje {
   - numeroVuelo: String
   - fecha: Date
   - millasVoladas: int
+  + calcularMillas(): int
 }
 
 class Premio {
   - fecha: Date
   - premioElegido: String
-  - puntosUtilizados: int
+  - puntos: int
+  + CobrarPremio()
 }
 
 class Resumen {
@@ -39,23 +45,14 @@ class Resumen {
   - millasAcumuladas: int
   - millasCambiadas: int
   - millasAVencer: int
+  + EmitirResumen()
 }
 
-Usuario "1" -left- "1" Tarjeta
+Usuario "1" -- "1" Tarjeta
 Usuario "1" -- "*" Viaje
 Usuario "1" -- "*" Premio
-Usuario "1" -right- "1" Resumen
+Usuario "1" -- "1" Resumen
 
-' Restricción: El nivel de la tarjeta solo puede ser "Plata" o "Oro".
-note bottom of Tarjeta
-  context Tarjeta
-  inv: self.nivel = 'Plata' or self.nivel = 'Oro'
-end note
-
-' Restricción: Las millas voladas en un viaje deben ser un número positivo.
-note bottom of Viaje
-  context Viaje
-  inv: self.millasVoladas > 0
-end note
-
+Tarjeta <|-- TarjetaPlata
+Tarjeta <|-- TarjetaOro
 @enduml
