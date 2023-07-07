@@ -1,0 +1,45 @@
+@startuml Trazabilidad
+
+!theme plain
+skinparam linetype ortho
+
+(Modelado del Negocio) as (MODELADO_DEL_NEGOCIO)
+
+rectangle "Modelo del Negocio" as modelo_del_negocio {
+  rectangle "Diagrama de Roles" as roles
+  rectangle "Diagrama de Secuencia" as secuencia
+  rectangle "Diagrama de Proceso" as proceso
+}
+
+(Análisis de Requisitos) as (ANALISIS_DE_REQUISITOS)
+
+rectangle "Glosario" as glosario
+
+rectangle "Modelo de Requisitos" as modelo_de_requisitos {
+  rectangle "Modelo Conceptual" as conceptual
+  rectangle "Diagrama de Casos de Uso del Sistema" as casos
+}
+
+' ------------------------------------------------------------------------------
+
+MODELADO_DEL_NEGOCIO --down-> modelo_del_negocio
+modelo_del_negocio --down-> ANALISIS_DE_REQUISITOS
+ANALISIS_DE_REQUISITOS -> glosario #line:white
+ANALISIS_DE_REQUISITOS --down-> modelo_de_requisitos
+
+roles -> secuencia #line:white
+secuencia .> proceso
+
+
+' ------------------------------------------------------------------------------
+
+roles ..> casos
+
+proceso ..> casos
+proceso ..> conceptual
+proceso .> glosario
+
+casos .up.> glosario
+conceptual .up.> glosario
+
+@enduml
