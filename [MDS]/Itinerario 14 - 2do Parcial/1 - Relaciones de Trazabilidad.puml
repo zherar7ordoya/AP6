@@ -1,23 +1,44 @@
-@startuml Trazabilidad
+@startuml Universidad de Murcia
+
+'/**
+' * Developer/s: Gerardo Tordoya
+' * Description: De 
+' * Create Date: 2023-07-07
+' * Update Date: XXXX-XX-XX
+' * https://youtu.be/v5Tdb5NqLlY
+' */
+
+
 
 !theme plain
 skinparam linetype ortho
 
-(Modelado del Negocio) as (MODELADO_DEL_NEGOCIO)
+title Relaciones de trazabilidad entre los modelos de negocio y de requisitos
+
+"<size:32>Modelado del Negocio" as (MODELADO_DEL_NEGOCIO)
 
 rectangle "Modelo del Negocio" as modelo_del_negocio {
-  rectangle "Diagrama de Roles" as roles
-  rectangle "Diagrama de Secuencia" as secuencia
-  rectangle "Diagrama de Proceso" as proceso
+  rectangle "Diagrama\nde  Roles" as roles
+  rectangle "Diagrama de\n Secuencia" as secuencia
+  rectangle " Diagrama\nde Proceso" as proceso
 }
 
-(Análisis de Requisitos) as (ANALISIS_DE_REQUISITOS)
+"<size:32>Análisis de Requisitos" as (ANALISIS_DE_REQUISITOS)
 
 rectangle "Glosario" as glosario
 
 rectangle "Modelo de Requisitos" as modelo_de_requisitos {
-  rectangle "Modelo Conceptual" as conceptual
-  rectangle "Diagrama de Casos de Uso del Sistema" as casos
+  rectangle "Modelo Conceptual" as conceptual {
+    rectangle "Biblioteca" as biblioteca
+    rectangle "ISBN\nAutor" <<Libro>> as libro
+    biblioteca -* libro
+  }
+  rectangle "Diagrama de Casos de Uso del Sistema" as casos {
+    actor Cliente
+    actor Vendedor
+    Cliente -> Vendedor: Solicita\nLibro
+    Vendedor -> (Ingresar Venta)
+  }
 }
 
 ' ------------------------------------------------------------------------------
@@ -41,5 +62,7 @@ proceso .> glosario
 
 casos .up.> glosario
 conceptual .up.> glosario
+
+footer Parcial 2 de Metodología de Desarrollo de Sistemas (2023-07-07)
 
 @enduml
