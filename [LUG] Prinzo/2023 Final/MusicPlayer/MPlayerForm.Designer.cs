@@ -148,7 +148,7 @@ namespace MusicPlayer
             // 
             // ArtPic
             // 
-            this.ArtPic.Image = global::MusicPlayer.Properties.Resources.Winamp;
+            this.ArtPic.Image = ((System.Drawing.Image)(resources.GetObject("ArtPic.Image")));
             this.ArtPic.Location = new System.Drawing.Point(12, 10);
             this.ArtPic.Name = "ArtPic";
             this.ArtPic.Size = new System.Drawing.Size(198, 198);
@@ -256,9 +256,13 @@ namespace MusicPlayer
             this.Controls.Add(this.NextBtn);
             this.Controls.Add(this.PreviewBtn);
             this.Controls.Add(this.MainPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MPlayerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Reproductor de Música";
             ((System.ComponentModel.ISupportInitialize)(this.ArtPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerWmp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VolumeBar)).EndInit();
