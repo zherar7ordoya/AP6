@@ -4,6 +4,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+
+using AxWMPLib;
 
 namespace MusicPlayer
 {
@@ -13,8 +16,30 @@ namespace MusicPlayer
     /// </summary>
     public interface IReproductorView
     {
-        void ActualizarPistas(List<string> nombresPistas);
-        void ActualizarImagenCubierta(Image imagen);
-        void ActualizarProgresoPista(int duracion, int posicion);
+        event EventHandler AnteriorBotonClick;
+        event EventHandler SiguienteBotonClick;
+        event EventHandler ReproducirBotonClick;
+        event EventHandler PausarBotonClick;
+        event EventHandler DetenerBotonClick;
+        event EventHandler CargarBotonClick;
+        event EventHandler PistasListaSelectedIndexChanged;
+        event EventHandler VolumenBarraScroll;
+        event MouseEventHandler PistaProgresoBarraMouseDown;
+        event EventHandler TemporizadorTick;
+
+        void SeleccionarPistaAnterior();
+        void SeleccionarPistaSiguiente();
+        void ReproducirPista(string ruta);
+        void RestablecerProgresoPista();
+        string[] SeleccionarArchivos();
+        int ObtenerIndicePistaSeleccionada();
+        void ActualizarListaPistas(string[] nombresPistas);
+        void MostrarImagenCubierta(Image imagen);
+        int ObtenerVolumen();
+        void ActualizarEtiquetaVolumen(int volumen);
+        int CalcularPosicionPista(int x);
+        void ActualizarProgresoPista(int duracionActual, int duracionTotal);
+        void ActualizarEtiquetasPista(int posicionActual, string duracionActualString);
     }
+
 }

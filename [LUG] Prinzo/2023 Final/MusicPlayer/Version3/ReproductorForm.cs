@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using WMPLib;
+using AxWMPLib;
 
 /**
  * Developer/s: Gerardo Tordoya
@@ -39,31 +41,73 @@ namespace MusicPlayer
         public ReproductorForm()
         {
             InitializeComponent();
-            _presenter = new ReproductorPresenter(this);
             VolumenBarra.Value = 50;
+
+            _presenter = new ReproductorPresenter(this);
         }
 
-        public void ActualizarPistas(List<string> nombresPistas)
+        // Implementar los métodos de la interfaz IReproductorView
+        public event EventHandler AnteriorBotonClick
         {
-            PistasLista.Items.Clear();
-            foreach (var nombrePista in nombresPistas)
-            {
-                PistasLista.Items.Add(nombrePista);
-            }
+            add { AnteriorBoton.Click += value; }
+            remove { AnteriorBoton.Click -= value; }
         }
 
-        public void ActualizarImagenCubierta(Image imagen)
+        public event EventHandler SiguienteBotonClick
         {
-            CubiertaPic.Image = imagen;
+            add { SiguienteBoton.Click += value; }
+            remove { SiguienteBoton.Click -= value; }
         }
 
-        public void ActualizarProgresoPista(int duracion, int posicion)
+        public event EventHandler ReproducirBotonClick
         {
-            PistaProgresoBarra.Maximum = duracion;
-            PistaProgresoBarra.Value = posicion;
+            add { ReproducirBoton.Click += value; }
+            remove { ReproducirBoton.Click -= value; }
         }
 
-        private void AnteriorBoton_Click(object sender, EventArgs e)
+        public event EventHandler PausarBotonClick
+        {
+            add { PausarBoton.Click += value; }
+            remove { PausarBoton.Click -= value; }
+        }
+
+        public event EventHandler DetenerBotonClick
+        {
+            add { DetenerBoton.Click += value; }
+            remove { DetenerBoton.Click -= value; }
+        }
+
+        public event EventHandler CargarBotonClick
+        {
+            add { CargarBoton.Click += value; }
+            remove { CargarBoton.Click -= value; }
+        }
+
+        public event EventHandler PistasListaSelectedIndexChanged
+        {
+            add { PistasLista.SelectedIndexChanged += value; }
+            remove { PistasLista.SelectedIndexChanged -= value; }
+        }
+
+        public event EventHandler VolumenBarraScroll
+        {
+            add { VolumenBarra.Scroll += value; }
+            remove { VolumenBarra.Scroll -= value; }
+        }
+
+        public event MouseEventHandler PistaProgresoBarraMouseDown
+        {
+            add { PistaProgresoBarra.MouseDown += value; }
+            remove { PistaProgresoBarra.MouseDown -= value; }
+        }
+
+        public event EventHandler TemporizadorTick
+        {
+            add { Temporizador.Tick += value; }
+            remove { Temporizador.Tick -= value; }
+        }
+
+        public void SeleccionarPistaAnterior()
         {
             if (PistasLista.SelectedIndex > 0)
             {
@@ -71,7 +115,7 @@ namespace MusicPlayer
             }
         }
 
-        private void SiguienteBoton_Click(object sender, EventArgs e)
+        public void SeleccionarPistaSiguiente()
         {
             if (PistasLista.SelectedIndex < PistasLista.Items.Count - 1)
             {
@@ -79,22 +123,18 @@ namespace MusicPlayer
             }
         }
 
-        private void ReproducirBoton_Click(object sender, EventArgs e)
+        public void ReproducirPista(string ruta)
         {
-            _presenter.Reproducir();
+            Reproductor.URL = ruta;
+            Reproductor.Ctlcontrols.play();
         }
 
-        private void PausarBoton_Click(object sender, EventArgs e)
+        public void RestablecerProgresoPista()
         {
-            _presenter.Pausar();
+            PistaProgresoBarra.Value = 0;
         }
 
-        private void DetenerBoton_Click(object sender, EventArgs e)
-        {
-            _presenter.Detener();
-        }
-
-        private void CargarBoton_Click(object sender, EventArgs e)
+        public string[] SeleccionarArchivos()
         {
             OpenFileDialog selector = new OpenFileDialog
             {
@@ -103,41 +143,61 @@ namespace MusicPlayer
 
             if (selector.ShowDialog() == DialogResult.OK)
             {
-                string[] rutas = selector.FileNames;
-                _presenter.CargarPistas(rutas);
+                return selector.FileNames;
             }
+
+            return null;
         }
 
-        private void PistasLista_SelectedIndexChanged(object sender, EventArgs e)
+        public int ObtenerIndicePistaSeleccionada()
         {
-            _presenter.SeleccionarPista(PistasLista.SelectedIndex);
+            return PistasLista.SelectedIndex;
         }
 
-        private void VolumenBarra_Scroll(object sender, EventArgs e)
+        public void ActualizarListaPistas(string[] nombresPistas)
         {
-            _presenter.CambiarVolumen(VolumenBarra.Value);
-            NivelVolumenEtiqueta.Text = string.Format("{0}%", VolumenBarra.Value.ToString());
+            PistasLista.Items.Clear();
+            PistasLista.Items.AddRange(nombresPistas);
         }
 
-        private void PistaProgresoBarra_MouseDown(object sender, MouseEventArgs e)
+        public void MostrarImagenCubierta(Image imagen)
         {
-            _presenter.CambiarPosicionPista(e.X * 100 / PistaProgresoBarra.Width);
+            CubiertaPic.Image = imagen;
         }
 
-        private void Temporizador_Tick(object sender, EventArgs e)
+        public int ObtenerVolumen()
         {
-            if (Reproductor.playState == WMPLib.WMPPlayState.wmppsPlaying)
-            {
-                PistaProgresoBarra.Maximum = (int)Reproductor.Ctlcontrols.currentItem.duration;
-                PistaProgresoBarra.Value = (int)Reproductor.Ctlcontrols.currentPosition;
-
-                try
-                {
-                    PistaProgresoEtiqueta.Text = Reproductor.Ctlcontrols.currentPositionString;
-                    PistaDuracionEtiqueta.Text = Reproductor.Ctlcontrols.currentItem.durationString;
-                }
-                catch { }
-            }
+            return VolumenBarra.Value;
         }
+
+        public void ActualizarEtiquetaVolumen(int volumen)
+        {
+            NivelVolumenEtiqueta.Text = string.Format("{0}%", volumen.ToString());
+        }
+
+        public int CalcularPosicionPista(int x)
+        {
+            return (int)(Reproductor.currentMedia.duration * x / PistaProgresoBarra.Width);
+        }
+
+        public void ActualizarProgresoPista(int duracionActual, int duracionTotal)
+        {
+            PistaProgresoBarra.Maximum = duracionTotal;
+            PistaProgresoBarra.Value = duracionActual;
+        }
+
+        public void ActualizarEtiquetasPista(int posicionActual, string duracionActualString)
+        {
+            PistaProgresoEtiqueta.Text = duracionActualString;
+            PistaDuracionEtiqueta.Text = Reproductor.Ctlcontrols.currentItem.durationString;
+        }
+
+
+
+
+
+        
+
+
     }
 }

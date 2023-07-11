@@ -61,7 +61,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReproductorMusica.cs" />
+    <Compile Include="ReproductorModel.cs" />
     <Compile Include="ReproductorPresenter.cs" />
     <EmbeddedResource Include="ReproductorForm.resx">
       <DependentUpon>ReproductorForm.cs</DependentUpon>
