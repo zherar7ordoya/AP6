@@ -202,24 +202,26 @@ namespace MusicPlayer
             // PistaProgresoEtiqueta
             // 
             this.PistaProgresoEtiqueta.AutoSize = true;
-            this.PistaProgresoEtiqueta.Font = new System.Drawing.Font("DigifaceWide", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PistaProgresoEtiqueta.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PistaProgresoEtiqueta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.PistaProgresoEtiqueta.Location = new System.Drawing.Point(-7, 9);
             this.PistaProgresoEtiqueta.Name = "PistaProgresoEtiqueta";
-            this.PistaProgresoEtiqueta.Size = new System.Drawing.Size(125, 39);
+            this.PistaProgresoEtiqueta.Size = new System.Drawing.Size(103, 37);
             this.PistaProgresoEtiqueta.TabIndex = 13;
             this.PistaProgresoEtiqueta.Text = "00:00";
+            this.PistaProgresoEtiqueta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PistaDuracionEtiqueta
             // 
             this.PistaDuracionEtiqueta.AutoSize = true;
-            this.PistaDuracionEtiqueta.Font = new System.Drawing.Font("DigifaceWide", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PistaDuracionEtiqueta.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PistaDuracionEtiqueta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.PistaDuracionEtiqueta.Location = new System.Drawing.Point(535, 9);
+            this.PistaDuracionEtiqueta.Location = new System.Drawing.Point(559, 9);
             this.PistaDuracionEtiqueta.Name = "PistaDuracionEtiqueta";
-            this.PistaDuracionEtiqueta.Size = new System.Drawing.Size(125, 39);
+            this.PistaDuracionEtiqueta.Size = new System.Drawing.Size(103, 37);
             this.PistaDuracionEtiqueta.TabIndex = 14;
             this.PistaDuracionEtiqueta.Text = "00:00";
+            this.PistaDuracionEtiqueta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Panel
             // 
