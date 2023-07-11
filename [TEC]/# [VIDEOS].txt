@@ -1,13 +1,13 @@
 VCs
 
-VC 4 => 1:00:00
+VC 4 => 1:10:00
 VC 5 =>   00:00
 VC 6 =>   00:00
 VC 7 =>   00:00
 
 
 Drive
-Itinerario 09 => Inicio => 11:50
+Itinerario 09 => Inicio => Finalizado
 
 
 Playlist
