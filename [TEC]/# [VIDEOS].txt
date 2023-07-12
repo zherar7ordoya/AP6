@@ -8,7 +8,7 @@ VC 7 => 0:00:00
 
 Drive
 Itinerario 09 => FINALIZADO
-Itinerario 10 =>
+      ARQ: 10 => CAPA 2 PARTE 2 => 00:00
 Itinerario 11 =>
 Itinerario 12 =>
 Itinerario 13 =>
