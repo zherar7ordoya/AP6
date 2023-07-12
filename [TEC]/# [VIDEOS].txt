@@ -7,13 +7,13 @@ VC 7 => 0:00:00
 
 
 Drive
-Itinerario 09 => FINALIZADO
-      ARQ: 10 => CAPA 2 PARTE 2 => 00:00
-Itinerario 11 =>
-Itinerario 12 =>
-Itinerario 13 =>
+
+09 Entramado, Errores  => FINALIZADO
+10 ARQ                 => CAPA 2 PARTE 2 => 00:00
+11 Acceso al Medio     => (Sin Vídeos)
+12 Ethernet            => (Sin Vídeos)
+13 Hub, Switch, Router => (Sin Vídeos)
 
 
 Playlist
-?
-
+¿?
