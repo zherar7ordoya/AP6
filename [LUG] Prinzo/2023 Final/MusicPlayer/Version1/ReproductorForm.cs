@@ -18,16 +18,18 @@ namespace MusicPlayer
 {
     public partial class ReproductorForm : Form
     {
+        #region INSTANCIACIÓN.********************************************************
         public ReproductorForm()
         {
             InitializeComponent();
             VolumenBarra.Value = 50;
         }
-        /////////////////////////////////////////////////////////////////////
+        
         string[] rutas, archivos;
-        /////////////////////////////////////////////////////////////////////
+        #endregion
 
-        #region BOTONES*-------------------------------------------------------------*
+
+        #region BOTONES.**************************************************************
         private void AnteriorBoton_Click(object sender, EventArgs e)
         {
             if (PistasLista.SelectedIndex > 0)
@@ -74,6 +76,8 @@ namespace MusicPlayer
         }
         #endregion
 
+
+        #region EVENTOS.**************************************************************
         // Si el usuario selecciona algún archivo de la lista, entonces reproducirla.
         private void PistasLista_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -114,5 +118,7 @@ namespace MusicPlayer
                 catch { }
             }
         }
+
+        #endregion
     }
 }
