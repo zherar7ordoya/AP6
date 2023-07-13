@@ -1,7 +1,7 @@
 VCs
 
 VC 4 => FINALIZADO
-VC 5 => 0:00:00
+VC 5 => 0:22:22
 VC 6 => 0:00:00
 VC 7 => 0:00:00
 
@@ -9,7 +9,7 @@ VC 7 => 0:00:00
 Drive
 
 09 Entramado, Errores  => FINALIZADO
-10 ARQ                 => CAPA 2 PARTE 2 => 00:00
+10 ARQ                 => FINALIZADO
 11 Acceso al Medio     => (Sin Vídeos)
 12 Ethernet            => (Sin Vídeos)
 13 Hub, Switch, Router => (Sin Vídeos)
