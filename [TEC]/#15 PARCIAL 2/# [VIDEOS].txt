@@ -3,7 +3,7 @@ VCs
 VC 4 => FINALIZADO
 VC 5 => FINALIZADO
 VC 6 => FINALIZADO
-VC 7 => 0:00:00
+VC 7 => 0:00:00 ??????
 
 
 Drive
