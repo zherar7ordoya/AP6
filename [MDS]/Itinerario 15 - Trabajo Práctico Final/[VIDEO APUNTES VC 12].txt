@@ -1,0 +1,1 @@
+00:40:50 => Relación Diagrama Roles y Diagrama ECS
