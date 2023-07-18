@@ -1,1 +1,43 @@
-00:40:50 => Relación Diagrama Roles y Diagrama ECS
+RELACIONES => "LO DEFINIDO AL PRINCIPIO DEBE MANTENERSE HASTA EL FINAL"
+
+00:40:50
+
+Diagrama ECS
+Deben tener la misma cantidad de "comportamientos":
+	*) El Diagrama de Roles
+	*) El Diagrama de Procesos de Negocio
+	*) El Diagrama de Casos de Uso
+
+Diagrama de Procesos de Negocio
+La cantidad de datastores debe coincidir con la cantidad de entidades del Modelo Conceptual.
+
+Diagrama de Casos de Uso
+Cada "globo" es una pantalla.
+
+-----------------------------
+
+00:59:35
+
+Diagrama de Clases de un Caso de Uso
+La cantidad de clases del Diagrama de Clases de un CU debe coincidir con las clases asociadas en el Diagrama de Secuencia de ese CU.
+
+----
+
+01:02:35
+El Diagrama de Clases debe evidenciar relaciones y cardinalidad.
+El Diagrama de Clases tiene que llegar así como está planteado al ERD.
+
+======================================================================
+
+CORRECCIONES
+
+*) Nombre de las clases
+*) Personitas de los casos de uso (todas a un lado)
+*) No hace falta la pelota individual del caso de uso
+*) Pág. 18: primer flujo no es registrar cliente sino "Datos del Cliente"
+*) Pág. 23: no es datastore, es Base de Datos [datastore es a nivel de RAM, en el diagrama se plantea la persistencia]. || La respuesta es "confirmado", no "éxito".
+
+========================================================================
+
+
+quedé en 1:18:30
