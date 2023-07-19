@@ -1,36 +1,28 @@
-RELACIONES => "LO DEFINIDO AL PRINCIPIO DEBE MANTENERSE HASTA EL FINAL"
+RELACIONES => "LO DEFINIDO AL PRINCIPIO DEBE MANTENERSE HASTA EL FINAL".
+MORALEJA   => "NO INVENTEN MÁS DE LO YA QUE TIENEN, HÁGANLO MÁS FÁCIL QUE DIFÍCIL".
 
 00:40:50
+*) Diagrama ECS => Deben tener la misma cantidad de "comportamientos":
+	- El Diagrama de Roles
+	- El Diagrama de Procesos de Negocio
+	- El Diagrama de Casos de Uso
+*) Diagrama de Procesos de Negocio => La cantidad de datastores debe coincidir con la cantidad de entidades del Modelo Conceptual.
+*) Diagrama de Casos de Uso => Cada "globo" es una pantalla.
 
-Diagrama ECS
-Deben tener la misma cantidad de "comportamientos":
-	*) El Diagrama de Roles
-	*) El Diagrama de Procesos de Negocio
-	*) El Diagrama de Casos de Uso
-
-Diagrama de Procesos de Negocio
-La cantidad de datastores debe coincidir con la cantidad de entidades del Modelo Conceptual.
-
-Diagrama de Casos de Uso
-Cada "globo" es una pantalla.
-
------------------------------
 
 00:59:35
-
 Diagrama de Clases de un Caso de Uso
 La cantidad de clases del Diagrama de Clases de un CU debe coincidir con las clases asociadas en el Diagrama de Secuencia de ese CU.
 
-----
 
 01:02:35
 El Diagrama de Clases debe evidenciar relaciones y cardinalidad.
 El Diagrama de Clases tiene que llegar así como está planteado al ERD.
 
+
 ======================================================================
 
-CORRECCIONES
-
+CORRECCIONES A NUESTRO TRABAJO
 *) Nombre de las clases
 *) Personitas de los casos de uso (todas a un lado)
 *) No hace falta la pelota individual del caso de uso
@@ -40,4 +32,24 @@ CORRECCIONES
 ========================================================================
 
 
-quedé en 1:18:30
+01:38:25
+La cantidad de entidades del Modelo Conceptual (que a su vez, coinciden con la cantidad de datastores) debe ser la misma que la de Modelo de Dominio y (obviamente) que la del Diagrama de Clases (a menos que se descompongan: relación de 1 a N) <- Se empieza a ver en el Diagrama de Dominio.
+
+
+01:41:00
+Cada "pelota" del Caso de Uso tiene su propio universo de Clases => Es decir, el Diagrama de Clases para cada CU no puede ser el mismo, no deberían ser necesarias las mismas clases en cada CU.
+NOTA: Este grupo hizo un Diagrama de Clases por cada CU.
+
+01:42:10
+Diagrama de Secuencia => No desarrollar la secuencia del <<extend>> dentro del diagrama de secuencia del que está llamando al <<extend>> (poner una "pelota" de fuga: me fui al <<extend>>).
+
+
+01:46:50
+(Es medio obvio...) => Deben haber tantos Diagramas de Secuencia como Casos de Uso existen.
+
+
+01:47:56
+(Es medio obvio...) => Un CU no puede tener más clases (Diagrama de Clases) que el Diagrama General de Clases (se ve en el Modelo Conceptual de Requerimiento Funcional específico).
+
+
+quedé en 01:54:00
