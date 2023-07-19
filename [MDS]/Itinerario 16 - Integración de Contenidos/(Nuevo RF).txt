@@ -1,0 +1,75 @@
+
+Requerimiento Funcional: Sistema de Mantenimiento Preventivo de Camiones
+
+Descripción: Agregar un módulo de Mantenimiento Preventivo de Camiones a la aplicación de escritorio que permita realizar un seguimiento detallado del estado y las necesidades de mantenimiento de la flota de camiones utilizada para el transporte de contenedores.
+
+Actores Principales:
+
+1. Encargado de Logística: Es el actor responsable de coordinar y supervisar las operaciones logísticas, incluido el mantenimiento de la flota de camiones.
+
+2. Técnico de Mantenimiento: Es el encargado de llevar a cabo las tareas de mantenimiento programadas y resolver cualquier incidencia reportada en los camiones.
+
+Diagrama de Procesos de Negocios (BPMN):
+
+```
+(Encargado de Logística)        (Técnico de Mantenimiento)
+       |                                      |
+       |    1. Solicitar mantenimiento        |
+       |------------------------------------->|
+       |                                      |
+       |    2. Programar mantenimiento        |
+       |------------------------------------->|
+       |                                      |
+       |    3. Alertas de mantenimiento       |
+       |<-------------------------------------|
+       |                                      |
+       |    4. Realizar mantenimiento         |
+       |------------------------------------->|
+       |                                      |
+       |    5. Registrar mantenimiento        |
+       |<-------------------------------------|
+       |                                      |
+       |    6. Registro de incidencias        |
+       |------------------------------------->|
+       |                                      |
+       |    7. Informes de mantenimiento      |
+       |<-------------------------------------|
+```
+
+Diagrama de ECS (Entrada-Comportamiento-Salida):
+
+```
+Entrada                   Comportamiento                      Salida
+--------------------------------------------------------------------------------------
+1. Solicitud de           - El Encargado de Logística         - Registro de solicitud
+mantenimiento.            solicita un mantenimiento          de mantenimiento en la
+                          preventivo para un camión.         base de datos.
+                                                             - Programación del
+                                                             mantenimiento.
+
+2. Programación           - El sistema programa el           - Notificación de
+de mantenimiento.         mantenimiento preventivo           mantenimiento al Técnico
+                          según las fechas                   de Mantenimiento.
+                          programadas.
+
+3. Alertas de             - El sistema envía alertas         - Notificación al
+mantenimiento.            al Encargado de Logística           Encargado de Logística
+                          sobre las fechas de                sobre los mantenimientos
+                          mantenimiento programado.          programados.
+
+4. Realización            - El Técnico de Mantenimiento      - Registro de mantenimiento
+de mantenimiento.         realiza el mantenimiento           completado en la base de
+                          preventivo en el camión.           datos.
+
+5. Registro de            - El Técnico de Mantenimiento      - Registro de incidencias
+incidencias.              registra cualquier incidencia      relacionadas con los
+                          o problema encontrado durante      mantenimientos en la
+                          el mantenimiento.                  base de datos.
+
+6. Informes de            - El sistema genera informes       - Informes de
+mantenimiento.            periódicos sobre el                mantenimiento con datos
+                          mantenimiento de la flota de       de mantenimientos
+                          camiones.                         realizados, costos, etc.
+```
+
+Este diagrama de procesos de negocios muestra cómo se llevará a cabo el mantenimiento preventivo de la flota de camiones. El Encargado de Logística solicita el mantenimiento, y luego el Técnico de Mantenimiento programa, realiza y registra el mantenimiento. Además, el sistema proporciona alertas sobre fechas programadas y genera informes periódicos sobre el estado del mantenimiento de la flota de camiones.
