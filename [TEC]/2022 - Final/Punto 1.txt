@@ -1,0 +1,11 @@
+Dado el siguiente espectro, dibuje la forma de onda resultante. Indique escalas.
+```
+ ^ A[v]
+ |
+1|.....+
+ |     |
+ |.....|.....+
+ |     |     |
+ +_____|_____|_____>
+       1     2     f[Hz]
+```
