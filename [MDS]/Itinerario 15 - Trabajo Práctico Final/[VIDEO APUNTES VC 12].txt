@@ -52,4 +52,26 @@ Diagrama de Secuencia => No desarrollar la secuencia del <<extend>> dentro del d
 (Es medio obvio...) => Un CU no puede tener más clases (Diagrama de Clases) que el Diagrama General de Clases (se ve en el Modelo Conceptual de Requerimiento Funcional específico).
 
 
-quedé en 01:54:00
+01:57:30
+Datastores en Diagrama de Proceso deben coincidir en cantidad con las entidades del Modelo Conceptual.
+
+
+01:58:30
+Diagrama que tiene mucho sentido (Diagrama de Caso de Uso General)
+
+                               +--------------------------------------------------------------+
+Cliente --- Administración --- | --- CU Realizar Reserva <...«extend»... CU Registrar Cliente |
+Cliente --- --- Mesero --- --- | --- CU Solicitar Pedido                                      |
+Cliente --- --- Cajero --- --- | --- CU Cobrar Venta --- --- --- --- --- --- --- --- --- ---  | --- Banco
+                               +--------------------------------------------------------------+
+NOTA: Sin embargo, Pedido y Pago debieran ser parte de un único Requisito Funcional.
+
+
+02:08:50
+Diagrama ECS
+=> La cantidad de entradas debe coincidir con la cantidad de entradas en el Diagrama de Secuencia.
+=> La cantidad de procesos debe coincidir con la cantidad de "pasos" descriptos en el Requerimiento Funcional.
+=> La cantidad de salidas debe coincidir con la cantidad de salidas en el Diagrama de Secuencia.
+
+
+02:28:00
