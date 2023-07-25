@@ -1,3 +1,7 @@
+***********************************************************************************
+
+VC#12
+
 RELACIONES => "LO DEFINIDO AL PRINCIPIO DEBE MANTENERSE HASTA EL FINAL".
 MORALEJA   => "NO INVENTEN MÁS DE LO YA QUE TIENEN, HÁGANLO MÁS FÁCIL QUE DIFÍCIL".
 
@@ -74,4 +78,8 @@ Diagrama ECS
 => La cantidad de salidas debe coincidir con la cantidad de salidas en el Diagrama de Secuencia.
 
 
-02:28:00
+***********************************************************************************
+
+VC#13
+
+01:04:00
