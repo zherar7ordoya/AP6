@@ -1,4 +1,3 @@
-***********************************************************************************
 
 VC#12
 
@@ -76,10 +75,3 @@ Diagrama ECS
 => La cantidad de entradas debe coincidir con la cantidad de entradas en el Diagrama de Secuencia.
 => La cantidad de procesos debe coincidir con la cantidad de "pasos" descriptos en el Requerimiento Funcional.
 => La cantidad de salidas debe coincidir con la cantidad de salidas en el Diagrama de Secuencia.
-
-
-***********************************************************************************
-
-VC#13
-
-01:04:00
