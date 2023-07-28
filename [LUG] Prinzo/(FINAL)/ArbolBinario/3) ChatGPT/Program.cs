@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Refactored
+namespace Version3
 {
     class Program
     {
