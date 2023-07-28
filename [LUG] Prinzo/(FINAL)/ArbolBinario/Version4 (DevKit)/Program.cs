@@ -50,11 +50,11 @@ namespace Version4
 
     public class ArbolBinario
     {
-        private ArbolNodo _raiz;  // Define el nodo raíz del árbol binario.
+        private ArbolNodo? _raiz;  // Define el nodo raíz del árbol binario.
         private int _contador;    // Un contador que almacena el número de nodos en el árbol.
         private readonly IComparer<int> _comparer = Comparer<int>.Default; // Comparador de enteros para determinar la posición de los nodos.
 
-        public ArbolNodo Raiz { get { return _raiz; } } // Propiedad pública para acceder al nodo raíz.
+        public ArbolNodo? Raiz { get { return _raiz; } } // Propiedad pública para acceder al nodo raíz.
 
         public ArbolBinario()
         {
@@ -123,8 +123,8 @@ namespace Version4
     public class ArbolNodo
     {
         public int Item;          // Almacena el valor del nodo.
-        public ArbolNodo Derecha; // Referencia al nodo hijo derecho.
-        public ArbolNodo Izquierda; // Referencia al nodo hijo izquierdo.
+        public ArbolNodo? Derecha; // Referencia al nodo hijo derecho.
+        public ArbolNodo? Izquierda; // Referencia al nodo hijo izquierdo.
 
         public ArbolNodo(int pItem)
         {
@@ -203,10 +203,10 @@ namespace Version4
         class NodoInfo
         {
             // Almacena el nodo actual.
-            public ArbolNodo Nodo;
+            public ArbolNodo? Nodo;
 
             // Texto que se mostrará para representar el nodo en la impresión.
-            public string Texto;
+            public string? Texto;
 
             // Posición inicial del nodo en la línea de impresión.
             public int PosicionInicial;
@@ -214,7 +214,7 @@ namespace Version4
             // Propiedad para obtener el tamaño del texto que representa el nodo.
             public int Tamaño
             {
-                get { return Texto.Length; }
+                get { return Texto?.Length ?? 0; }
             }
 
             // Propiedad para obtener o establecer la posición final del nodo en la línea de impresión.
@@ -225,7 +225,7 @@ namespace Version4
             }
 
             // Referencias a los nodos padre, hijo izquierdo y hijo derecho del nodo actual.
-            public NodoInfo Padre, Izquierda, Derecha;
+            public NodoInfo? Padre, Izquierda, Derecha;
         }
 
         public static void Imprimir(this ArbolNodo pRaiz,
@@ -291,7 +291,7 @@ namespace Version4
                     // Establece la referencia al nodo padre del nodo actual utilizando el último nodo impreso en el nivel anterior.
                     item.Padre = lista[nivel - 1];
 
-                    if (proximo == item.Padre.Nodo.Izquierda)
+                    if (item.Padre?.Nodo?.Izquierda == proximo)
                     {
                         // Si el nodo actual es el hijo izquierdo del nodo padre, establece la referencia al hijo izquierdo del nodo padre.
                         item.Padre.Izquierda = item;
@@ -302,10 +302,16 @@ namespace Version4
                     else
                     {
                         // Si el nodo actual es el hijo derecho del nodo padre, establece la referencia al hijo derecho del nodo padre.
-                        item.Padre.Derecha = item;
+                        if (item.Padre != null)
+                        {
+                            item.Padre.Derecha = item;
+                        }
 
                         // Ajusta la posición inicial del nodo actual para evitar solapamientos con el nodo padre.
-                        item.PosicionInicial = Math.Max(item.PosicionInicial, item.Padre.PosicionFinal);
+                        if (item.Padre != null)
+                        {
+                            item.PosicionInicial = Math.Max(item.PosicionInicial, item.Padre.PosicionFinal);
+                        }
                     }
                 }
 
@@ -315,22 +321,38 @@ namespace Version4
                 for (; proximo == null; item = item.Padre)
                 {
                     // Imprime los ángulos en la impresión, mostrando la estructura jerárquica del árbol.
-                    ImprimeAngulares(item, raizMargenSuperior + 2 * nivel);
+                    if (item != null)
+                    {
+                        ImprimeAngulares(item, raizMargenSuperior + 2 * nivel);
+                    }
 
                     // Decrementa el nivel y sale del bucle si se ha llegado a la raíz del árbol.
                     if (--nivel < 0) break;
 
-                    if (item == item.Padre.Izquierda)
+                    if (item?.Padre?.Izquierda == item)
                     {
-                        item.Padre.PosicionInicial = item.PosicionFinal;
+                        if (item.Padre?.Nodo != null)
+                        {
+                            item.Padre.PosicionInicial = item.PosicionFinal;
+                        }
 
                         // Se mueve al nodo hermano derecho del nodo actual.
-                        proximo = item.Padre.Nodo.Derecha;
+                        if (item.Padre?.Nodo?.Derecha != null)
+                        {
+                            proximo = item.Padre.Nodo.Derecha;
+                        }
+                        else
+                        {
+                            proximo = null;
+                        }
                     }
                     else
                     {
-                        if (item.Padre.Izquierda == null)
-                            item.Padre.PosicionFinal = item.PosicionInicial;
+                        if (item.Padre?.Izquierda == null)
+                            if (item.Padre != null)
+                            {
+                                item.Padre.PosicionFinal = item.PosicionInicial;
+                            }
                         else
                             // Ajusta la posición inicial del nodo padre para evitar solapamientos con otros nodos hijos.
                             item.Padre.PosicionInicial += (item.PosicionInicial - item.Padre.PosicionFinal) / 2;
@@ -403,12 +425,7 @@ namespace Version4
 
         private static void IntercambiarColores()
         {
-            var color = Console.ForegroundColor;
-
-            // Intercambia los colores de texto y fondo para resaltar los nodos en la impresión.
-            Console.ForegroundColor = Console.BackgroundColor;
-
-            Console.BackgroundColor = color;
+            (Console.BackgroundColor, Console.ForegroundColor) = (Console.ForegroundColor, Console.BackgroundColor);
         }
     }
 
