@@ -1,4 +1,4 @@
-﻿namespace BinaryTree
+﻿namespace Version2
 {
     /// <summary>
     /// El nodo no necesita mayores explicaciones: nombre, izquierda, derecha

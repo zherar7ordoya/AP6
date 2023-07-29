@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{AE5D71FC-A662-4E8D-9A42-7D1398781C60}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BinaryTree</RootNamespace>
-    <AssemblyName>BinaryTree</AssemblyName>
+    <RootNamespace>Version2</RootNamespace>
+    <AssemblyName>Version2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

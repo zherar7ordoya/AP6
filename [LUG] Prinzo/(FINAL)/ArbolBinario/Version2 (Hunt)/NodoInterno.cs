@@ -1,4 +1,4 @@
-﻿namespace BinaryTree
+﻿namespace Version2
 {
     public static partial class ImpresionBase
     {

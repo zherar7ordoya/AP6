@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BinaryTree
+namespace Version2
 {
     public static class ImpresionColores
     {

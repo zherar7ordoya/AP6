@@ -11,7 +11,7 @@ using System;
 using static System.Console;
 
 
-namespace BinaryTree
+namespace Version2
 {
     class Program
     {

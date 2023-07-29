@@ -1,5 +1,9 @@
-﻿using System;
+﻿////////10////////20////////30////////40////////50////////60////////70////////80////////90///////100///////110///////120
+
+
+using System;
 using System.Collections.Generic;
+
 
 namespace Version3
 {
@@ -50,70 +54,121 @@ namespace Version3
 
     public class ArbolBinario
     {
-        private ArbolNodo _raiz;  // Define el nodo raíz del árbol binario.
-        private int _contador;    // Un contador que almacena el número de nodos en el árbol.
-        private readonly IComparer<int> _comparer = Comparer<int>.Default; // Comparador de enteros para determinar la posición de los nodos.
+        // Define el nodo raíz del árbol binario.
+        private ArbolNodo _raiz;
 
-        public ArbolNodo Raiz { get { return _raiz; } } // Propiedad pública para acceder al nodo raíz.
+        // Un contador que almacena el número de nodos en el árbol.
+        private int _contador = default;
+
+        // Comparador de enteros para determinar la posición de los nodos.
+        private readonly IComparer<int> _comparer = Comparer<int>.Default;
+
+        // Propiedad pública para acceder al nodo raíz.
+        public ArbolNodo Raiz { get { return _raiz; } } 
 
         public ArbolBinario()
         {
-            _raiz = null;   // Inicializa la raíz del árbol como nula, ya que al inicio no hay nodos.
-            _contador = 0;  // Inicializa el contador en 0, ya que al inicio no hay nodos.
+            // Inicializa la raíz del árbol como nula, ya que al inicio no hay
+            // nodos.
+            _raiz = null;
+
+            // Inicializa el contador en 0, ya que al inicio no hay nodos.
+            _contador = 0;  
         }
 
         public void Imprimir()
         {
-            ArbolBinarioImpresor.Imprimir(Raiz); // Invoca el método "Imprimir" de la clase "ArbolBinarioImpresor" para imprimir el árbol binario.
+            // Invoca el método "Imprimir" de la clase "ArbolBinarioImpresor"
+            // para imprimir el árbol binario.
+            ArbolBinarioImpresor.Imprimir(Raiz); 
         }
 
         public bool AgregarNodo(int pItem)
         {
             if (_raiz == null)
             {
-                _raiz = new ArbolNodo(pItem); // Si el árbol está vacío, crea un nuevo nodo con el elemento dado y lo establece como la raíz.
-                _contador++; // Incrementa el contador de nodos en 1.
-                return true; // Retorna true, indicando que se pudo agregar el nodo correctamente.
+                // Si el árbol está vacío, crea un nuevo nodo con el elemento
+                // dado y lo establece como la raíz.
+                _raiz = new ArbolNodo(pItem);
+
+                // Incrementa el contador de nodos en 1.
+                _contador++;
+
+                // Retorna true, indicando que se pudo agregar el nodo
+                // correctamente.
+                return true; 
             }
             else
             {
-                return AgregarSubnodo(_raiz, pItem); // Si el árbol no está vacío, llama al método "AgregarSubnodo" para agregar el nuevo nodo en la posición correcta.
+                // Si el árbol no está vacío, llama al método "AgregarSubnodo"
+                // para agregar el nuevo nodo en la posición correcta.
+                return AgregarSubnodo(_raiz, pItem); 
             }
         }
 
         private bool AgregarSubnodo(ArbolNodo pNodo, int pItem)
         {
-            int resultadoComparado = _comparer.Compare(pNodo.Item, pItem); // Compara el valor del nodo actual con el elemento a insertar.
+            // Compara el valor del nodo actual con el elemento a insertar.
+            int resultadoComparado = _comparer.Compare(pNodo.Item, pItem);
 
-            if (resultadoComparado < 0) // Si el elemento a insertar es mayor que el elemento actual:
+            // Si el elemento a insertar es mayor que el elemento actual:
+            if (resultadoComparado < 0) 
             {
                 if (pNodo.Derecha == null)
                 {
-                    pNodo.Derecha = new ArbolNodo(pItem); // Si no hay un nodo a la derecha del nodo actual, crea un nuevo nodo con el elemento y lo coloca en la posición de la derecha.
-                    _contador++; // Incrementa el contador de nodos en 1.
-                    return true; // Retorna true, indicando que se pudo agregar el nodo correctamente.
+                    // Si no hay un nodo a la derecha del nodo actual, crea un
+                    // nuevo nodo con el elemento y lo coloca en la posición de la derecha.
+                    pNodo.Derecha = new ArbolNodo(pItem);
+
+                    // Incrementa el contador de nodos en 1.
+                    _contador++;
+
+                    // Retorna true, indicando que se pudo agregar el nodo
+                    // correctamente.
+                    return true; 
                 }
                 else
                 {
-                    return AgregarSubnodo(pNodo.Derecha, pItem); // Si ya hay un nodo a la derecha del nodo actual, llama recursivamente al método "AgregarSubnodo" para agregar el nuevo nodo en la posición correcta de la rama derecha.
+                    // Si ya hay un nodo a la derecha del nodo actual, llama
+                    // recursivamente al método "AgregarSubnodo" para agregar el
+                    // nuevo nodo en la posición correcta de la rama derecha.
+                    return AgregarSubnodo(pNodo.Derecha, pItem); 
                 }
             }
-            else if (resultadoComparado > 0) // Si el elemento a insertar es menor que el elemento actual:
+
+            // Si el elemento a insertar es menor que el elemento actual:
+            else if (resultadoComparado > 0) 
             {
                 if (pNodo.Izquierda == null)
                 {
-                    pNodo.Izquierda = new ArbolNodo(pItem); // Si no hay un nodo a la izquierda del nodo actual, crea un nuevo nodo con el elemento y lo coloca en la posición de la izquierda.
-                    _contador++; // Incrementa el contador de nodos en 1.
-                    return true; // Retorna true, indicando que se pudo agregar el nodo correctamente.
+                    // Si no hay un nodo a la izquierda del nodo actual, crea un
+                    // nuevo nodo con el elemento y lo coloca en la posición de
+                    // la izquierda.
+                    pNodo.Izquierda = new ArbolNodo(pItem);
+
+                    // Incrementa el contador de nodos en 1.
+                    _contador++;
+
+                    // Retorna true, indicando que se pudo agregar el nodo
+                    // correctamente.
+                    return true; 
                 }
                 else
                 {
-                    return AgregarSubnodo(pNodo.Izquierda, pItem); // Si ya hay un nodo a la izquierda del nodo actual, llama recursivamente al método "AgregarSubnodo" para agregar el nuevo nodo en la posición correcta de la rama izquierda.
+                    // Si ya hay un nodo a la izquierda del nodo actual, llama
+                    // recursivamente al método "AgregarSubnodo" para agregar el
+                    // nuevo nodo en la posición correcta de la rama izquierda.
+                    return AgregarSubnodo(pNodo.Izquierda, pItem); 
                 }
             }
-            else // Si el elemento a insertar es igual al elemento actual, no se permite agregar duplicados:
+
+            // Si el elemento a insertar es igual al elemento actual, no se
+            // permite agregar duplicados:
+            else
             {
-                return false; // Retorna false, indicando que no se pudo agregar el nodo debido a que ya existe un nodo con el mismo valor.
+                // Retorna false, indicando que no se pudo agregar el nodo
+                // debido a que ya existe un nodo con el mismo valor.
+                return false; 
             }
         }
     }
@@ -122,46 +177,48 @@ namespace Version3
 
     public class ArbolNodo
     {
-        public int Item;          // Almacena el valor del nodo.
-        public ArbolNodo Derecha; // Referencia al nodo hijo derecho.
-        public ArbolNodo Izquierda; // Referencia al nodo hijo izquierdo.
+        // Almacena el valor del nodo.
+        public int Item;
+
+        // Referencia al nodo hijo derecho.
+        public ArbolNodo Derecha;
+
+        // Referencia al nodo hijo izquierdo.
+        public ArbolNodo Izquierda; 
 
         public ArbolNodo(int pItem)
         {
-            Item = pItem; // Constructor de la clase que inicializa el valor del nodo con el valor pasado como argumento.
+            // Constructor de la clase que inicializa el valor del nodo con el
+            // valor pasado como argumento.
+            Item = pItem; 
         }
     }
 
 
-    /// <summary>
-    /// La clase ArbolBinarioImpresor es una clase estática que se utiliza para
-    /// imprimir visualmente un árbol binario en la consola. El método principal
-    /// para esta impresión es el método de extensión Imprimir que se aplica a
-    /// un nodo raíz del árbol. A continuación, una explicación de cada parte
-    /// del código:
-    /// 
-    /// 1.
-    /// class NodoInfo:
-    /// Esta clase interna es utilizada para almacenar información sobre cada
-    /// nodo durante la impresión. Contiene propiedades para el nodo actual, el
-    /// texto que representa al nodo, la posición inicial y final del nodo en la
-    /// impresión, así como referencias a sus nodos padre, hijo izquierdo y hijo
-    /// derecho.
-    /// 
-    /// 2.
-    /// public static void Imprimir(this ArbolNodo pRaiz,
-    /// int pMargenSuperior = 2, int pMargenIzquierdo = 2):
-    /// Este es el método de extensión utilizado para imprimir el árbol binario.
-    /// Recibe el nodo raíz del árbol como argumento, así como opciones para
-    /// ajustar los márgenes superiores e izquierdos de la impresión.
-    /// 
-    /// 3.
-    /// El resto del código implementa la lógica necesaria para calcular las
-    /// posiciones y espacios necesarios para la impresión del árbol binario en
-    /// la consola. Utiliza una combinación de espacios en blanco y caracteres
-    /// especiales (ángulos y líneas) para representar la estructura jerárquica
-    /// del árbol.
-    /// </summary>
+    /*
+    La clase ArbolBinarioImpresor es una clase estática que se utiliza para
+    imprimir visualmente un árbol binario en la consola. El método principal
+    para esta impresión es el método de extensión Imprimir que se aplica a un
+    nodo raíz del árbol. A continuación, una explicación de cada parte del
+    código:
+    
+    class NodoInfo:
+    Esta clase interna es utilizada para almacenar información sobre cada nodo
+    durante la impresión. Contiene propiedades para el nodo actual, el texto que
+    representa al nodo, la posición inicial y final del nodo en la impresión,
+    así como referencias a sus nodos padre, hijo izquierdo y hijo derecho.
+    
+    public static void Imprimir(this ArbolNodo pRaiz, int pMargenSuperior = 2, int pMargenIzquierdo = 2):
+    Este es el método de extensión utilizado para imprimir el árbol binario.
+    Recibe el nodo raíz del árbol como argumento, así como opciones para
+    ajustar los márgenes superiores e izquierdos de la impresión.
+    
+    El resto del código implementa la lógica necesaria para calcular las
+    posiciones y espacios necesarios para la impresión del árbol binario en la
+    consola. Utiliza una combinación de espacios en blanco y caracteres
+    especiales (ángulos y líneas) para representar la estructura jerárquica del
+    árbol.
+    */
     public static class ArbolBinarioImpresor
     {
         /// <summary>
@@ -211,58 +268,83 @@ namespace Version3
             // Posición inicial del nodo en la línea de impresión.
             public int PosicionInicial;
 
-            // Propiedad para obtener el tamaño del texto que representa el nodo.
+            // Propiedad para obtener el tamaño del texto que representa el
+            // nodo.
             public int Tamaño
             { 
                 get { return Texto.Length; } 
             }
 
-            // Propiedad para obtener o establecer la posición final del nodo en la línea de impresión.
+            // Propiedad para obtener o establecer la posición final del nodo en
+            // la línea de impresión.
             public int PosicionFinal
             {
                 get { return PosicionInicial + Tamaño; }
                 set { PosicionInicial = value - Tamaño; }
             }
 
-            // Referencias a los nodos padre, hijo izquierdo y hijo derecho del nodo actual.
+            // Referencias a los nodos padre, hijo izquierdo y hijo derecho del
+            // nodo actual.
             public NodoInfo Padre, Izquierda, Derecha; 
         }
+
+
+        // Los parámetros de margen pueden ser considerados configuración de
+        // cómo, en términos generales, se ubicará el diagrama en pantalla.
+
+        /*
+        ¿Como enviar el cursor a una posicion de la pantalla?
+
+        Así:
+            Console.CursorLeft = 10; // columna
+            Console.CursorTop = 10; // fila
+            Console.Write( "Este texto inicia en la columna 11 de la fila 11" );
+
+        O así:
+            Console.SetCursorPosition( 10, 10 );
+        */
 
         public static void Imprimir(this ArbolNodo pRaiz,
                                     int pMargenSuperior = 2,
                                     int pMargenIzquierdo = 2)
         {
-            // Si la raíz del árbol es nula, no hay nada que imprimir, así que se sale del método.
+            // Si la raíz del árbol es nula, no hay nada que imprimir, así que
+            // se sale del método.
             if (pRaiz == null) return;
 
             // Calcula la posición superior de la raíz en la consola.
             int raizMargenSuperior = Console.CursorTop + pMargenSuperior;
 
-            // Crea una lista para almacenar información de los nodos de cada nivel.
+            // Crea una lista para almacenar información de los nodos de cada
+            // nivel.
             var lista = new List<NodoInfo>();
 
-            // Inicializa una variable para rastrear el nodo actual durante la impresión.
+            // Inicializa una variable para rastrear el nodo actual durante la
+            // impresión.
             var proximo = pRaiz;
 
 
-            // Diagrama de esta estrucutura:
-            //  for
-            //   |
-            //   +-- if (nivel < lista.Count)
-            //   |
-            //   +-- if (nivel > 0)
-            //        |
-            //        +-- if (proximo == item.Padre.Nodo.Izquierda)
-            //   |
-            //   +-- for
-            //        |
-            //        +-- if (--nivel < 0)
-            //        |
-            //        +-- if (item == item.Padre.Izquierda)
+            /*
+            Diagrama de esta estructura:
 
+              for
+               |
+               +-- if (nivel < lista.Count)
+               |
+               +-- if (nivel > 0)
+                    |
+                    +-- if (proximo == item.Padre.Nodo.Izquierda)
+               |
+               +-- for
+                    |
+                    +-- if (--nivel < 0)
+                    |
+                    +-- if (item == item.Padre.Izquierda)
+            */
             for (int nivel = 0; proximo != null; nivel++)
             {
-                // Crea una nueva instancia de NodoInfo para el nodo actual, con su información.
+                // Crea una nueva instancia de NodoInfo para el nodo actual,
+                // con su información.
                 var item = new NodoInfo
                 {
                     Nodo = proximo,
@@ -271,53 +353,66 @@ namespace Version3
 
                 if (nivel < lista.Count)
                 {
-                    // Calcula la posición inicial del nodo actual basándose en el último nodo impreso en el mismo nivel.
+                    // Calcula la posición inicial del nodo actual basándose en
+                    // el último nodo impreso en el mismo nivel.
                     item.PosicionInicial = lista[nivel].PosicionFinal + 1;
 
-                    // Reemplaza el último nodo impreso en el mismo nivel con el nodo actual.
+                    // Reemplaza el último nodo impreso en el mismo nivel con el
+                    // nodo actual.
                     lista[nivel] = item; 
                 }
                 else
                 {
-                    // Si es el primer nodo en el nivel, establece su posición inicial con el margen izquierdo.
+                    // Si es el primer nodo en el nivel, establece su posición
+                    // inicial con el margen izquierdo.
                     item.PosicionInicial = pMargenIzquierdo;
 
-                    // Agrega el nodo actual a la lista de información de nodos del nivel actual.
+                    // Agrega el nodo actual a la lista de información de nodos
+                    // del nivel actual.
                     lista.Add(item); 
                 }
 
                 if (nivel > 0)
                 {
-                    // Establece la referencia al nodo padre del nodo actual utilizando el último nodo impreso en el nivel anterior.
+                    // Establece la referencia al nodo padre del nodo actual
+                    // utilizando el último nodo impreso en el nivel anterior.
                     item.Padre = lista[nivel - 1]; 
 
                     if (proximo == item.Padre.Nodo.Izquierda)
                     {
-                        // Si el nodo actual es el hijo izquierdo del nodo padre, establece la referencia al hijo izquierdo del nodo padre.
+                        // Si el nodo actual es el hijo izquierdo del nodo
+                        // padre, establece la referencia al hijo izquierdo del
+                        // nodo padre.
                         item.Padre.Izquierda = item;
 
-                        // Ajusta la posición final del nodo actual para evitar solapamientos con el nodo padre.
+                        // Ajusta la posición final del nodo actual para evitar
+                        // solapamientos con el nodo padre.
                         item.PosicionFinal = Math.Max(item.PosicionFinal, item.Padre.PosicionInicial); 
                     }
                     else
                     {
-                        // Si el nodo actual es el hijo derecho del nodo padre, establece la referencia al hijo derecho del nodo padre.
+                        // Si el nodo actual es el hijo derecho del nodo padre,
+                        // establece la referencia al hijo derecho del nodo padre.
                         item.Padre.Derecha = item;
 
-                        // Ajusta la posición inicial del nodo actual para evitar solapamientos con el nodo padre.
+                        // Ajusta la posición inicial del nodo actual para
+                        // evitar solapamientos con el nodo padre.
                         item.PosicionInicial = Math.Max(item.PosicionInicial, item.Padre.PosicionFinal); 
                     }
                 }
 
-                // Se mueve al siguiente nodo en el recorrido, primero hacia el hijo izquierdo si existe, y si no, hacia el hijo derecho.
+                // Se mueve al siguiente nodo en el recorrido, primero hacia el
+                // hijo izquierdo si existe, y si no, hacia el hijo derecho.
                 proximo = proximo.Izquierda ?? proximo.Derecha; 
 
                 for (; proximo == null; item = item.Padre)
                 {
-                    // Imprime los ángulos en la impresión, mostrando la estructura jerárquica del árbol.
+                    // Imprime los ángulos en la impresión, mostrando la
+                    // estructura jerárquica del árbol.
                     ImprimeAngulares(item, raizMargenSuperior + 2 * nivel);
 
-                    // Decrementa el nivel y sale del bucle si se ha llegado a la raíz del árbol.
+                    // Decrementa el nivel y sale del bucle si se ha llegado a
+                    // la raíz del árbol.
                     if (--nivel < 0) break; 
 
                     if (item == item.Padre.Izquierda)
@@ -332,18 +427,21 @@ namespace Version3
                         if (item.Padre.Izquierda == null)
                             item.Padre.PosicionFinal = item.PosicionInicial;
                         else
-                            // Ajusta la posición inicial del nodo padre para evitar solapamientos con otros nodos hijos.
+                            // Ajusta la posición inicial del nodo padre para
+                            // evitar solapamientos con otros nodos hijos.
                             item.Padre.PosicionInicial += (item.PosicionInicial - item.Padre.PosicionFinal) / 2; 
                     }
                 }
             }
-            // Posiciona el cursor en la última línea impresa, debajo del árbol completo.
+            // Posiciona el cursor en la última línea impresa, debajo del árbol
+            // completo.
             Console.SetCursorPosition(0, raizMargenSuperior + 2 * lista.Count - 1); 
         }
 
         private static void ImprimeAngulares(NodoInfo pItem, int pSuperior)
         {
-            // Intercambia los colores de texto y fondo para imprimir el nodo actual con colores invertidos.
+            // Intercambia los colores de texto y fondo para imprimir el nodo
+            // actual con colores invertidos.
             IntercambiarColores();
 
             // Imprime el texto que representa al nodo actual.
@@ -351,23 +449,28 @@ namespace Version3
                          pSuperior,
                          pItem.PosicionInicial);
 
-            // Restaura los colores originales para imprimir los ángulos y ramas del árbol.
-            IntercambiarColores(); 
+            // Restaura los colores originales para imprimir los ángulos y ramas
+            // del árbol.
+            IntercambiarColores();
 
             if (pItem.Izquierda != null)
+            {
                 // Imprime las ramas y ángulos hacia el nodo hijo izquierdo.
                 ImprimeHorizontales(pSuperior + 1,
                                     "┌",
                                     "┘",
                                     pItem.Izquierda.PosicionInicial + pItem.Izquierda.Tamaño / 2,
-                                    pItem.PosicionInicial); 
+                                    pItem.PosicionInicial);
+            }
             if (pItem.Derecha != null)
+            {
                 // Imprime las ramas y ángulos hacia el nodo hijo derecho.
                 ImprimeHorizontales(pSuperior + 1,
                                     "└",
                                     "┐",
                                     pItem.PosicionFinal - 1,
-                                    pItem.Derecha.PosicionInicial + pItem.Derecha.Tamaño / 2); 
+                                    pItem.Derecha.PosicionInicial + pItem.Derecha.Tamaño / 2);
+            }
         }
 
         private static void ImprimeHorizontales(int pSuperior,
@@ -376,13 +479,16 @@ namespace Version3
                                                 int pPosicionInicial,
                                                 int pPosicionFinal)
         {
-            // Imprime el ángulo o punto de unión hacia la rama izquierda o derecha.
+            // Imprime el ángulo o punto de unión hacia la rama izquierda o
+            // derecha.
             ImprimeNodos(pInicio, pSuperior, pPosicionInicial);
 
-            // Imprime líneas horizontales que conectan los ángulos o puntos de unión.
+            // Imprime líneas horizontales que conectan los ángulos o puntos de
+            // unión.
             ImprimeNodos("─", pSuperior, pPosicionInicial + 1, pPosicionFinal);
 
-            // Imprime el ángulo o punto de unión hacia la rama derecha o izquierda.
+            // Imprime el ángulo o punto de unión hacia la rama derecha o
+            // izquierda.
             ImprimeNodos(pFinal, pSuperior, pPosicionFinal); 
         }
 
@@ -391,10 +497,12 @@ namespace Version3
                                          int pIzquierda,
                                          int pDerecha = -1)
         {
-            // Posiciona el cursor en la posición especificada para imprimir el texto.
+            // Posiciona el cursor en la posición especificada para imprimir el
+            // texto.
             Console.SetCursorPosition(pIzquierda, pSuperior);
 
-            // Calcula la posición derecha para la impresión si no se especifica.
+            // Calcula la posición derecha para la impresión si no se
+            // especifica.
             if (pDerecha < 0) pDerecha = pIzquierda + pTexto.Length;
 
             // Imprime el texto hasta alcanzar la posición derecha.
@@ -405,13 +513,11 @@ namespace Version3
         {
             var color = Console.ForegroundColor;
 
-            // Intercambia los colores de texto y fondo para resaltar los nodos en la impresión.
+            // Intercambia los colores de texto y fondo para resaltar los nodos
+            // en la impresión.
             Console.ForegroundColor = Console.BackgroundColor; 
             
             Console.BackgroundColor = color;
         }
     }
-
-
-
 }

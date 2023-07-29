@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using static BinaryTree.ImpresionBase;
+using static Version2.ImpresionBase;
 
-namespace BinaryTree
+namespace Version2
 {
     public static class ImpresionHerramientas
     {
