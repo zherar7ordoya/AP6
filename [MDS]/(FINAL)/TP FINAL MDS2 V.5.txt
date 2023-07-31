@@ -1,0 +1,5 @@
+[10:51, 26/7/2023] Betiana Rolando: Creo que nuestro diagrama de entradas y salidas estaba bien pobre en el RF2 y lo agregamos, pero si les parece sacarlo lo sacamos
+[10:52, 26/7/2023] Betiana Rolando: pero ojo que hay que sacarlo de todos lados
+[10:59, 26/7/2023] Betiana Rolando: Mi pregunta va enfocada al diagrama de clases, si el encargado de Logistica modifica la orden de transporte y de acuerdo a esa modificacion se genera una nueva factura, porque no estamos relacionando al Encargado de logistica con el CU facturar??
+[12:05, 26/7/2023] Betiana Rolando: para mi hay que relacionar en el diagrama de clases global y el DER el encargado de logistica con la factura
+
