@@ -1,0 +1,5 @@
++ Procesos 
++ Planificación 
++ Sincronización 
++ Memoria Virtual 
++ Memoria Principal
