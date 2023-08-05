@@ -1,0 +1,111 @@
+<mxfile host="app.diagrams.net" modified="2023-08-05T12:48:13.761Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="mBieU-GKIPsWPe4DjCij" version="21.6.3" type="device">
+  <diagram name="Page-1" id="uk-WA-k7jNDUKVa3kCe1">
+    <mxGraphModel dx="936" dy="518" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3_w771cl3F17AdnO9iCj-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="40" width="400" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-2" value="Sistema de Transporte de Larga Distancia de Contenedores" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="205" y="40" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-3" value="Asesor Comercial" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="120" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-5" value="Encargado de Logistica" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="310" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-7" value="CU 001: Registrar Carga" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="140" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-8" value="CU 002: Registrar Cliente" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-9" value="CU 003: Facturar carga" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="190" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-10" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="3_w771cl3F17AdnO9iCj-20" target="3_w771cl3F17AdnO9iCj-22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="210" as="sourcePoint" />
+            <mxPoint x="780" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-11" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="164.5" as="sourcePoint" />
+            <mxPoint x="200" y="164.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-12" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3_w771cl3F17AdnO9iCj-8" target="3_w771cl3F17AdnO9iCj-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="120" as="sourcePoint" />
+            <mxPoint x="350" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-14" value="&amp;lt;extend&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3_w771cl3F17AdnO9iCj-12">
+          <mxGeometry x="-0.1176" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-13" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3_w771cl3F17AdnO9iCj-7" target="3_w771cl3F17AdnO9iCj-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="690" y="220" as="sourcePoint" />
+            <mxPoint x="790" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-15" value="&amp;lt;include&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3_w771cl3F17AdnO9iCj-13">
+          <mxGeometry x="0.0616" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-16" value="CU 006: Modificar Carga" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="300" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-17" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="3_w771cl3F17AdnO9iCj-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="339.5" as="sourcePoint" />
+            <mxPoint x="200" y="339.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-18" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="3_w771cl3F17AdnO9iCj-16" target="3_w771cl3F17AdnO9iCj-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="300" as="sourcePoint" />
+            <mxPoint x="740" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-19" value="&amp;lt;include&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3_w771cl3F17AdnO9iCj-18">
+          <mxGeometry x="-0.0685" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-20" value="CU 004: Asignar Unidades" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="380" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-21" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="3_w771cl3F17AdnO9iCj-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="350" as="sourcePoint" />
+            <mxPoint x="200" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-22" value="CU 004: Asignar Unidades" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="380" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-23" value="&amp;lt;include&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="424.99655049319534" y="270.0002124687845" as="geometry">
+            <mxPoint x="-40" y="116" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-24" value="" style="shape=mxgraph.signs.travel.bank;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="660" y="184" width="50" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="3_w771cl3F17AdnO9iCj-25" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.03;exitY=0.65;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="3_w771cl3F17AdnO9iCj-24" target="3_w771cl3F17AdnO9iCj-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="174.5" as="sourcePoint" />
+            <mxPoint x="210" y="174.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
