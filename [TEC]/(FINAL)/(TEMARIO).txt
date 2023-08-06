@@ -1,0 +1,10 @@
+RODRIGO:
+
+- Aloha
+- Protocolos (en alta y baja)
+- Teoremas
+- Medios Guiados
+- STP / Mallas (?)
+- Componente de las ondas sinusoidales (función que ejerce)
+- Onda cuadrada
+- Modulación
